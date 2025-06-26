@@ -38,7 +38,7 @@
                 <span class="lni-menu"></span>
                 <span class="lni-menu"></span>
               </button>
-              <a href="homepage.aspx" class="navbar-brand"><img src="assets/img/logo.png" alt=""></a>
+              <a href="homepage.aspx" class="navbar-brand"><img src="assets/img/logo.png" alt="" /></a>
             </div>
             <div class="collapse navbar-collapse" id="main-navbar">
               <ul class="navbar-nav mr-auto w-100 justify-content-end">
@@ -52,14 +52,11 @@
                     Pages
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="about.aspx">About</a></li>
+                    <li><a class="dropdown-item" href="aboutus.aspx">About</a></li>
+                    <li><a class="dropdown-item" href="contactus.aspx">Contact</a></li>
                     <li><a class="dropdown-item" href="job-page.html">Job Page</a></li>
                     <li><a class="dropdown-item" href="job-details.html">Job Details</a></li>
                     <li><a class="dropdown-item" href="resume.html">Resume Page</a></li>
-                    <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                    <li><a class="dropdown-item" href="pricing.html">Pricing Tables</a></li>
-                    <li><a class="dropdown-item" href="contact.aspx">Contact</a></li>
                   </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -85,19 +82,9 @@
                     <li><a class="dropdown-item" href="browse-resumes.html">Browse Resumes</a></li>
                   </ul>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Blog 
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="blog.html">Blog - Right Sidebar</a></li>
-                    <li><a class="dropdown-item" href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>
-                    <li><a class="dropdown-item" href="blog-full-width.html"> Blog full width</a></li>
-                    <li><a class="dropdown-item" href="single-post.html">Blog Single Post</a></li>
-                  </ul>
-                </li>
+                
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.aspx">
+                  <a class="nav-link" href="contactus.aspx">
                     Contact
                   </a>
                 </li>
@@ -266,13 +253,13 @@
     <!-- Category Section End -->  
 
         <!-- Listings Section Start -->
-    <section id="job-listings" class="section">
+   <%-- <section id="job-listings" class="section">
       <div class="container text-center wow  wow fadeInUp">
         <h1 class="section-title">You Using Free Lite Version :(</h1>
 <h6>Purchase Full Version to Get All Pages, Features, Docs and Support!</h6></br>
 <a href="https://rebrand.ly/jobx-gg" target="_blank" rel="nofollow" class="btn btn-common btn-lg"><span class="lni-pointer-right"></span> Purchase Now!</a>
       </div>
-    </section>
+    </section>--%>
     <!-- Listings Section End -->
 
     <!-- Browse jobs Section Start -->
@@ -523,17 +510,17 @@
     <!-- Testimonial Section End -->  
 
     <!-- Start Pricing Table Section -->
-    <div id="pricing" class="section bg-gray">
+    <%--<div id="pricing" class="section bg-gray">
       <div class="container text-center wow  wow fadeInUp">
         <h1 class="section-title">You Using Free Lite Version :(</h1>
 <h6>Purchase Full Version to Get All Pages, Features, Docs and Support!</h6></br>
 <a href="https://rebrand.ly/jobx-gg" target="_blank" rel="nofollow" class="btn btn-common btn-lg"><span class="lni-pointer-right"></span> Purchase Now!</a>
       </div>
-    </div>
+    </div>--%>
     <!-- End Pricing Table Section -->
 
     <!-- Blog Section -->
-    <section id="blog" class="section">
+    <%--<section id="blog" class="section">
       <!-- Container Starts -->
       <div class="container">
         <div class="section-header">  
@@ -593,11 +580,11 @@
           </div>
         </div>
       </div>
-    </section>
+    </section>--%>
     <!-- blog Section End -->
 
     <!-- download Section Start -->
-    <section id="download" class="section bg-gray">
+    <%--<section id="download" class="section bg-gray">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-md-8 col-xs-12">
@@ -621,7 +608,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section>--%>
     <!-- download Section Start -->
 
         
@@ -643,10 +630,10 @@
               <div class="widget">
                 <h3 class="block-title">Quick Links</h3>
                 <ul class="menu">
-                  <li><a href="about.aspx">About Us</a></li>
+                  <li><a href="aboutus.aspx">About Us</a></li>
                   <li><a href="#">Support</a></li>
                   <li><a href="#">License</a></li>
-                  <li><a href="contact.aspx">Contact</a></li>
+                  <li><a href="contactus.aspx">Contact</a></li>
                 </ul>
                 <ul class="menu">
                   <li><a href="#">Terms & Conditions</a></li>
