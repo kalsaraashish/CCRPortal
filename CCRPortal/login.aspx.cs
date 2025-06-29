@@ -28,40 +28,61 @@ namespace CCRPortal
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
-            SqlConnection con=new SqlConnection(conn);  
-            SqlDataAdapter da = new SqlDataAdapter("select * from user_data where Username=@username and Password=@pass", con);
-            da.SelectCommand.Parameters.AddWithValue("@username", username.Text);
-            da.SelectCommand.Parameters.AddWithValue("@pass", pass.Text);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
+            SqlConnection con = new SqlConnection(conn);
+
             {
-                if (chkRememberMe.Checked)
+                con.Open();
+                using (SqlCommand da = new SqlCommand("SELECT * FROM user_data WHERE Username=@username AND Password=@pass", con))
                 {
-                    Request.Cookies["username"].Value = username.Text;
-                    Request.Cookies["pass"].Value = pass.Text;
-                    Response.Cookies["username"].Expires = DateTime.Now.AddHours(1);
-                    Response.Cookies["pass"].Expires = DateTime.Now.AddHours(1);
-                }
-                else
-                {
-                    if (Request.Cookies["username"] != null)
+                    da.Parameters.AddWithValue("@username", username.Text);
+                    da.Parameters.AddWithValue("@pass", pass.Text);
+
+                    using (SqlDataReader reader = da.ExecuteReader())
                     {
-                        Response.Cookies["username"].Expires = DateTime.Now.AddDays(-1);
+                        if (reader != null && reader.HasRows)
+                        {
+                            reader.Read();
+
+                            if (chkRememberMe.Checked)
+                            {
+                                Response.Cookies["username"].Value = username.Text;
+                                Response.Cookies["pass"].Value = pass.Text;
+
+                                Response.Cookies["username"].Expires = DateTime.Now.AddHours(1);
+                                Response.Cookies["pass"].Expires = DateTime.Now.AddHours(1);
+                            }
+                            else
+                            {
+                                Response.Cookies["username"].Expires = DateTime.Now.AddHours(-1);
+                                Response.Cookies["pass"].Expires = DateTime.Now.AddHours(-1);
+                            }
+
+                            string userType = reader["usertype"].ToString().Trim().ToLower();
+
+                            Session["username"] = username.Text;
+
+                            if (userType == "admin")
+                            {
+                                Response.Redirect("AdminDashboard.aspx");
+                            }
+                            else if (userType == "user")
+                            {
+                                Response.Redirect("UserDashboard.aspx");
+                            }
+                            username.Text = string.Empty;
+                            pass.Text = string.Empty;
+                            username.Focus();
+
+                        }
+                        else
+                        {
+                            Response.Write("<script>alert('Invalid username or password');</script>");
+                            username.Text = string.Empty;
+                            pass.Text = string.Empty;
+                            username.Focus();
+                        }
+                        con.Close();
                     }
-                    if (Request.Cookies["pass"] != null)
-                    {
-                        Response.Cookies["pass"].Expires = DateTime.Now.AddDays(-1);
-                    }
-                }
-                string userType = dt.Rows[0]["UserType"].ToString();
-                if (userType == "Admin")
-                {
-                    Response.Redirect("AdminDashboard.aspx");
-                }
-                else if (userType == "User")
-                {
-                    Response.Redirect("UserDashboard.aspx");
                 }
             }
         }

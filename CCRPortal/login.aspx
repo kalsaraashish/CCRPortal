@@ -48,7 +48,7 @@
 
                             </div>
 
-                            <asp:Button runat="server" class="btn btn-common log-btn" Text="Submit" OnClick="Unnamed_Click" />
+                            <asp:Button runat="server" ID="btn" class="btn btn-common log-btn" Text="Submit" OnClick="Unnamed_Click" />
                         </div>
                         <ul class="form-links">
                             <li class="text-center"><a href="register.aspx">Don't have an account?</a></li>
