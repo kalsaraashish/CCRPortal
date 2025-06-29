@@ -68,10 +68,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="aboutus.aspx" />
+    <Content Include="App_Data\CCRPortal.mdf" />
+    <Content Include="App_Data\CCRPortal_log.ldf">
+      <DependentUpon>CCRPortal.mdf</DependentUpon>
+    </Content>
     <Content Include="contactus.aspx" />
-    <Content Include="ex.aspx" />
     <Content Include="homepage.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -82,19 +86,26 @@
     <Compile Include="aboutus.aspx.designer.cs">
       <DependentUpon>aboutus.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admintemplate.Master.cs">
+      <DependentUpon>admintemplate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admintemplate.Master.designer.cs">
+      <DependentUpon>admintemplate.Master</DependentUpon>
+    </Compile>
+    <Compile Include="companytemplate.Master.cs">
+      <DependentUpon>companytemplate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="companytemplate.Master.designer.cs">
+      <DependentUpon>companytemplate.Master</DependentUpon>
+    </Compile>
     <Compile Include="contactus.aspx.cs">
       <DependentUpon>contactus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="contactus.aspx.designer.cs">
       <DependentUpon>contactus.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ex.aspx.cs">
-      <DependentUpon>ex.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ex.aspx.designer.cs">
-      <DependentUpon>ex.aspx</DependentUpon>
     </Compile>
     <Compile Include="homepage.aspx.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
@@ -111,14 +122,24 @@
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="usertemplate.Master.cs">
       <DependentUpon>usertemplate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="usertemplate.Master.designer.cs">
       <DependentUpon>usertemplate.Master</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="companytemplate.Master" />
+    <Content Include="admintemplate.Master" />
     <None Include="packages.config" />
     <Content Include="usertemplate.Master" />
     <None Include="Web.Debug.config">
@@ -129,7 +150,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="admin\" />
     <Folder Include="assets\" />
+    <Folder Include="company\" />
+    <Folder Include="img\resume\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

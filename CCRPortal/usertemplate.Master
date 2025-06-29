@@ -52,14 +52,14 @@
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="about.aspx">About</a></li>
+                                        <li><a class="dropdown-item" href="aboutus.aspx">About</a></li>
                                         <li><a class="dropdown-item" href="job-page.html">Job Page</a></li>
                                         <li><a class="dropdown-item" href="job-details.html">Job Details</a></li>
                                         <li><a class="dropdown-item" href="resume.html">Resume Page</a></li>
                                         <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
                                         <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
                                         <li><a class="dropdown-item" href="pricing.html">Pricing Tables</a></li>
-                                        <li><a class="dropdown-item" href="contact.aspx">Contact</a></li>
+                                        <li><a class="dropdown-item" href="contactus.aspx">Contact</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -83,18 +83,9 @@
                                         <li><a class="dropdown-item" href="browse-resumes.html">Browse Resumes</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog 
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="blog.html">Blog - Right Sidebar</a></li>
-                                        <li><a class="dropdown-item" href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>
-                                        <li><a class="dropdown-item" href="blog-full-width.html">Blog full width</a></li>
-                                        <li><a class="dropdown-item" href="single-post.html">Blog Single Post</a></li>
-                                    </ul>
-                                </li>
+                                
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.aspx">Contact
+                                    <a class="nav-link" href="contactus.aspx">Contact
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -156,7 +147,7 @@
                                 <p>Sed consequat sapien faus quam bibendum convallis.</p>
                                 <form method="post" id="subscribe-form" name="subscribe-form" class="validate">
                                     <div class="form-group is-empty">
-                                        <input type="email" value="" name="Email" class="form-control" id="EMAIL" placeholder="Enter Email..." required="">
+                                        <input type="email" value="" name="Email" class="form-control" id="EMAIL" placeholder="Enter Email...">
                                         <button type="submit" name="subscribe" id="subscribes" class="btn btn-common sub-btn"><i class="lni-envelope"></i></button>
                                         <div class="clearfix"></div>
                                     </div>
