@@ -19,7 +19,7 @@ namespace CCRPortal
                 }
                 else
                 {
-                    lblUserName.Text = "Welcome, Guest";
+                   Response.Redirect("~/Login.aspx");
                 }
             }
         }

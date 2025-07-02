@@ -41,29 +41,29 @@
                                 <img src="assets/img/logo.png" alt=""></a>
                         </div>
                         <div class="collapse navbar-collapse" id="main-navbar">
-                             <ul class="navbar-nav mr-auto w-100 justify-content-end">
-     <li class="nav-item active">
-         <a class="nav-link" href="homepage.aspx">Home
-         </a>
-     </li>
-     <li class="nav-item">
-         <a class="nav-link" href="aboutus.aspx">About
-         </a>
-     </li>
-     <li class="nav-item">
-         <a class="nav-link" href="contactus.aspx">Contact
-         </a>
-     </li>
-     <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In
-         </a>
-         <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="login.aspx">Sign In for User</a></li>
-             <li><a class="dropdown-item" href="/company/company_login.aspx">Company Sign In</a></li>
-         </ul>
-     </li>
+                            <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="homepage.aspx">Home
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="aboutus.aspx">About
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contactus.aspx">Contact
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="login.aspx">Sign In for User</a></li>
+                                        <li><a class="dropdown-item" href="/company/company_login.aspx">Company Sign In</a></li>
+                                    </ul>
+                                </li>
 
- </ul>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -130,85 +130,86 @@
         </section>
         <!-- Content section End -->
     </form>
-         <!-- Footer Section Start -->
-     <footer>
-     <!-- Footer Area Start -->
-     <section class="footer-Content">
-         <div class="container">
-             <div class="row">
-                 <div class="col-lg-3 col-md-3 col-xs-12">
-                     <div class="widget">
-                         <div class="footer-logo">
-                             <img src="assets/img/logo-footer.png" alt=""></div>
-                         <div class="textwidget">
-                             <p>Sed consequat sapien faus quam bibendum convallis quis in nulla. Pellentesque volutpat odio eget diam cursus semper.</p>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="col-lg-6 col-md-4 col-xs-12">
-                     <div class="widget">
-                         <h3 class="block-title">Quick Links</h3>
-                         <ul class="menu">
-                             <li><a href="aboutus.aspx">About Us</a></li>
-                             <li><a href="#">Support</a></li>
-                             <li><a href="#">License</a></li>
-                             <li><a href="contactus.aspx">Contact</a></li>
-                         </ul>
-                         <ul class="menu">
-                             <li><a href="#">Terms & Conditions</a></li>
-                             <li><a href="#">Privacy</a></li>
-                             <li><a href="#">Refferal Terms</a></li>
-                             <li><a href="#">Product License</a></li>
-                         </ul>
-                     </div>
-                 </div>
-                 <div class="col-lg-3 col-md-4 col-xs-12">
-                     <div class="widget">
-                         <h3 class="block-title">Subscribe Now</h3>
-                         <p>Sed consequat sapien faus quam bibendum convallis.</p>
-                         <div method="post" id="subscribe-form" name="subscribe-form" class="validate">
-                             <div class="form-group is-empty">
-                                 <input type="email" value="" name="Email" class="form-control" id="EMAIL" placeholder="Enter Email...">
-                                 <button type="submit" name="subscribe" id="subscribes" class="btn btn-common sub-btn"><i class="lni-envelope"></i></button>
-                                 <div class="clearfix"></div>
-                             </div>
-                         </div>
-                         <ul class="mt-3 footer-social">
-                             <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
-                             <li><a class="twitter" href="#"><i class="lni-twitter-filled"></i></a></li>
-                             <li><a class="linkedin" href="#"><i class="lni-linkedin-fill"></i></a></li>
-                             <li><a class="google-plus" href="#"><i class="lni-google-plus"></i></a></li>
-                         </ul>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </section>
-     <!-- Footer area End -->
+    <!-- Footer Section Start -->
+    <footer>
+        <!-- Footer Area Start -->
+        <section class="footer-Content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-xs-12">
+                        <div class="widget">
+                            <div class="footer-logo">
+                                <img src="assets/img/logo-footer.png" alt="">
+                            </div>
+                            <div class="textwidget">
+                                <p>Sed consequat sapien faus quam bibendum convallis quis in nulla. Pellentesque volutpat odio eget diam cursus semper.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-xs-12">
+                        <div class="widget">
+                            <h3 class="block-title">Quick Links</h3>
+                            <ul class="menu">
+                                <li><a href="aboutus.aspx">About Us</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">License</a></li>
+                                <li><a href="contactus.aspx">Contact</a></li>
+                            </ul>
+                            <ul class="menu">
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Refferal Terms</a></li>
+                                <li><a href="#">Product License</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-12">
+                        <div class="widget">
+                            <h3 class="block-title">Subscribe Now</h3>
+                            <p>Sed consequat sapien faus quam bibendum convallis.</p>
+                            <div method="post" id="subscribe-form" name="subscribe-form" class="validate">
+                                <div class="form-group is-empty">
+                                    <input type="email" value="" name="Email" class="form-control" id="EMAIL" placeholder="Enter Email...">
+                                    <button type="submit" name="subscribe" id="subscribes" class="btn btn-common sub-btn"><i class="lni-envelope"></i></button>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <ul class="mt-3 footer-social">
+                                <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
+                                <li><a class="twitter" href="#"><i class="lni-twitter-filled"></i></a></li>
+                                <li><a class="linkedin" href="#"><i class="lni-linkedin-fill"></i></a></li>
+                                <li><a class="google-plus" href="#"><i class="lni-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer area End -->
 
-     <!-- Copyright Start  -->
-     <div id="copyright">
-         <div class="container">
-             <div class="row">
-                 <div class="col-md-12">
-                     <div class="site-info text-center">
-                         <p>Designed and Developed by UIdeck</p>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <!-- Copyright End -->
- </footer>
- <!-- Footer Section End -->
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info text-center">
+                            <p>Designed and Developed by UIdeck</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
 
-      
 
- <!-- Preloader -->
-<%-- <div id="preloader">
+
+    <!-- Preloader -->
+    <%-- <div id="preloader">
      <div class="loader" id="loader-1"></div>
  </div>--%>
- <!-- End Preloader -->
+    <!-- End Preloader -->
 </body>
 </html>
 

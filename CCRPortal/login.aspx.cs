@@ -63,7 +63,7 @@ namespace CCRPortal
 
                             if (userType == "admin")
                             {
-                                Response.Redirect("AdminDashboard.aspx");
+                                Response.Redirect("/admin/AdminDashboard.aspx");
                             }
                             else if (userType == "user")
                             {

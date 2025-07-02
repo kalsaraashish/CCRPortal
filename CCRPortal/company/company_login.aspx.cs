@@ -54,9 +54,10 @@ namespace CCRPortal.company
                     bool isApproved = Convert.ToBoolean(reader["IsApproved"]);
                     if (isApproved)
                     {
-                        Session["CompanyID"] = reader["CompanyID"];
-                        Session["CompanyName"] = reader["CompanyName"];
+                        Session["CompanyID"] = reader["id"];
+                        Session["CompanyName"] = reader["company_name"];
                         Session["UserType"] = "Company";
+                        Response.Write("<script>alert('welcome');</script>");
                         Response.Redirect("Dashboard.aspx");
                     }
                     else

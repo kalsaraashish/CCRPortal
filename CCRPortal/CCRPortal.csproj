@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="aboutus.aspx" />
+    <Content Include="admin\AdminDashboard.aspx" />
     <Content Include="App_Data\CCRPortal.mdf" />
     <Content Include="App_Data\CCRPortal_log.ldf">
       <DependentUpon>CCRPortal.mdf</DependentUpon>
@@ -90,6 +91,13 @@
     </Compile>
     <Compile Include="aboutus.aspx.designer.cs">
       <DependentUpon>aboutus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AdminDashboard.aspx.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdminDashboard.aspx.designer.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\admintemplate.Master.cs">
       <DependentUpon>admintemplate.Master</DependentUpon>
