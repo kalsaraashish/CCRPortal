@@ -163,7 +163,7 @@
                                     Profile Info :
                                     <div class="input-icon">
                                         <i class="lni-bolt"></i>
-                                        <asp:TextBox runat="server" ID="info" class="form-control" placeholder="Profile Info"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="info" class="form-control" placeholder="Profile Info" TextMode="MultiLine"></asp:TextBox>
 
                                     </div>
                                 </div>

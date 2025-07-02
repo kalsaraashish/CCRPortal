@@ -156,9 +156,17 @@
                                     <i class="lni-graduation"></i>
                                     <%--<asp:TextBox runat="server"  TextMode="Password"></asp:TextBox>--%>
                                     <asp:DropDownList ID="DropDownList1" runat="server" class="form-control">
-                                        <asp:ListItem>mca</asp:ListItem>
-                                        <asp:ListItem>bca</asp:ListItem>
-                                        <asp:ListItem>mscit</asp:ListItem>
+                                        <asp:ListItem Text="-- Select Branch --" Value="" />
+                                        <asp:ListItem Text="Computer Science (CSE)" Value="CSE" />
+                                        <asp:ListItem Text="Information Technology" Value="IT" />
+                                        <asp:ListItem Text="Electronics & Communication" Value="ECE" />
+                                        <asp:ListItem Text="Electrical Engineering" Value="EE" />
+                                        <asp:ListItem Text="Mechanical Engineering" Value="ME" />
+                                        <asp:ListItem Text="Civil Engineering" Value="CE" />
+                                        <asp:ListItem Text="MCA" Value="MCA" />
+                                        <asp:ListItem Text="BCA" Value="BCA" />
+                                        <asp:ListItem Text="Other" Value="Other" />
+
                                     </asp:DropDownList>
 
                                 </div>

@@ -30,7 +30,7 @@ namespace CCRPortal
         {
             SqlConnection con = new SqlConnection(conn);
 
-            {
+            {   
                 con.Open();
                 using (SqlCommand da = new SqlCommand("SELECT * FROM user_data WHERE Username=@username AND Password=@pass", con))
                 {
