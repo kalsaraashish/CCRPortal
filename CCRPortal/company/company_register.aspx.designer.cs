@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CCRPortal
+namespace CCRPortal.company
 {
 
 
-    public partial class register
+    public partial class company_register
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace CCRPortal
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// username control.
+        /// coname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox username;
+        protected global::System.Web.UI.WebControls.TextBox coname;
 
         /// <summary>
         /// email control.
@@ -51,31 +51,22 @@ namespace CCRPortal
         protected global::System.Web.UI.WebControls.TextBox pass;
 
         /// <summary>
-        /// DropDownList1 control.
+        /// website control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.TextBox website;
 
         /// <summary>
-        /// skills control.
+        /// info control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox skills;
-
-        /// <summary>
-        /// resume control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload resume;
+        protected global::System.Web.UI.WebControls.TextBox info;
 
         /// <summary>
         /// sub control.

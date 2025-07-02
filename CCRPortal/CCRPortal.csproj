@@ -72,9 +72,11 @@
     <Content Include="App_Data\CCRPortal_log.ldf">
       <DependentUpon>CCRPortal.mdf</DependentUpon>
     </Content>
+    <Content Include="company\company_register.aspx" />
     <Content Include="contactus.aspx" />
     <Content Include="homepage.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="logout.aspx" />
     <Content Include="register.aspx" />
     <Content Include="UserDashboard.aspx" />
     <Content Include="Web.config" />
@@ -101,6 +103,13 @@
     <Compile Include="companytemplate.Master.designer.cs">
       <DependentUpon>companytemplate.Master</DependentUpon>
     </Compile>
+    <Compile Include="company\company_register.aspx.cs">
+      <DependentUpon>company_register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\company_register.aspx.designer.cs">
+      <DependentUpon>company_register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="contactus.aspx.cs">
       <DependentUpon>contactus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -121,6 +130,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="register.aspx.cs">
@@ -160,7 +176,6 @@
   <ItemGroup>
     <Folder Include="admin\" />
     <Folder Include="assets\" />
-    <Folder Include="company\" />
     <Folder Include="img\resume\" />
   </ItemGroup>
   <PropertyGroup>

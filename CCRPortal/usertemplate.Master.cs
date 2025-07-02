@@ -11,7 +11,17 @@ namespace CCRPortal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session["UserName"] != null)
+                {
+                    lblUserName.Text = "Welcome, " + Session["UserName"].ToString().ToLower();
+                }
+                else
+                {
+                    lblUserName.Text = "Welcome, Guest";
+                }
+            }
         }
     }
 }

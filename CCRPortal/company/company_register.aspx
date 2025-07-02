@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="CCRPortal.register" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="company_register.aspx.cs" Inherits="CCRPortal.company.company_register" %>
 
 <!DOCTYPE html>
 <html>
@@ -12,14 +12,14 @@
     <title>CCRP - Job Portal</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/line-icons.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.css">
-    <link rel="stylesheet" href="assets/css/slicknav.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/line-icons.css">
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/css/owl.theme.default.css">
+    <link rel="stylesheet" href="../assets/css/slicknav.min.css">
+    <link rel="stylesheet" href="../assets/css/animate.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
 </head>
 <body>
     <form id="form1" runat="server">
@@ -38,7 +38,7 @@
                                 <span class="lni-menu"></span>
                             </button>
                             <a href="homepage.aspx" class="navbar-brand">
-                                <img src="assets/img/logo.png" alt=""></a>
+                                <img src="../assets/img/logo.png" alt=""></a>
                         </div>
                         <div class="collapse navbar-collapse" id="main-navbar">
                             <ul class="navbar-nav mr-auto w-100 justify-content-end">
@@ -97,7 +97,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mobile-menu" data-logo="assets/img/logo-mobile.png"></div>
+                <div class="mobile-menu" data-logo="../assets/img/logo-mobile.png"></div>
             </nav>
             <!-- Navbar End -->
 
@@ -110,7 +110,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="inner-header">
-                            <h3>Register</h3>
+                            <h3>Company Register</h3>
                         </div>
                     </div>
                 </div>
@@ -124,14 +124,14 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-6 col-xs-12">
                         <div class="page-login-form box">
-                            <h3>Register</h3>
+                            <h3>Company Register</h3>
                             <div class="login-form">
                                 <div class="form-group">
-                                    User Name :
+                                    Company Name :
                                 <div class="input-icon">
                                     <i class="lni-user"></i>
-                                    <asp:TextBox runat="server" placeholder="Username" ID="username" class="form-control"></asp:TextBox>
-                                    <%--<input type="text" id="sender-email"  name="email" >--%>
+                                    <asp:TextBox runat="server" placeholder="Company Name" ID="coname" class="form-control"></asp:TextBox>
+
                                 </div>
                                 </div>
                                 <div class="form-group">
@@ -150,34 +150,22 @@
 
                                 </div>
                                 </div>
-                                <div class="form-group">
-                                    Branch :
-                                <div class="input-icon">
-                                    <i class="lni-graduation"></i>
-                                    <%--<asp:TextBox runat="server"  TextMode="Password"></asp:TextBox>--%>
-                                    <asp:DropDownList ID="DropDownList1" runat="server" class="form-control">
-                                        <asp:ListItem>mca</asp:ListItem>
-                                        <asp:ListItem>bca</asp:ListItem>
-                                        <asp:ListItem>mscit</asp:ListItem>
-                                    </asp:DropDownList>
 
-                                </div>
-                                </div>
                                 <div class="form-group">
-                                    Skills :
+                                    Website :
                                 <div class="input-icon">
                                     <i class="lni-bolt"></i>
-                                    <asp:TextBox runat="server" ID="skills" class="form-control" placeholder="Skills" TextMode="MultiLine"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="website" class="form-control" placeholder="Website"></asp:TextBox>
 
                                 </div>
                                 </div>
                                 <div class="form-group">
-                                    Upload Resume:
-                                <div class="input-icon">
-                                    <i class="lni-cloud-upload"></i>
-                                    <%--<asp:TextBox runat="server"  placeholder="Upload Resume"></asp:TextBox>--%>
-                                    <asp:FileUpload ID="resume" runat="server" class="form-control" Style="cursor: pointer" />
-                                </div>
+                                    Profile Info :
+                                    <div class="input-icon">
+                                        <i class="lni-bolt"></i>
+                                        <asp:TextBox runat="server" ID="info" class="form-control" placeholder="Profile Info"></asp:TextBox>
+
+                                    </div>
                                 </div>
 
 
@@ -203,7 +191,7 @@
                     <div class="col-lg-3 col-md-3 col-xs-12">
                         <div class="widget">
                             <div class="footer-logo">
-                                <img src="assets/img/logo-footer.png" alt="">
+                                <img src="../assets/img/logo-footer.png" alt="">
                             </div>
                             <div class="textwidget">
                                 <p>Sed consequat sapien faus quam bibendum convallis quis in nulla. Pellentesque volutpat odio eget diam cursus semper.</p>

@@ -92,7 +92,7 @@
                   <a class="nav-link" href="login.aspx">Sign In</a>
                 </li>
                 <li class="button-group">
-                  <a href="post-job.html" class="button btn btn-common">Post a Job</a>
+                  <a href="company/company_register.aspx" class="button btn btn-common">Post a Job</a>
                 </li>
               </ul>
             </div>
