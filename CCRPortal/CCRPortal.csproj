@@ -91,19 +91,12 @@
     <Compile Include="aboutus.aspx.designer.cs">
       <DependentUpon>aboutus.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admintemplate.Master.cs">
+    <Compile Include="admin\admintemplate.Master.cs">
       <DependentUpon>admintemplate.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admintemplate.Master.designer.cs">
+    <Compile Include="admin\admintemplate.Master.designer.cs">
       <DependentUpon>admintemplate.Master</DependentUpon>
-    </Compile>
-    <Compile Include="companytemplate.Master.cs">
-      <DependentUpon>companytemplate.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="companytemplate.Master.designer.cs">
-      <DependentUpon>companytemplate.Master</DependentUpon>
     </Compile>
     <Compile Include="company\CompanyDashboard.aspx.cs">
       <DependentUpon>CompanyDashboard.aspx</DependentUpon>
@@ -111,6 +104,13 @@
     </Compile>
     <Compile Include="company\CompanyDashboard.aspx.designer.cs">
       <DependentUpon>CompanyDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="company\companytemplate.Master.cs">
+      <DependentUpon>companytemplate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\companytemplate.Master.designer.cs">
+      <DependentUpon>companytemplate.Master</DependentUpon>
     </Compile>
     <Compile Include="company\company_login.aspx.cs">
       <DependentUpon>company_login.aspx</DependentUpon>
@@ -178,8 +178,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="companytemplate.Master" />
-    <Content Include="admintemplate.Master" />
+    <Content Include="company\companytemplate.Master" />
+    <Content Include="admin\admintemplate.Master" />
     <None Include="packages.config" />
     <Content Include="usertemplate.Master" />
     <None Include="Web.Debug.config">
@@ -190,7 +190,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="admin\" />
     <Folder Include="assets\" />
     <Folder Include="img\resume\" />
   </ItemGroup>

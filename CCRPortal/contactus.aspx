@@ -45,53 +45,23 @@
                                 <a class="nav-link" href="homepage.aspx">Home
                                 </a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages
+                            <li class="nav-item">
+                                <a class="nav-link" href="aboutus.aspx">About
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="aboutus.aspx">About</a></li>
-                                    <li><a class="dropdown-item" href="job-page.html">Job Page</a></li>
-                                    <li><a class="dropdown-item" href="job-details.html">Job Details</a></li>
-                                    <li><a class="dropdown-item" href="resume.html">Resume Page</a></li>
-                                    <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                                    <li><a class="dropdown-item" href="pricing.html">Pricing Tables</a></li>
-                                    <li><a class="dropdown-item" href="contactus.aspx">Contact</a></li>
-                                </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Candidates
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="browse-jobs.html">Browse Jobs</a></li>
-                                    <li><a class="dropdown-item" href="browse-categories.html">Browse Categories</a></li>
-                                    <li><a class="dropdown-item" href="add-resume.html">Add Resume</a></li>
-                                    <li><a class="dropdown-item" href="manage-resumes.html">Manage Resumes</a></li>
-                                    <li><a class="dropdown-item" href="job-alerts.html">Job Alerts</a></li>
-                                </ul>
-                            </li>
-                            <%--<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Employers
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="post-job.html">Add Job</a></li>
-                            <li><a class="dropdown-item" href="manage-jobs.html">Manage Jobs</a></li>
-                            <li><a class="dropdown-item" href="manage-applications.html">Manage Applications</a></li>
-                            <li><a class="dropdown-item" href="browse-resumes.html">Browse Resumes</a></li>
-                        </ul>
-                    </li>--%>
-
                             <li class="nav-item">
                                 <a class="nav-link" href="contactus.aspx">Contact
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="login.aspx">Sign In</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="login.aspx">Sign In for User</a></li>
+                                    <li><a class="dropdown-item" href="/company/company_login.aspx">Company Sign In</a></li>
+                                </ul>
                             </li>
-                            <%--<li class="button-group">
-                                <asp:Label runat="server" ID="lblUserName" Text="POST A JOB" class="button btn btn-common"></asp:Label>
-                        <a href="post-job.html" class="button btn btn-common">Post a Job</a>
-                            </li>--%>
+
                         </ul>
                     </div>
                 </div>
@@ -201,76 +171,77 @@
         </div>
     </section>
     <!-- Contact Section End -->
-        <footer>
-    <!-- Footer Area Start -->
-    <section class="footer-Content">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-xs-12">
-                    <div class="widget">
-                        <div class="footer-logo">
-                            <img src="assets/img/logo-footer.png" alt=""></div>
-                        <div class="textwidget">
-                            <p>Sed consequat sapien faus quam bibendum convallis quis in nulla. Pellentesque volutpat odio eget diam cursus semper.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-4 col-xs-12">
-                    <div class="widget">
-                        <h3 class="block-title">Quick Links</h3>
-                        <ul class="menu">
-                            <li><a href="aboutus.aspx">About Us</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">License</a></li>
-                            <li><a href="contactus.aspx">Contact</a></li>
-                        </ul>
-                        <ul class="menu">
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Refferal Terms</a></li>
-                            <li><a href="#">Product License</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-12">
-                    <div class="widget">
-                        <h3 class="block-title">Subscribe Now</h3>
-                        <p>Sed consequat sapien faus quam bibendum convallis.</p>
-                        <div method="post" id="subscribe-form" name="subscribe-form" class="validate">
-                            <div class="form-group is-empty">
-                                <input type="email" value="" name="Email" class="form-control" id="EMAIL" placeholder="Enter Email...">
-                                <button type="submit" name="subscribe" id="subscribes" class="btn btn-common sub-btn"><i class="lni-envelope"></i></button>
-                                <div class="clearfix"></div>
+    <footer>
+        <!-- Footer Area Start -->
+        <section class="footer-Content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-xs-12">
+                        <div class="widget">
+                            <div class="footer-logo">
+                                <img src="assets/img/logo-footer.png" alt="">
+                            </div>
+                            <div class="textwidget">
+                                <p>Sed consequat sapien faus quam bibendum convallis quis in nulla. Pellentesque volutpat odio eget diam cursus semper.</p>
                             </div>
                         </div>
-                        <ul class="mt-3 footer-social">
-                            <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
-                            <li><a class="twitter" href="#"><i class="lni-twitter-filled"></i></a></li>
-                            <li><a class="linkedin" href="#"><i class="lni-linkedin-fill"></i></a></li>
-                            <li><a class="google-plus" href="#"><i class="lni-google-plus"></i></a></li>
-                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-xs-12">
+                        <div class="widget">
+                            <h3 class="block-title">Quick Links</h3>
+                            <ul class="menu">
+                                <li><a href="aboutus.aspx">About Us</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">License</a></li>
+                                <li><a href="contactus.aspx">Contact</a></li>
+                            </ul>
+                            <ul class="menu">
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Refferal Terms</a></li>
+                                <li><a href="#">Product License</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-12">
+                        <div class="widget">
+                            <h3 class="block-title">Subscribe Now</h3>
+                            <p>Sed consequat sapien faus quam bibendum convallis.</p>
+                            <div method="post" id="subscribe-form" name="subscribe-form" class="validate">
+                                <div class="form-group is-empty">
+                                    <input type="email" value="" name="Email" class="form-control" id="EMAIL" placeholder="Enter Email...">
+                                    <button type="submit" name="subscribe" id="subscribes" class="btn btn-common sub-btn"><i class="lni-envelope"></i></button>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <ul class="mt-3 footer-social">
+                                <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
+                                <li><a class="twitter" href="#"><i class="lni-twitter-filled"></i></a></li>
+                                <li><a class="linkedin" href="#"><i class="lni-linkedin-fill"></i></a></li>
+                                <li><a class="google-plus" href="#"><i class="lni-google-plus"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Footer area End -->
+        </section>
+        <!-- Footer area End -->
 
-    <!-- Copyright Start  -->
-    <div id="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="site-info text-center">
-                        <p>Designed and Developed by UIdeck</p>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info text-center">
+                            <p>Designed and Developed by UIdeck</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Copyright End -->
-</footer>
-<!-- Footer Section End -->
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
 
 </body>
 </html>
