@@ -87,13 +87,13 @@ namespace CCRPortal.company
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDeadline;
 
         /// <summary>
-        /// resume control.
+        /// jobimg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload resume;
+        protected global::System.Web.UI.WebControls.FileUpload jobimg;
 
         /// <summary>
         /// sub control.

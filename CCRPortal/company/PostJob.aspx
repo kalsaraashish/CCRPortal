@@ -70,14 +70,15 @@
                             <div class="form-group">
                                 Upload Image:
                         <div class="input-icon">
+                            
                             <i class="lni-cloud-upload"></i>
                             <%--<asp:TextBox runat="server"  placeholder="Upload Resume"></asp:TextBox>--%>
-                            <asp:FileUpload ID="resume" runat="server" class="form-control" Style="cursor: pointer" />
+                            <asp:FileUpload ID="jobimg" runat="server" class="form-control" Style="cursor: pointer" />
                         </div>
                             </div>
 
 
-                            <asp:Button runat="server" class="btn btn-common log-btn" ID="sub" Text="Submit" />
+                            <asp:Button runat="server" class="btn btn-common log-btn" ID="sub" Text="Submit" OnClick="sub_Click" />
                         </div>
                         
                     </div>

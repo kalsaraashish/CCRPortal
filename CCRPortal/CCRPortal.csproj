@@ -207,6 +207,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\" />
+    <Folder Include="img\co_img\" />
     <Folder Include="img\resume\" />
   </ItemGroup>
   <PropertyGroup>
