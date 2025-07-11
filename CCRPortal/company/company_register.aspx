@@ -42,28 +42,28 @@
                         </div>
                         <div class="collapse navbar-collapse" id="main-navbar">
                             <ul class="navbar-nav mr-auto w-100 justify-content-end">
-     <li class="nav-item active">
-         <a class="nav-link" href="../homepage.aspx">Home
-         </a>
-     </li>
-     <li class="nav-item">
-         <a class="nav-link" href="../aboutus.aspx">About
-         </a>
-     </li>
-     <li class="nav-item">
-         <a class="nav-link" href="../contactus.aspx">Contact
-         </a>
-     </li>
-     <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In
-         </a>
-         <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="login.aspx">Sign In for User</a></li>
-             <li><a class="dropdown-item" href="/company/company_login.aspx">Company Sign In</a></li>
-         </ul>
-     </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="../homepage.aspx">Home
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../aboutus.aspx">About
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../contactus.aspx">Contact
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="login.aspx">Sign In for User</a></li>
+                                        <li><a class="dropdown-item" href="/company/company_login.aspx">Company Sign In</a></li>
+                                    </ul>
+                                </li>
 
- </ul>
+                            </ul>
                         </div>
                     </div>
                 </div>

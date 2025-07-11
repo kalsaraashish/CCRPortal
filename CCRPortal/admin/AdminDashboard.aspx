@@ -23,7 +23,7 @@
                     <asp:Repeater ID="rptCompanies" runat="server">
                         <ItemTemplate>
                             <tr>
-                                <td><%# Eval("Id") %></td>
+                                <td><%# Eval("CompanyId") %></td>
                                 <td><%# Eval("company_name").ToString().Trim() %></td>
                                 <td><%# Eval("email").ToString().Trim() %></td>
                                 <td><%# Eval("password").ToString().Trim() %></td>
@@ -34,7 +34,7 @@
                                 </td>
                                 <td>
                                     <asp:Button ID="btnApprove" runat="server" Text="Approve" CssClass="btn btn-success btn-sm"
-                                        CommandName="Approve" CommandArgument='<%# Eval("Id") %>'
+                                        CommandName="Approve" CommandArgument='<%# Eval("CompanyId") %>'
                                         OnClick="btnApprove_Click"
                                         Enabled='<%# !Convert.ToBoolean(Eval("IsApproved")) %>' />
                                 </td>

@@ -77,7 +77,7 @@
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Employers
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="post-job.html">Add Job</a></li>
+                                        <li><a class="dropdown-item" href="PostJob.aspx">Add Job</a></li>
                                         <li><a class="dropdown-item" href="manage-jobs.html">Manage Jobs</a></li>
                                         <li><a class="dropdown-item" href="manage-applications.html">Manage Applications</a></li>
                                         <li><a class="dropdown-item" href="browse-resumes.html">Browse Resumes</a></li>
@@ -92,7 +92,10 @@
                                     <a class="nav-link" href="../logout.aspx">Sign Out</a>
                                 </li>
                                 <li class="button-group">
-                                    <a href="post-job.html" class="button btn btn-common">Post a Job</a>
+                                    <a href="PostJob.aspx" class="button btn btn-common">Post a Job</a>
+                                </li>
+                                <li class="button-group">
+                                    <<asp:Label runat="server" ID="lblUserName" Text="" class="button btn btn-common"></asp:Label>
                                 </li>
                             </ul>
                         </div>
@@ -107,8 +110,9 @@
 
 
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
 
+        </asp:ContentPlaceHolder>
+         </form>
         <!-- Footer Section Start -->
         <footer>
             <!-- Footer Area Start -->
@@ -182,6 +186,6 @@
         </footer>
         <!-- Footer Section End -->
 
-    </form>
+   
 </body>
 </html>
