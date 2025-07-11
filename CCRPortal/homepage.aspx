@@ -111,9 +111,11 @@
                     <div class="col-lg-10 col-md-12 col-xs-12">
                         <div class="contents">
                             <h2 class="head-title">Find the job that fits your life</h2>
-                            <p>Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. Vestibulum congue posuere lacus,
+                            <p>
+                                Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. Vestibulum congue posuere lacus,
                                 <br>
-                                id tincidunt nisi porta sit amet. Suspendisse et sapien varius, pellentesque dui non.</p>
+                                id tincidunt nisi porta sit amet. Suspendisse et sapien varius, pellentesque dui non.
+                            </p>
                             <div class="job-search-form">
                                 <form>
                                     <div class="row">
@@ -172,101 +174,47 @@
             </div>
         </header>
         <!-- Header Section End -->
-
-        <!-- Category Section Start -->
-        <section class="category section bg-gray">
+        <!-- Latest Section Start -->
+        <section id="latest-jobs" class="section bg-gray">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Browse Categories</h2>
-                    <p>Most popular categories of portal, sorted by popularity</p>
+                    <h2 class="section-title">Latest Jobs</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et
+                 <br />
+                        metus effici turac fringilla lorem facilisis.
+                    </p>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-xs-12 f-category">
-                        <a href="browse-jobs.html">
-                            <div class="icon bg-color-1">
-                                <i class="lni-home"></i>
+                    <asp:Repeater ID="rp1" runat="server">
+                        <ItemTemplate>
+                            <div class="col-lg-6 col-md-12 col-xs-12">
+                                <div class="jobs-latest">
+                                    <div class="img-thumb">
+                                        <img src="<%# Eval("jobimage") %>" alt="" style="height: 100px; width: 100px" />
+
+                                    </div>
+                                    <div class="content">
+                                        <h3><a href="job-details.aspx?id=<%# Eval("JobID") %>"><%# Eval("Title") %></a></h3>
+                                        <p class="brand"><%# Eval("Title") %></p>
+                                        <div class="tags">
+                                            <span><i class="lni-map-marker"></i>New York</span>
+                                            <span><i class="lni-user"></i>John Smith</span>
+                                        </div>
+                                        <div class="tag mb-3"><i class="lni-tag"></i><%# Eval("Eligibility") %></div>
+                                        <span class="full-time">Full Time</span>
+                                    </div>
+                                </div>
                             </div>
-                            <h3>Finance</h3>
-                            <p>(4286 jobs)</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-xs-12 f-category">
-                        <a href="browse-jobs.html">
-                            <div class="icon bg-color-2">
-                                <i class="lni-world"></i>
-                            </div>
-                            <h3>Sale/Markting</h3>
-                            <p>(2000 jobs)</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-xs-12 f-category">
-                        <a href="browse-jobs.html">
-                            <div class="icon bg-color-3">
-                                <i class="lni-book"></i>
-                            </div>
-                            <h3>Education/Training</h3>
-                            <p>(1450 jobs)</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-xs-12 f-category border-right-0">
-                        <a href="browse-jobs.html">
-                            <div class="icon bg-color-4">
-                                <i class="lni-display"></i>
-                            </div>
-                            <h3>Technologies</h3>
-                            <p>(5100 jobs)</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-xs-12 f-category border-bottom-0">
-                        <a href="browse-jobs.html">
-                            <div class="icon bg-color-5">
-                                <i class="lni-brush"></i>
-                            </div>
-                            <h3>Art/Design</h3>
-                            <p>(5079 jobs)</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-xs-12 f-category border-bottom-0">
-                        <a href="browse-jobs.html">
-                            <div class="icon bg-color-6">
-                                <i class="lni-heart"></i>
-                            </div>
-                            <h3>Healthcare</h3>
-                            <p>(3235 jobs)</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-xs-12 f-category border-bottom-0">
-                        <a href="browse-jobs.html">
-                            <div class="icon bg-color-7">
-                                <i class="lni-funnel"></i>
-                            </div>
-                            <h3>Science</h3>
-                            <p>(1800 jobs)</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-xs-12 f-category border-right-0 border-bottom-0">
-                        <a href="browse-jobs.html">
-                            <div class="icon bg-color-8">
-                                <i class="lni-cup"></i>
-                            </div>
-                            <h3>Food Services</h3>
-                            <p>(4286 jobs)</p>
-                        </a>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <div class="col-12 text-center mt-4">
+                        <a href="job-page.html" class="btn btn-common">Browse All Jobs</a>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Category Section End -->
-
-        <!-- Listings Section Start -->
-        <%-- <section id="job-listings" class="section">
-      <div class="container text-center wow  wow fadeInUp">
-        <h1 class="section-title">You Using Free Lite Version :(</h1>
-<h6>Purchase Full Version to Get All Pages, Features, Docs and Support!</h6></br>
-<a href="https://rebrand.ly/jobx-gg" target="_blank" rel="nofollow" class="btn btn-common btn-lg"><span class="lni-pointer-right"></span> Purchase Now!</a>
-      </div>
-    </section>--%>
-        <!-- Listings Section End -->
+        <!-- Latest Section End -->
 
         <!-- Browse jobs Section Start -->
         <div id="browse-jobs" class="section bg-gray">
@@ -296,9 +244,11 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">How It Works?</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et
                         <br>
-                        metus effici turac fringilla lorem facilisis.</p>
+                        metus effici turac fringilla lorem facilisis.
+                    </p>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -332,136 +282,16 @@
             </div>
         </section>
         <!-- How It Work Section End -->
-
-        <!-- Latest Section Start -->
-        <section id="latest-jobs" class="section bg-gray">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Latest Jobs</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et
-                        <br>
-                        metus effici turac fringilla lorem facilisis.</p>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 col-xs-12">
-                        <div class="jobs-latest">
-                            <div class="img-thumb">
-                                <img src="assets/img/features/img-1.jpg" alt="">
-                            </div>
-                            <div class="content">
-                                <h3><a href="job-details.html">UX Designer</a></h3>
-                                <p class="brand">MagNews</p>
-                                <div class="tags">
-                                    <span><i class="lni-map-marker"></i>New York</span>
-                                    <span><i class="lni-user"></i>John Smith</span>
-                                </div>
-                                <div class="tag mb-3"><i class="lni-tag"></i>#Html #Css #PHP</div>
-                                <span class="full-time">Full Time</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-xs-12">
-                        <div class="jobs-latest">
-                            <div class="img-thumb">
-                                <img src="assets/img/features/img-2.jpg" alt="">
-                            </div>
-                            <div class="content">
-                                <h3><a href="job-details.html">UI Designer</a></h3>
-                                <p class="brand">Hunter Inc.</p>
-                                <div class="tags">
-                                    <span><i class="lni-map-marker"></i>New York</span>
-                                    <span><i class="lni-user"></i>John Smith</span>
-                                </div>
-                                <div class="tag mb-3"><i class="lni-tag"></i>#Html #Css #PHP</div>
-                                <span class="part-time">Part Time</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-xs-12">
-                        <div class="jobs-latest">
-                            <div class="img-thumb">
-                                <img src="assets/img/features/img-3.jpg" alt="">
-                            </div>
-                            <div class="content">
-                                <h3><a href="job-details.html">Web Developer</a></h3>
-                                <p class="brand">MagNews</p>
-                                <div class="tags">
-                                    <span><i class="lni-map-marker"></i>New York</span>
-                                    <span><i class="lni-user"></i>John Smith</span>
-                                </div>
-                                <div class="tag mb-3"><i class="lni-tag"></i>#Html #Css #PHP</div>
-                                <span class="full-time">Full Time</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-xs-12">
-                        <div class="jobs-latest">
-                            <div class="img-thumb">
-                                <img src="assets/img/features/img-4.jpg" alt="">
-                            </div>
-                            <div class="content">
-                                <h3><a href="job-details.html">UX Designer</a></h3>
-                                <p class="brand">AmazeSoft</p>
-                                <div class="tags">
-                                    <span><i class="lni-map-marker"></i>New York</span>
-                                    <span><i class="lni-user"></i>John Smith</span>
-                                </div>
-                                <div class="tag mb-3"><i class="lni-tag"></i>#Html #Css #PHP</div>
-                                <span class="full-time">Full Time</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-xs-12">
-                        <div class="jobs-latest">
-                            <div class="img-thumb">
-                                <img src="assets/img/features/img-2.jpg" alt="">
-                            </div>
-                            <div class="content">
-                                <h3><a href="job-details.html">Digital Marketer</a></h3>
-                                <p class="brand">Bingo</p>
-                                <div class="tags">
-                                    <span><i class="lni-map-marker"></i>New York</span>
-                                    <span><i class="lni-user"></i>John Smith</span>
-                                </div>
-                                <div class="tag mb-3"><i class="lni-tag"></i>#Html #Css #PHP</div>
-                                <span class="part-time">Part Time</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-xs-12">
-                        <div class="jobs-latest">
-                            <div class="img-thumb">
-                                <img src="assets/img/features/img-1.jpg" alt="">
-                            </div>
-                            <div class="content">
-                                <h3><a href="job-details.html">Web Developer</a></h3>
-                                <p class="brand">MagNews</p>
-                                <div class="tags">
-                                    <span><i class="lni-map-marker"></i>New York</span>
-                                    <span><i class="lni-user"></i>John Smith</span>
-                                </div>
-                                <div class="tag mb-3"><i class="lni-tag"></i>#Html #Css #PHP</div>
-                                <span class="full-time">Full Time</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 text-center mt-4">
-                        <a href="job-page.html" class="btn btn-common">Browse All Jobs</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Latest Section End -->
-
-
         <!-- Testimonial Section Start -->
         <section id="testimonial" class="section">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Clients Review</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et
                         <br>
-                        metus effici turac fringilla lorem facilisis.</p>
+                        metus effici turac fringilla lorem facilisis.
+                    </p>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
@@ -521,109 +351,6 @@
         </section>
         <!-- Testimonial Section End -->
 
-        <!-- Start Pricing Table Section -->
-        <%--<div id="pricing" class="section bg-gray">
-      <div class="container text-center wow  wow fadeInUp">
-        <h1 class="section-title">You Using Free Lite Version :(</h1>
-<h6>Purchase Full Version to Get All Pages, Features, Docs and Support!</h6></br>
-<a href="https://rebrand.ly/jobx-gg" target="_blank" rel="nofollow" class="btn btn-common btn-lg"><span class="lni-pointer-right"></span> Purchase Now!</a>
-      </div>
-    </div>--%>
-        <!-- End Pricing Table Section -->
-
-        <!-- Blog Section -->
-        <%--<section id="blog" class="section">
-      <!-- Container Starts -->
-      <div class="container">
-        <div class="section-header">  
-          <h2 class="section-title">Blog Post</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et <br> metus effici turac fringilla lorem facilisis.</p>      
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
-            <!-- Blog Item Starts -->
-            <div class="blog-item-wrapper">
-              <div class="blog-item-img">
-                <a href="single-post.html">
-                  <img src="assets/img/blog/img1.jpg" alt="">
-                </a>              
-              </div>
-              <div class="blog-item-text"> 
-                <h3><a href="single-post.html">Tips to write an impressive resume online for beginner</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore praesentium asperiores ad vitae.</p>
-              </div>
-              <a class="readmore" href="#">Read More</a>
-            </div>
-            <!-- Blog Item Wrapper Ends-->
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
-            <!-- Blog Item Starts -->
-            <div class="blog-item-wrapper">
-              <div class="blog-item-img">
-                <a href="single-post.html">
-                  <img src="assets/img/blog/img2.jpg" alt="">
-                </a>              
-              </div>
-              <div class="blog-item-text"> 
-                <h3><a href="single-post.html">Let's explore 5 cool new features in JobBoard theme</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore praesentium asperiores ad vitae.</p>
-              </div>
-              <a class="readmore" href="#">Read More</a>
-            </div>
-            <!-- Blog Item Wrapper Ends-->
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
-            <!-- Blog Item Starts -->
-            <div class="blog-item-wrapper">
-              <div class="blog-item-img">
-                <a href="single-post.html">
-                  <img src="assets/img/blog/img3.jpg" alt="">
-                </a>              
-              </div>
-              <div class="blog-item-text"> 
-                <h3><a href="single-post.html">How to convince recruiters and get your dream job</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore praesentium asperiores ad vitae.</p>
-              </div>
-              <a class="readmore" href="#">Read More</a>
-            </div>
-            <!-- Blog Item Wrapper Ends-->
-          </div>
-        </div>
-      </div>
-    </section>--%>
-        <!-- blog Section End -->
-
-        <!-- download Section Start -->
-        <%--<section id="download" class="section bg-gray">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-md-8 col-xs-12">
-            <div class="download-wrapper">
-              <div>
-                <div class="download-text">
-                  <h4>Download Our Best Apps</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et metus effici turac fringilla lorem facilisis, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <div class="app-button">
-                <a href="#" class="btn btn-border"><i class="lni-apple"></i>Download <br> <span>From App Store</span></a>
-                <a href="#" class="btn btn-common btn-effect"><i class="lni-android"></i> Download <br> <span>From Play Store</span></a>
-              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-4 col-xs-12">            
-            <div class="download-thumb">
-              <img class="img-fluid" src="assets/img/app.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>--%>
-        <!-- download Section Start -->
-
-
         <!-- Footer Section Start -->
         <footer>
             <!-- Footer Area Start -->
@@ -633,7 +360,8 @@
                         <div class="col-lg-3 col-md-3 col-xs-12">
                             <div class="widget">
                                 <div class="footer-logo">
-                                    <img src="assets/img/logo-footer.png" alt=""></div>
+                                    <img src="assets/img/logo-footer.png" alt="">
+                                </div>
                                 <div class="textwidget">
                                     <p>Sed consequat sapien faus quam bibendum convallis quis in nulla. Pellentesque volutpat odio eget diam cursus semper.</p>
                                 </div>

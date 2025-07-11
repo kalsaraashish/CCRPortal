@@ -39,6 +39,22 @@ namespace CCRPortal.company
                     return;
                 }
 
+                con.Open();
+
+                //  Check if job already exists
+                using (SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Jobs WHERE CompanyID = @CompanyID AND Title = @Title", con))
+                {
+                    checkCmd.Parameters.AddWithValue("@CompanyID", Session["CompanyID"]);
+                    checkCmd.Parameters.AddWithValue("@Title", txtTitle.Text.Trim());
+
+                    int count = (int)checkCmd.ExecuteScalar();
+                    if (count > 0)
+                    {
+                        Response.Write("<script>alert('Job with this title already exists for your company.');</script>");
+                        return;
+                    }
+                }
+
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO Jobs (CompanyID, Title, Description, Eligibility, Deadline, jobimage) VALUES (@CompanyID, @Title, @Description, @Eligibility, @Deadline, @jobimage)", con))
                 {
                     cmd.Parameters.AddWithValue("@CompanyID", Session["CompanyID"]);
@@ -47,7 +63,7 @@ namespace CCRPortal.company
                     cmd.Parameters.AddWithValue("@Eligibility", txtEligibility.Text.Trim());
                     cmd.Parameters.AddWithValue("@Deadline", txtDeadline.Text.Trim());
                     cmd.Parameters.AddWithValue("@jobimage", resumeRelativePath);
-                    con.Open();
+                    
                     int rowsAffected = cmd.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {

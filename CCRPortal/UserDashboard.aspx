@@ -86,108 +86,29 @@
                 </p>
             </div>
             <div class="row">
-                <div class="col-lg-6 col-md-12 col-xs-12">
-                    <div class="jobs-latest">
-                        <div class="img-thumb">
-                            <img src="assets/img/features/img-1.jpg" alt="">
-                        </div>
-                        <div class="content">
-                            <h3><a href="job-details.html">UX Designer</a></h3>
-                            <p class="brand">MagNews</p>
-                            <div class="tags">
-                                <span><i class="lni-map-marker"></i>New York</span>
-                                <span><i class="lni-user"></i>John Smith</span>
+                <asp:Repeater ID="rp1" runat="server">
+                    <ItemTemplate>
+                        <div class="col-lg-6 col-md-12 col-xs-12">
+                            <div class="jobs-latest">
+                                <div class="img-thumb">
+                                    <img src="<%# Eval("jobimage") %>" alt="" style="height: 100px; width: 100px" />
+
+                                </div>
+                                <div class="content">
+                                    <h3><a href="job-details.aspx?id=<%# Eval("JobID") %>"><%# Eval("Title") %></a></h3>
+                                    <p class="brand"><%# Eval("Title") %></p>
+                                    <div class="tags">
+                                        <span><i class="lni-map-marker"></i>New York</span>
+                                        <span><i class="lni-user"></i>John Smith</span>
+                                    </div>
+                                    <div class="tag mb-3"><i class="lni-tag"></i><%# Eval("Eligibility") %></div>
+                                    <span class="full-time">Full Time</span>
+                                </div>
                             </div>
-                            <div class="tag mb-3"><i class="lni-tag"></i>#Html #Css #PHP</div>
-                            <span class="full-time">Full Time</span>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-xs-12">
-                    <div class="jobs-latest">
-                        <div class="img-thumb">
-                            <img src="assets/img/features/img-2.jpg" alt="">
-                        </div>
-                        <div class="content">
-                            <h3><a href="job-details.html">UI Designer</a></h3>
-                            <p class="brand">Hunter Inc.</p>
-                            <div class="tags">
-                                <span><i class="lni-map-marker"></i>New York</span>
-                                <span><i class="lni-user"></i>John Smith</span>
-                            </div>
-                            <div class="tag mb-3"><i class="lni-tag"></i>#Html #Css #PHP</div>
-                            <span class="part-time">Part Time</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-xs-12">
-                    <div class="jobs-latest">
-                        <div class="img-thumb">
-                            <img src="assets/img/features/img-3.jpg" alt="">
-                        </div>
-                        <div class="content">
-                            <h3><a href="job-details.html">Web Developer</a></h3>
-                            <p class="brand">MagNews</p>
-                            <div class="tags">
-                                <span><i class="lni-map-marker"></i>New York</span>
-                                <span><i class="lni-user"></i>John Smith</span>
-                            </div>
-                            <div class="tag mb-3"><i class="lni-tag"></i>#Html #Css #PHP</div>
-                            <span class="full-time">Full Time</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-xs-12">
-                    <div class="jobs-latest">
-                        <div class="img-thumb">
-                            <img src="assets/img/features/img-4.jpg" alt="">
-                        </div>
-                        <div class="content">
-                            <h3><a href="job-details.html">UX Designer</a></h3>
-                            <p class="brand">AmazeSoft</p>
-                            <div class="tags">
-                                <span><i class="lni-map-marker"></i>New York</span>
-                                <span><i class="lni-user"></i>John Smith</span>
-                            </div>
-                            <div class="tag mb-3"><i class="lni-tag"></i>#Html #Css #PHP</div>
-                            <span class="full-time">Full Time</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-xs-12">
-                    <div class="jobs-latest">
-                        <div class="img-thumb">
-                            <img src="assets/img/features/img-2.jpg" alt="">
-                        </div>
-                        <div class="content">
-                            <h3><a href="job-details.html">Digital Marketer</a></h3>
-                            <p class="brand">Bingo</p>
-                            <div class="tags">
-                                <span><i class="lni-map-marker"></i>New York</span>
-                                <span><i class="lni-user"></i>John Smith</span>
-                            </div>
-                            <div class="tag mb-3"><i class="lni-tag"></i>#Html #Css #PHP</div>
-                            <span class="part-time">Part Time</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-xs-12">
-                    <div class="jobs-latest">
-                        <div class="img-thumb">
-                            <img src="assets/img/features/img-1.jpg" alt="">
-                        </div>
-                        <div class="content">
-                            <h3><a href="job-details.html">Web Developer</a></h3>
-                            <p class="brand">MagNews</p>
-                            <div class="tags">
-                                <span><i class="lni-map-marker"></i>New York</span>
-                                <span><i class="lni-user"></i>John Smith</span>
-                            </div>
-                            <div class="tag mb-3"><i class="lni-tag"></i>#Html #Css #PHP</div>
-                            <span class="full-time">Full Time</span>
-                        </div>
-                    </div>
-                </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+
                 <div class="col-12 text-center mt-4">
                     <a href="job-page.html" class="btn btn-common">Browse All Jobs</a>
                 </div>
@@ -309,9 +230,11 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">How It Works?</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et
                     <br>
-                    metus effici turac fringilla lorem facilisis.</p>
+                    metus effici turac fringilla lorem facilisis.
+                </p>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">

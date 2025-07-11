@@ -79,6 +79,7 @@
     <Content Include="company\PostJob.aspx" />
     <Content Include="contactus.aspx" />
     <Content Include="homepage.aspx" />
+    <Content Include="job-details.aspx" />
     <Content Include="login.aspx" />
     <Content Include="logout.aspx" />
     <Content Include="register.aspx" />
@@ -155,6 +156,13 @@
     </Compile>
     <Compile Include="homepage.aspx.designer.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="job-details.aspx.cs">
+      <DependentUpon>job-details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="job-details.aspx.designer.cs">
+      <DependentUpon>job-details.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
