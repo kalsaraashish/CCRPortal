@@ -55,13 +55,15 @@ namespace CCRPortal.company
                     }
                 }
 
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Jobs (CompanyID, Title, Description, Eligibility, Deadline, jobimage) VALUES (@CompanyID, @Title, @Description, @Eligibility, @Deadline, @jobimage)", con))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Jobs (CompanyID, Title, Description, Eligibility, Deadline,job_time,job_city, jobimage) VALUES (@CompanyID, @Title, @Description, @Eligibility, @Deadline,@job_time,@job_city @jobimage)", con))
                 {
                     cmd.Parameters.AddWithValue("@CompanyID", Session["CompanyID"]);
                     cmd.Parameters.AddWithValue("@Title", txtTitle.Text.Trim());
                     cmd.Parameters.AddWithValue("@Description", txtDescription.Text.Trim());
                     cmd.Parameters.AddWithValue("@Eligibility", txtEligibility.Text.Trim());
                     cmd.Parameters.AddWithValue("@Deadline", txtDeadline.Text.Trim());
+                    cmd.Parameters.AddWithValue("@job_time", job_time_drp.SelectedValue.Trim());
+                    cmd.Parameters.AddWithValue("@job_city", txtcity.Text.Trim());
                     cmd.Parameters.AddWithValue("@jobimage", resumeRelativePath);
                     
                     int rowsAffected = cmd.ExecuteNonQuery();
