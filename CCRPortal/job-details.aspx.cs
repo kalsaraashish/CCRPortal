@@ -33,7 +33,7 @@ namespace CCRPortal
                 using (SqlConnection con = new SqlConnection(conn))
                 {
                     con.Open();
-                    using (SqlCommand da = new SqlCommand("SELECT * FROM jobs where jobID=", con))
+                    using (SqlCommand da = new SqlCommand("SELECT * FROM jobs where jobID='"+jobId+"'", con))
                     {
                         SqlDataAdapter ad = new SqlDataAdapter(da);
                         DataTable dt = new DataTable();

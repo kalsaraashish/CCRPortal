@@ -76,7 +76,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                Time Of Job :
+                                Type Of Job :
                                 <div class="input-icon">
                                     <i class="lni-graduation"></i>
                                

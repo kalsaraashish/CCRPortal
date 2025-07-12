@@ -195,14 +195,14 @@
 
                                     </div>
                                     <div class="content">
-                                        <h3><a href="job-details.aspx?id=<%# Eval("JobID") %>"><%# Eval("Title") %></a></h3>
+                                        <h3><a href="job-details.aspx?jobId=<%# Eval("JobID") %>"><%# Eval("Title") %></a></h3>
                                         <p class="brand"><%# Eval("Title") %></p>
                                         <div class="tags">
                                             <span><i class="lni-map-marker"></i><%# Eval("job_city") %></span>
                                             <%--<span><i class="lni-user"></i>John Smith</span>--%>
                                         </div>
                                         <div class="tag mb-3"><i class="lni-tag"></i><%# Eval("Eligibility") %></div>
-                                        <a href="job-details.aspx?id=<%# Eval("JobID") %>"><span class="full-time"><%# Eval("job_time") %></span></a>
+                                        <a href="job-details.aspx?jobId=<%# Eval("JobID") %>"><span class="full-time"><%# Eval("job_type") %></span></a>
                                     </div>
                                 </div>
                             </div>
