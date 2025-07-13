@@ -81,23 +81,24 @@ namespace CCRPortal
 
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    string query = "UPDATE user_data SET ResumePath = @Resume WHERE Id = @Id";
+                    string query = "UPDATE user_data SET Username=@username, Email=email,Skills=@skills, Resume = @Resume WHERE Id = @Id";
                     SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@username", username.Text);
+                    cmd.Parameters.AddWithValue("@email", email.Text);
+                    cmd.Parameters.AddWithValue("@skills", skills.Text);
                     cmd.Parameters.AddWithValue("@Resume", resumeRelativePath);
                     cmd.Parameters.AddWithValue("@Id", studentId);
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }
-
-                //lblMessage.Text = "Resume updated successfully!";
-
+                Response.Write("<script>alert('Data updated successfully!');</script>");
 
                 LoadProfile(); // Refresh the resume link
             }
             else
             {
-                //lblMessage.Text = "Please select a resume file to upload.";
+                Response.Write("<script>alert('Please select a resume file to upload.');</script>");
             }
         }
     }

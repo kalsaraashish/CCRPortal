@@ -29,8 +29,17 @@
                             <td><%# Eval("email").ToString().Trim() %></td>
 
                             <td>
-                                <a href='../<%# Eval("Resume") %>' download target="_blank">Download Resume
-                                </a>
+                                <%--<a href='../<%# Eval("Resume") %>' download target="_blank">Download Resume
+                                </a>--%>
+                                <asp:HyperLink 
+    ID="hlResume" 
+    runat="server" 
+    NavigateUrl='<%# Eval("Resume", "../{0}") %>' 
+    Target="_blank" 
+    Text="Download Resume" 
+/>
+
+
                             </td>
                             <td><%# Convert.ToDateTime(Eval("AppliedDate")).ToString("dd MMM yyyy") %></td>
                             <td>
