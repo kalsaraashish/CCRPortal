@@ -173,6 +173,7 @@
                 </div>
             </div>
         </header>
+       
         <!-- Header Section End -->
         <!-- Latest Section Start -->
         <section id="latest-jobs" class="section bg-gray">

@@ -11,15 +11,34 @@ namespace CCRPortal
 {
     public partial class UserDashboard : System.Web.UI.Page
     {
+        string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\admin\OneDrive\Desktop\CCRPortal\CCRPortal\App_Data\CCRPortal.mdf;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+
+                if (Session["Username"] == null)
+                {
+                    Response.Redirect("Login.aspx"); // Redirect to login if session is null
+                }
+                string username = Session["Username"].ToString();
+                using (SqlConnection con = new SqlConnection(conn))
+                {
+                    con.Open();
+                    string query = "SELECT Id FROM user_data WHERE Username = @Username";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@Username", username);
+
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        Session["StudentID"] = result;// Store StudentID in session for later use
+                    }
+                }
                 Binddata();
             }
-
         }
-        string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\admin\OneDrive\Desktop\CCRPortal\CCRPortal\App_Data\CCRPortal.mdf;Integrated Security=True";
+       
 
         private void Binddata()
         {
@@ -27,8 +46,8 @@ namespace CCRPortal
             {
                 using (SqlConnection con = new SqlConnection(conn))
                 {
-                    con.Open();
-                    using (SqlCommand da = new SqlCommand("SELECT * FROM jobs", con))
+                    //con.Open();
+                    using (SqlCommand da = new SqlCommand("SELECT * FROM jobs where Deadline >= GETDATE()", con))
                     {
                         SqlDataAdapter ad = new SqlDataAdapter(da);
                         DataTable dt = new DataTable();
@@ -48,7 +67,8 @@ namespace CCRPortal
             }
             catch (Exception ex)
             {
-                Response.Write("<script>alert('Error: " + ex.Message + "');</script>");
+                Response.Write("<script>alert('No Data Found: " + ex.Message + "');</script>");
+                //Response.Write("<script>alert('No Data Found');</script>");
             }
         }
     }

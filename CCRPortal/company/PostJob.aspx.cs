@@ -55,9 +55,10 @@ namespace CCRPortal.company
                     }
                 }
 
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Jobs (CompanyID, Title, Description, Eligibility, Deadline,job_type,job_city, jobimage) VALUES (@CompanyID, @Title, @Description, @Eligibility, @Deadline,@job_type,@job_city @jobimage)", con))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Jobs (CompanyID,company_name, Title, Description, Eligibility, Deadline,job_type,job_city, jobimage) VALUES (@CompanyID,@company_name, @Title, @Description, @Eligibility, @Deadline,@job_type,@job_city @jobimage)", con))
                 {
-                    cmd.Parameters.AddWithValue("@CompanyID", Session["CompanyID"]);
+                    cmd.Parameters.AddWithValue("@companyID", Session["CompanyID"]);
+                    cmd.Parameters.AddWithValue("@Company_name", Session["CompanyName"]);
                     cmd.Parameters.AddWithValue("@Title", txtTitle.Text.Trim());
                     cmd.Parameters.AddWithValue("@Description", txtDescription.Text.Trim());
                     cmd.Parameters.AddWithValue("@Eligibility", txtEligibility.Text.Trim());

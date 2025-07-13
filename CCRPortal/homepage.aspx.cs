@@ -30,7 +30,7 @@ namespace CCRPortal
                 using (SqlConnection con = new SqlConnection(conn))
                 {
                     con.Open();
-                    using (SqlCommand da = new SqlCommand("SELECT * FROM jobs", con))
+                    using (SqlCommand da = new SqlCommand("SELECT * FROM jobs where Deadline >= GETDATE()", con))
                     {
                         SqlDataAdapter ad = new SqlDataAdapter(da);
                         DataTable dt = new DataTable();

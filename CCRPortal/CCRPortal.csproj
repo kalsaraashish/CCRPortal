@@ -77,11 +77,13 @@
     <Content Include="company\company_login.aspx" />
     <Content Include="company\company_register.aspx" />
     <Content Include="company\PostJob.aspx" />
+    <Content Include="company\ViewApplicants.aspx" />
     <Content Include="contactus.aspx" />
     <Content Include="homepage.aspx" />
     <Content Include="job-details.aspx" />
     <Content Include="login.aspx" />
     <Content Include="logout.aspx" />
+    <Content Include="MyApplications.aspx" />
     <Content Include="register.aspx" />
     <Content Include="UserDashboard.aspx" />
     <Content Include="Web.config" />
@@ -143,6 +145,13 @@
     <Compile Include="company\PostJob.aspx.designer.cs">
       <DependentUpon>PostJob.aspx</DependentUpon>
     </Compile>
+    <Compile Include="company\ViewApplicants.aspx.cs">
+      <DependentUpon>ViewApplicants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\ViewApplicants.aspx.designer.cs">
+      <DependentUpon>ViewApplicants.aspx</DependentUpon>
+    </Compile>
     <Compile Include="contactus.aspx.cs">
       <DependentUpon>contactus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -177,6 +186,13 @@
     </Compile>
     <Compile Include="logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyApplications.aspx.cs">
+      <DependentUpon>MyApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyApplications.aspx.designer.cs">
+      <DependentUpon>MyApplications.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="register.aspx.cs">

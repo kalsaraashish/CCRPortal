@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace CCRPortal
             if (!IsPostBack)
             {
                 Binddata();
+                
             }
 
         }
@@ -43,6 +45,7 @@ namespace CCRPortal
                         {
                             rp1.DataSource = dt;
                             rp1.DataBind();
+                            
                         }
                         else
                         {
@@ -57,5 +60,46 @@ namespace CCRPortal
             }
         }
 
+        protected void applyjob_Click(object sender, EventArgs e)
+        {
+            
+           
+            int studentId = 0;
+
+            using (SqlConnection con = new SqlConnection(conn))
+            {
+                con.Open();
+
+                studentId = Convert.ToInt32( Session["StudentID"]);
+            int jobId = Convert.ToInt32(Request.QueryString["JobID"]);
+
+                // 1. Prevent duplicate application
+                string checkQuery = @"SELECT COUNT(*) FROM Applications 
+                              WHERE StudentID = @StudentID AND JobID = @JobID";
+                SqlCommand checkCmd = new SqlCommand(checkQuery, con);
+                checkCmd.Parameters.AddWithValue("@StudentID", studentId);
+                checkCmd.Parameters.AddWithValue("@JobID", jobId);
+
+                int count = (int)checkCmd.ExecuteScalar();
+                if (count > 0)
+                { 
+                    Response.Write("<script>alert('You have already applied for this job.');</script>");
+                    return;
+                }
+
+                // 2. Insert new application (Status and AppliedDate auto-handled by defaults)
+                string insertQuery = @"INSERT INTO Applications (StudentID, JobID) 
+                               VALUES (@StudentID, @JobID)";
+                SqlCommand insertCmd = new SqlCommand(insertQuery, con);
+                insertCmd.Parameters.AddWithValue("@StudentID", studentId);
+                insertCmd.Parameters.AddWithValue("@JobID", jobId);
+                insertCmd.ExecuteNonQuery();
+                Response.Write("<script>alert('Application submitted successfully!');</script>");
+
+
+                // Optionally: Redirect to MyApplications.aspx
+                // Response.Redirect("~/Student/MyApplications.aspx");
+            }
+        }
     }
 }

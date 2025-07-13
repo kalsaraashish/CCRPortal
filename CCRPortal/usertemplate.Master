@@ -66,7 +66,7 @@
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Candidates
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="browse-jobs.html">Browse Jobs</a></li>
+                                        <li><a class="dropdown-item" href="MyApplications.aspx">My Applications</a></li>
                                         <li><a class="dropdown-item" href="browse-categories.html">Browse Categories</a></li>
                                         <li><a class="dropdown-item" href="add-resume.html">Add Resume</a></li>
                                         <li><a class="dropdown-item" href="manage-resumes.html">Manage Resumes</a></li>
@@ -109,7 +109,7 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
 
-
+        </form>
         <!-- Footer Section Start -->
         <footer>
             <!-- Footer Area Start -->
@@ -190,6 +190,6 @@
             <div class="loader" id="loader-1"></div>
         </div>--%>
         <!-- End Preloader -->
-    </form>
+    
 </body>
 </html>

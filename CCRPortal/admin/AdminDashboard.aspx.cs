@@ -42,7 +42,7 @@ namespace CCRPortal.admin
             using (SqlConnection con = new SqlConnection(conn))
             {
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand("UPDATE Company SET IsApproved = 1 WHERE Id = @Id", con))
+                using (SqlCommand cmd = new SqlCommand("UPDATE Company SET IsApproved = 1 WHERE CompanyId = @Id", con))
                 {
                     cmd.Parameters.AddWithValue("@Id", companyId);
                     cmd.ExecuteNonQuery();

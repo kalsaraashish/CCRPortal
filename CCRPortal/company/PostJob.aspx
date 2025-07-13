@@ -70,7 +70,7 @@
                                 City :
                                 <div class="input-icon">
                                     <i class="lni-lock"></i>
-                                    <asp:TextBox ID="txtcity" runat="server" CssClass="form-control" placeholder="Eligibility" />
+                                    <asp:TextBox ID="txtcity" runat="server" CssClass="form-control" placeholder="City" />
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtcity"
                                         ErrorMessage="City is required" CssClass="text-danger" Display="Dynamic" />
                                 </div>

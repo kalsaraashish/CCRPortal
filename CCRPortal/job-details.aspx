@@ -19,11 +19,11 @@
                                 </div>
                                 <div class="content">
                                     <h3 class="product-title">Hiring <%# Eval("Title") %></h3>
-                                    <p class="brand">UIDeck Inc.</p>
+                                    <p class="brand"><%# Eval("Company_name") %></p>
                                     <div class="tags">
                                         <span><i class="lni-map-marker"></i><%# Eval("job_city") %></span>
                                         <span><i class="lni-calendar"></i>Posted <%# Eval("PostedDate", "{0:dd MMM yyyy}") %></span>
-                                        <span><i class="lni-calendar"></i>Deadline <%# Eval("Deadline", "{0:dd MMM yyyy}") %></span><span class="full-time"><%# Eval("job_time") %></span>
+                                        <span><i class="lni-calendar"></i>Deadline <%# Eval("Deadline", "{0:dd MMM yyyy}") %></span><span class="full-time"><%# Eval("job_type") %></span>
 
                                     </div>
                                 </div>
@@ -40,7 +40,6 @@
             </div>
             <!-- Page Header End -->
 
-
             <!-- Job Detail Section Start -->
             <section class="job-detail section">
                 <div class="container">
@@ -49,8 +48,12 @@
                             <div class="content-area">
                                 <h4>Job Description</h4>
                                 <p><%# Eval("Description") %></p>
+                             <div>
+                                 <asp:Label runat="server" ID="mofapplay" ></asp:Label>
+                             </div>
+                                <asp:Button class="btn btn-common" runat="server" ID="applyjob" OnClick="applyjob_Click" Text="Apply job" />
 
-                                <a href="#" class="btn btn-common">Apply job</a>
+
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12 col-xs-12">
@@ -68,8 +71,8 @@
                                     <div class="share-job">
                                         <div method="post" class="subscribe-form">
                                             <div class="form-group">
-                                                <input type="email" name="Email" class="form-control" placeholder="https://ccrportal.com" required="">
-                                                <button type="submit" name="subscribe" class="btn btn-common sub-btn"><i class="lni-files"></i></button>
+                                               <%-- <input type="email" name="Email" class="form-control" placeholder="https://ccrportal.com" >
+                                                <button type="submit" name="subscribe" class="btn btn-common sub-btn"><i class="lni-files"></i></button>--%>
                                                 <div class="clearfix"></div>
                                             </div>
                                         </div>
@@ -94,71 +97,5 @@
         </ItemTemplate>
     </asp:Repeater>
     <!-- Job Detail Section End -->
-
-
-
-    <!-- Featured Section Start -->
-    <section id="featured" class="section bg-gray pb-45">
-        <div class="container">
-            <h4 class="small-title text-left">Similar Jobs</h4>
-            <div class="row">
-                <div class="col-lg-6 col-md-12 col-xs-12">
-                    <a class="job-listings-featured" href="job-details.html">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-xs-12">
-                                <div class="job-company-logo">
-                                    <img src="assets/img/features/img1.png" alt="">
-                                </div>
-                                <div class="job-details">
-                                    <h3>Software Engineer</h3>
-                                    <span class="company-neme">MizTech</span>
-                                    <div class="tags">
-                                        <span><i class="lni-map-marker"></i>New York</span>
-                                        <span><i class="lni-user"></i>John Smith</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-xs-12 text-right">
-                                <div class="tag-type">
-                                    <sapn class="heart-icon">
-                                        <i class="lni-heart"></i>
-                                    </sapn>
-                                    <span class="full-time">Full Time</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-6 col-md-12 col-xs-12">
-                    <a class="job-listings-featured" href="job-details.html">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-xs-12">
-                                <div class="job-company-logo">
-                                    <img src="assets/img/features/img2.png" alt="">
-                                </div>
-                                <div class="job-details">
-                                    <h3>Graphic Designer</h3>
-                                    <span class="company-neme">Hunter Inc.</span>
-                                    <div class="tags">
-                                        <span><i class="lni-map-marker"></i>New York</span>
-                                        <span><i class="lni-user"></i>John Smith</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-xs-12 text-right">
-                                <div class="tag-type">
-                                    <sapn class="heart-icon">
-                                        <i class="lni-heart"></i>
-                                    </sapn>
-                                    <span class="part-time">Part Time</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Featured Section End -->
 
 </asp:Content>
