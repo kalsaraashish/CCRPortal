@@ -16,6 +16,7 @@ namespace CCRPortal
                 if (Session["UserName"] != null)
                 {
                     lblUserName.Text = "Welcome, " + Session["UserName"].ToString().ToLower();
+                    lblUserName.Attributes.Add("onclick", "window.location.href='User_Profile.aspx';");
                 }
                 else
                 {
@@ -23,5 +24,7 @@ namespace CCRPortal
                 }
             }
         }
+
+       
     }
 }
