@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -65,6 +66,48 @@ namespace CCRPortal.company
                     cmd.Parameters.AddWithValue("@ApplicationID", applicationId);
                     cmd.ExecuteNonQuery();
                 }
+
+                // Send email to the student
+                // ✅ Get Email + Name
+                string email = "", name = "", jobTitle = "";
+                string selectQuery = @"SELECT u.Email, u.username, j.Title 
+                               FROM Applications a
+                               INNER JOIN user_data u ON u.Id = a.StudentID
+                               INNER JOIN Jobs j ON j.JobID = a.JobID
+                               WHERE a.ApplicationID = @ApplicationID";
+
+                SqlCommand selectCmd = new SqlCommand(selectQuery, con);
+                selectCmd.Parameters.AddWithValue("@ApplicationID", applicationId);
+                SqlDataReader reader = selectCmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    email = reader["Email"].ToString();
+                    name = reader["username"].ToString();
+                    jobTitle = reader["Title"].ToString();
+                }
+                reader.Close();
+
+                // ✅ Send Email
+                string body = $@"Hello {name},<br /><br />
+
+                    🎉 Congratulations! Your application for the position <strong>{jobTitle}</strong> has been <strong>Shortlisted</strong> by the company.<br /><br />
+
+                    Please wait for further updates from the recruiter.<br /><br />
+
+                    Thank you for using Career Connect Recruitment Portal.<br /><br />
+
+                    Best regards,<br />
+                    Career Connect Recruitment Portal(CCRP) Team";
+
+                MailMessage mail = new MailMessage("ashishkalsara223@gmail.com", email);
+                mail.Subject = "Application Shortlisted - CareerConnect";
+                mail.Body = body;
+                mail.IsBodyHtml = true;
+
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+                smtp.Credentials = new System.Net.NetworkCredential("ashishkalsara223@gmail.com", "ruzs fwdk toqb galv");
+                smtp.EnableSsl = true;
+                smtp.Send(mail);
             }
 
             // Refresh data after approval
@@ -72,6 +115,8 @@ namespace CCRPortal.company
 
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('approved successfully.');", true);
         }
+
+
         protected void btnReject_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -86,6 +131,48 @@ namespace CCRPortal.company
 
                 con.Open();
                 cmd.ExecuteNonQuery();
+
+
+                // ❌ Get student info
+                string email = "", name = "", jobTitle = "";
+                string selectQuery = @"SELECT u.Email, u.username, j.Title 
+                               FROM Applications a
+                               INNER JOIN user_data u ON u.Id = a.StudentID
+                               INNER JOIN Jobs j ON j.JobID = a.JobID
+                               WHERE a.ApplicationID = @ApplicationID";
+
+                SqlCommand selectCmd = new SqlCommand(selectQuery, con);
+                selectCmd.Parameters.AddWithValue("@ApplicationID", applicationId);
+                SqlDataReader reader = selectCmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    email = reader["Email"].ToString();
+                    name = reader["username"].ToString();
+                    jobTitle = reader["Title"].ToString();
+                }
+                reader.Close();
+
+                // ❌ Send rejection email
+                string body = $@"Hello {name},<br /><br />
+
+                    We regret to inform you that your application for the position <strong>{jobTitle}</strong> has not been shortlisted.<br /><br />
+
+                    We appreciate your interest and encourage you to apply to other available opportunities.<br /><br />
+
+                    Best wishes for your career ahead!<br /><br />
+
+                    Sincerely,<br />
+                    Career Connect Recruitment Portal(CCRP) Team";
+
+                MailMessage mail = new MailMessage("ashishkalsara223@gmail.com", email);
+                mail.Subject = "Application Status - Not Shortlisted";
+                mail.Body = body;
+                mail.IsBodyHtml = true;
+
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+                smtp.Credentials = new System.Net.NetworkCredential("ashishkalsara223@gmail.com", "ruzs fwdk toqb galv");
+                smtp.EnableSsl = true;
+                smtp.Send(mail);
             }
 
             // Refresh the page/grid

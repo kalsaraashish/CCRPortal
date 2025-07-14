@@ -31,13 +31,12 @@
                             <td>
                                 <%--<a href='../<%# Eval("Resume") %>' download target="_blank">Download Resume
                                 </a>--%>
-                                <asp:HyperLink 
-    ID="hlResume" 
-    runat="server" 
-    NavigateUrl='<%# Eval("Resume", "../{0}") %>' 
-    Target="_blank" 
-    Text="Download Resume" 
-/>
+                                <asp:HyperLink
+                                    ID="hlResume"
+                                    runat="server"
+                                    NavigateUrl='<%# Eval("Resume", "../{0}") %>'
+                                    Target="_blank"
+                                    Text="Download Resume" />
 
 
                             </td>
@@ -49,13 +48,13 @@
                                 <%# Eval("Status").ToString().Trim() %>
                             </td>
                             <td>
-                               <asp:Button ID="btnApprove" runat="server" Text="Approve" CssClass="btn btn-success btn-sm"
-                CommandArgument='<%# Eval("ApplicationID") %>' OnClick="btnApprove_Click"
-                Enabled='<%# Eval("Status").ToString().Trim() == "Applied" %>' />
-                
-            <asp:Button ID="btnReject" runat="server" Text="Reject" CssClass="btn btn-danger btn-sm"
-                CommandArgument='<%# Eval("ApplicationID") %>' OnClick="btnReject_Click"
-                Enabled='<%# Eval("Status").ToString().Trim() == "Applied" %>' />
+                                <asp:Button ID="btnApprove" runat="server" Text="Approve" CssClass="btn btn-success btn-sm"
+                                    CommandArgument='<%# Eval("ApplicationID") %>' OnClick="btnApprove_Click"
+                                    Enabled='<%# Eval("Status").ToString().Trim() == "Applied" %>' />
+
+                                <asp:Button ID="btnReject" runat="server" Text="Reject" CssClass="btn btn-danger btn-sm"
+                                    CommandArgument='<%# Eval("ApplicationID") %>' OnClick="btnReject_Click"
+                                    Enabled='<%# Eval("Status").ToString().Trim() == "Applied" %>' />
 
                             </td>
                         </tr>

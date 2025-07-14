@@ -81,14 +81,14 @@ namespace CCRPortal
 
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    string query = "UPDATE user_data SET Username=@username, Email=email,Skills=@skills, Resume = @Resume WHERE Id = @Id";
+                    string query = "UPDATE user_data SET Username=@username, Email=@Email,Skills=@skills, Resume = @Resume WHERE Id = @Id";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@username", username.Text);
-                    cmd.Parameters.AddWithValue("@email", email.Text);
+                    cmd.Parameters.AddWithValue("@Email", email.Text);
                     cmd.Parameters.AddWithValue("@skills", skills.Text);
                     cmd.Parameters.AddWithValue("@Resume", resumeRelativePath);
                     cmd.Parameters.AddWithValue("@Id", studentId);
-
+                    Session["username"] = username.Text;
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }

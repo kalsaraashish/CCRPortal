@@ -7,6 +7,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net.Mail;
+using System.Net;
 
 namespace CCRPortal
 {
@@ -65,6 +67,7 @@ namespace CCRPortal
             
            
             int studentId = 0;
+            
 
             using (SqlConnection con = new SqlConnection(conn))
             {
@@ -94,6 +97,53 @@ namespace CCRPortal
                 insertCmd.Parameters.AddWithValue("@StudentID", studentId);
                 insertCmd.Parameters.AddWithValue("@JobID", jobId);
                 insertCmd.ExecuteNonQuery();
+
+
+                // 3. Send confirmation email
+              
+                SqlCommand cmd = new SqlCommand("select * from user_data where id=@id", con);
+                cmd.Parameters.AddWithValue("@id", studentId);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                int a = da.Fill(dt);
+
+                //send email
+                string ToEamilAddress = dt.Rows[0]["email"].ToString();
+                string Username = dt.Rows[0]["username"].ToString();
+                //string Username = dt.Rows[0]["username"].ToString();
+
+
+                string emailBody = $@"Hello {Username},<br /><br />
+
+                    📝 You have successfully submitted a job application.<br /><br />
+
+                    🔹 <strong>Job ID</strong>        : {jobId}<br />
+                    🔹 <strong>Student Name</strong>  : {Username}<br />
+                    🔹 <strong>Applied Date</strong>  : {DateTime.Now:dd MMM yyyy hh:mm tt}<br /><br />
+
+                    Thank you for using CareerConnect!<br /><br />
+
+                    📢 <em>Please do not reply to this email. For support, contact support@careerconnect.com</em><br /><br />
+
+                    Best regards,<br />
+                    Career Connect Recruitment Portal(CCRP) Team";
+
+                MailMessage Passmail = new MailMessage("ashishkalsara223@gmail.com ", ToEamilAddress);
+                Passmail.Body = emailBody;
+                Passmail.IsBodyHtml = true;
+
+                Passmail.Subject = "Application Submitted - Job Portal";
+
+                SmtpClient SMTP = new SmtpClient("smtp.gmail.com", 587);
+
+                SMTP.EnableSsl = true;
+
+                SMTP.Credentials = new NetworkCredential("ashishkalsara223@gmail.com", "ruzs fwdk toqb galv");
+
+
+                SMTP.Send(Passmail);
+
+
                 Response.Write("<script>alert('Application submitted successfully!');</script>");
 
 
