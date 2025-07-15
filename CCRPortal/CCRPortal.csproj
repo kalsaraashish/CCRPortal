@@ -76,6 +76,9 @@
     <Content Include="company\CompanyDashboard.aspx" />
     <Content Include="company\company_login.aspx" />
     <Content Include="company\company_register.aspx" />
+    <Content Include="company\Delete_job.aspx" />
+    <Content Include="company\edit_job.aspx" />
+    <Content Include="company\manage-jobs.aspx" />
     <Content Include="company\PostJob.aspx" />
     <Content Include="company\ViewApplicants.aspx" />
     <Content Include="contactus.aspx" />
@@ -138,6 +141,27 @@
     </Compile>
     <Compile Include="company\company_register.aspx.designer.cs">
       <DependentUpon>company_register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="company\Delete_job.aspx.cs">
+      <DependentUpon>Delete_job.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\Delete_job.aspx.designer.cs">
+      <DependentUpon>Delete_job.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="company\edit_job.aspx.cs">
+      <DependentUpon>edit_job.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\edit_job.aspx.designer.cs">
+      <DependentUpon>edit_job.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="company\manage-jobs.aspx.cs">
+      <DependentUpon>manage-jobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="company\manage-jobs.aspx.designer.cs">
+      <DependentUpon>manage-jobs.aspx</DependentUpon>
     </Compile>
     <Compile Include="company\PostJob.aspx.cs">
       <DependentUpon>PostJob.aspx</DependentUpon>

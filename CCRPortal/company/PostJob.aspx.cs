@@ -35,7 +35,7 @@ namespace CCRPortal.company
                 }
                 else
                 {
-                    Response.Write("<script>alert('Please upload your resume.');</script>");
+                    Response.Write("<script>alert('Please upload your image.');</script>");
                     return;
                 }
 
@@ -70,6 +70,11 @@ namespace CCRPortal.company
                     int rowsAffected = cmd.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
+                        txtTitle.Text = string.Empty;
+                        txtDescription.Text = string.Empty;
+                        txtEligibility.Text = string.Empty;
+                        txtDeadline.Text = string.Empty;
+                        txtcity.Text = string.Empty;
                         Response.Write("<script>alert('Job posted successfully');</script>");
                     }
                     else

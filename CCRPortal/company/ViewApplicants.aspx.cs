@@ -105,7 +105,8 @@ namespace CCRPortal.company
                 mail.IsBodyHtml = true;
 
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-                smtp.Credentials = new System.Net.NetworkCredential("ashishkalsara223@gmail.com", "ruzs fwdk toqb galv");
+                smtp.Credentials = new System.Net.NetworkCredential("ashishkalsara223@gmail.com", "yourpass");
+                //ruzs fwdk toqb galv
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
             }
@@ -170,7 +171,8 @@ namespace CCRPortal.company
                 mail.IsBodyHtml = true;
 
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-                smtp.Credentials = new System.Net.NetworkCredential("ashishkalsara223@gmail.com", "ruzs fwdk toqb galv");
+                smtp.Credentials = new System.Net.NetworkCredential("ashishkalsara223@gmail.com", "yourpass");
+                //ruzs fwdk toqb galv
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
             }
