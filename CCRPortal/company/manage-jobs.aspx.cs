@@ -60,5 +60,53 @@ namespace CCRPortal.company
                 }
             }
         }
+
+        protected void btnExportJobs_Click(object sender, EventArgs e)
+        {
+            int companyID = Convert.ToInt32(Session["CompanyID"]);
+
+            using (SqlConnection con = new SqlConnection(conn))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Jobs WHERE CompanyID = @CompanyID AND Deadline >= GETDATE()", con);
+                cmd.Parameters.AddWithValue("@CompanyID", companyID);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    string filename = "MyJobs_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".xls";
+
+                    Response.Clear();
+                    Response.Buffer = true;
+                    Response.AddHeader("content-disposition", "attachment;filename=" + filename);
+                    Response.Charset = "";
+                    Response.ContentType = "application/vnd.ms-excel";  
+
+                    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+                    // Column headers
+                    for (int i = 0; i < dt.Columns.Count; i++)
+                    {
+                        sb.Append(dt.Columns[i].ColumnName + "\t");
+                    }
+                    sb.Append("\n");
+
+                    // Data rows
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        for (int i = 0; i < dt.Columns.Count; i++)
+                        {
+                            sb.Append(row[i].ToString().Replace("\t", " ") + "\t");
+                        }
+                        sb.Append("\n");
+                    }
+
+                    Response.Output.Write(sb.ToString());
+                    Response.Flush();
+                    Response.End();
+                }
+            }
+        }
     }
 }

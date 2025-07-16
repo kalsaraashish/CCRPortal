@@ -47,7 +47,11 @@
             </asp:Repeater>
         </tbody>
     </table>
+        <asp:Button ID="btnExportJobs" runat="server" Text="Export Available Jobs to Excel"
+CssClass="btn btn-success mb-3" OnClick="btnExportJobs_Click" />
 </div>
+    
+
 
 
 
