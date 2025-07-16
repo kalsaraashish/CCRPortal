@@ -16,8 +16,47 @@ namespace CCRPortal.admin
             if (!IsPostBack)
             {
                 BindCompanyTable();
+                BindCountdata();
             }
         }
+
+        private void BindCountdata()
+        {
+            using (SqlConnection con = new SqlConnection(conn))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Company", con))
+                {
+                    con.Open();
+                    int cocount = (int)cmd.ExecuteScalar();
+                    countcom.InnerText = cocount.ToString();
+
+                }
+                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Applications", con))
+                {
+             
+                    int appcount = (int)cmd.ExecuteScalar();
+                    totalapplication.InnerText = appcount.ToString();
+
+                }
+                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM user_data", con))
+                {
+                   
+                    int usercount = (int)cmd.ExecuteScalar();
+                    tuser.InnerText = usercount.ToString();
+
+                }
+                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM jobs", con))
+                {
+                    
+                    int usercount = (int)cmd.ExecuteScalar();
+                    tjob.InnerText = usercount.ToString();
+
+                }
+            }
+
+
+        }
+
         string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\admin\OneDrive\Desktop\CCRPortal\CCRPortal\App_Data\CCRPortal.mdf;Integrated Security=True";
         private void BindCompanyTable()
         {

@@ -92,7 +92,7 @@ namespace CCRPortal
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }
-                Response.Write("<script>alert('Data updated successfully!');</script>");
+                Response.Write("<script>alert('Data updated successfully!'); window.location.href=window.location.href</script>");
 
                 LoadProfile(); // Refresh the resume link
             }

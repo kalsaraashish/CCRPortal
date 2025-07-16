@@ -52,13 +52,8 @@
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="aboutus.aspx">About</a></li>
                                         <li><a class="dropdown-item" href="job-page.html">Job Page</a></li>
-                                        <li><a class="dropdown-item" href="job-details.html">Job Details</a></li>
-                                        <li><a class="dropdown-item" href="resume.html">Resume Page</a></li>
-                                        <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
-                                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                                        <li><a class="dropdown-item" href="pricing.html">Pricing Tables</a></li>
+                                        <li><a class="dropdown-item" href="aboutus.aspx">About</a></li>
                                         <li><a class="dropdown-item" href="contactus.aspx">Contact</a></li>
                                     </ul>
                                 </li>
@@ -67,10 +62,7 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="MyApplications.aspx">My Applications</a></li>
-                                        <li><a class="dropdown-item" href="browse-categories.html">Browse Categories</a></li>
-                                        <li><a class="dropdown-item" href="add-resume.html">Add Resume</a></li>
-                                        <li><a class="dropdown-item" href="manage-resumes.html">Manage Resumes</a></li>
-                                        <li><a class="dropdown-item" href="job-alerts.html">Job Alerts</a></li>
+                                       
                                     </ul>
                                 </li>
                            

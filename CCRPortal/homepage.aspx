@@ -47,38 +47,12 @@
                                     <a class="nav-link" href="homepage.aspx">Home
                                     </a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="aboutus.aspx">About
                                     </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="aboutus.aspx">About</a></li>
-                                        <li><a class="dropdown-item" href="contactus.aspx">Contact</a></li>
-                                        <li><a class="dropdown-item" href="job-page.html">Job Page</a></li>
-                                        <li><a class="dropdown-item" href="job-details.html">Job Details</a></li>
-                                        <li><a class="dropdown-item" href="resume.html">Resume Page</a></li>
-                                    </ul>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Candidates
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="browse-jobs.html">Browse Jobs</a></li>
-                                        <li><a class="dropdown-item" href="browse-categories.html">Browse Categories</a></li>
-                                        <li><a class="dropdown-item" href="add-resume.html">Add Resume</a></li>
-                                        <li><a class="dropdown-item" href="manage-resumes.html">Manage Resumes</a></li>
-                                        <li><a class="dropdown-item" href="job-alerts.html">Job Alerts</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Employers
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="post-job.html">Add Job</a></li>
-                                        <li><a class="dropdown-item" href="manage-jobs.html">Manage Jobs</a></li>
-                                        <li><a class="dropdown-item" href="manage-applications.html">Manage Applications</a></li>
-                                        <li><a class="dropdown-item" href="browse-resumes.html">Browse Resumes</a></li>
-                                    </ul>
-                                </li>
+
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="contactus.aspx">Contact
@@ -112,68 +86,17 @@
                         <div class="contents">
                             <h2 class="head-title">Find the job that fits your life</h2>
                             <p>
-                                Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. Vestibulum congue posuere lacus,
-                                <br>
-                                id tincidunt nisi porta sit amet. Suspendisse et sapien varius, pellentesque dui non.
+                                At Career Connect Recruitment Portal (CCRP), your career journey begins with purpose.
+                                <br />
+                                We guide you every step of the way—toward growth, clarity, and lasting success.
                             </p>
-                            <div class="job-search-form">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-lg-5 col-md-6 col-xs-12">
-                                            <div class="form-group">
-                                                <input class="form-control" type="text" placeholder="Job Title or Company Name">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-xs-12">
-                                            <div class="form-group">
-                                                <div class="search-category-container">
-                                                    <label class="styled-select">
-                                                        <select>
-                                                            <option value="none">Locations</option>
-                                                            <option value="none">New York</option>
-                                                            <option value="none">California</option>
-                                                            <option value="none">Washington</option>
-                                                            <option value="none">Birmingham</option>
-                                                            <option value="none">Chicago</option>
-                                                            <option value="none">Phoenix</option>
-                                                        </select>
-                                                    </label>
-                                                </div>
-                                                <i class="lni-map-marker"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-xs-12">
-                                            <div class="form-group">
-                                                <div class="search-category-container">
-                                                    <label class="styled-select">
-                                                        <select>
-                                                            <option>All Categories</option>
-                                                            <option>Finance</option>
-                                                            <option>IT & Engineering</option>
-                                                            <option>Education/Training</option>
-                                                            <option>Art/Design</option>
-                                                            <option>Sale/Markting</option>
-                                                            <option>Healthcare</option>
-                                                            <option>Science</option>
-                                                            <option>Food Services</option>
-                                                        </select>
-                                                    </label>
-                                                </div>
-                                                <i class="lni-layers"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-1 col-md-6 col-xs-12">
-                                            <button type="submit" class="button"><i class="lni-search"></i></button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </header>
-       
+
         <!-- Header Section End -->
         <!-- Latest Section Start -->
         <section id="latest-jobs" class="section bg-gray">
@@ -389,13 +312,13 @@
                             <div class="widget">
                                 <h3 class="block-title">Subscribe Now</h3>
                                 <p>Sed consequat sapien faus quam bibendum convallis.</p>
-                                <form method="post" id="subscribe-form" name="subscribe-form" class="validate">
+                                <div method="post" id="subscribe-form" name="subscribe-form" class="validate">
                                     <div class="form-group is-empty">
                                         <input type="email" value="" name="Email" class="form-control" id="EMAIL" placeholder="Enter Email..." required="">
                                         <button type="submit" name="subscribe" id="subscribes" class="btn btn-common sub-btn"><i class="lni-envelope"></i></button>
                                         <div class="clearfix"></div>
                                     </div>
-                                </form>
+                                </div>
                                 <ul class="mt-3 footer-social">
                                     <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
                                     <li><a class="twitter" href="#"><i class="lni-twitter-filled"></i></a></li>

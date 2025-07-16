@@ -25,7 +25,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-5 col-md-6 col-xs-12">
                     <div class="page-login-form box">
-                        <h3>Uour Information</h3>
+                        <h3>Your Information</h3>
                         <div class="login-form">
                             <div class="form-group">
                                 User Name :

@@ -12,6 +12,7 @@
     <title>CCRP - Job Portal</title>
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/adminlte.css" />
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/line-icons.css">
     <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
