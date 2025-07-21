@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
         <div class="container mt-4" style="padding-top: 2rem">
-    <h3 class="mb-4">Total User</h3>
+    <h3 class="mb-4">User Data :</h3>
 
     <table class="table table-striped table-bordered table-responsive">
         <thead class="table-dark">
@@ -14,7 +14,7 @@
                 <th>Email ID</th>
                 <th>Password</th>
                 <th>Branch</th>
-                <th>Skills</th>
+                <th style="width:25rem">Skills</th>
                 <th>Resume</th>
                 <th>Register Date</th>
                 <th>Action</th>
@@ -42,7 +42,7 @@
                         
                         <td>
                             <%--<a href="edit_job.aspx?userid=<%# Eval("id") %>" CssClass="btn btn-success btn-sm" >Edit</a><br />--%>
-                             <a href="Delete_job.aspx?userid=<%# Eval("id") %>" CssClass="btn btn-success btn-sm" >Delete</a>
+                             <a href="Delete_User.aspx?userid=<%# Eval("id") %>" CssClass="btn btn-success btn-sm" >Delete</a>
                         </td>
                        
                     </tr>

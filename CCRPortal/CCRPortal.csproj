@@ -69,6 +69,9 @@
   <ItemGroup>
     <Content Include="aboutus.aspx" />
     <Content Include="admin\AdminDashboard.aspx" />
+    <Content Include="admin\Delete_Company.aspx" />
+    <Content Include="admin\Delete_User.aspx" />
+    <Content Include="admin\Manage_company.aspx" />
     <Content Include="admin\Manage_user.aspx" />
     <Content Include="alljobs.aspx" />
     <Content Include="App_Data\CCRPortal.mdf" />
@@ -119,6 +122,27 @@
     </Compile>
     <Compile Include="admin\admintemplate.Master.designer.cs">
       <DependentUpon>admintemplate.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Delete_Company.aspx.cs">
+      <DependentUpon>Delete_Company.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Delete_Company.aspx.designer.cs">
+      <DependentUpon>Delete_Company.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Delete_User.aspx.cs">
+      <DependentUpon>Delete_User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Delete_User.aspx.designer.cs">
+      <DependentUpon>Delete_User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Manage_company.aspx.cs">
+      <DependentUpon>Manage_company.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Manage_company.aspx.designer.cs">
+      <DependentUpon>Manage_company.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\Manage_user.aspx.cs">
       <DependentUpon>Manage_user.aspx</DependentUpon>

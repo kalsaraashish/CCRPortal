@@ -62,7 +62,7 @@ namespace CCRPortal.admin
         {
             using (SqlConnection con = new SqlConnection(conn))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM Company", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM Company where isApproved=0", con))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {

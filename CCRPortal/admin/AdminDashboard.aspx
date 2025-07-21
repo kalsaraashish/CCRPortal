@@ -70,7 +70,7 @@
                                 </path>
                             </svg>
                             <a
-                                href="#"
+                                href="Manage_company.aspx"
                                 class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">More info <i class="bi bi-link-45deg"></i>
                             </a>
                         </div>
@@ -150,8 +150,8 @@
 
 
 
-    <div class="container mt-4">
-        <h3 class="mb-4">Company Details</h3>
+    <div class="container ">
+        <h3 class="mb-4">Waiting For Approve :</h3>
 
         <table class="table table-striped table-bordered table-responsive">
             <thead class="table-dark">
@@ -161,7 +161,7 @@
                     <th>Email</th>
                     <th>Password</th>
                     <th>Website</th>
-                    <th>Profile Info</th>
+                    <th style="width:20rem">Profile Info</th>
                     <th>Is Approved</th>
                     <th>Action</th>
                 </tr>

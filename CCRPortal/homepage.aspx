@@ -52,8 +52,6 @@
                                     <a class="nav-link" href="aboutus.aspx">About
                                     </a>
                                 </li>
-
-
                                 <li class="nav-item">
                                     <a class="nav-link" href="contactus.aspx">Contact
                                     </a>
@@ -96,7 +94,6 @@
                 </div>
             </div>
         </header>
-
         <!-- Header Section End -->
         <!-- Latest Section Start -->
         <section id="latest-jobs" class="section bg-gray">
