@@ -3,9 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <h2 class="text-center">My Job Applications</h2>
+    <h3 class="text-center" style="padding-top:5rem">My Applications</h3>
 
-    <asp:GridView ID="gvApplications" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered" EmptyDataText="You have not applied to any jobs yet.">
+    <asp:GridView ID="gvApplications" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered" EmptyDataText="You have not applied to any jobs yet." style="margin:5rem 2rem">
         <Columns>
             <asp:BoundField DataField="Title" HeaderText="Job Title" />
             <asp:BoundField DataField="CompanyName" HeaderText="Company Name" />

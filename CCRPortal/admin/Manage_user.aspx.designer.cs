@@ -7,38 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CCRPortal.company
+namespace CCRPortal.admin
 {
 
 
-    public partial class CompanyDashboard
+    public partial class Manage_user
     {
 
         /// <summary>
-        /// tuser control.
+        /// rptuser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tuser;
+        protected global::System.Web.UI.WebControls.Repeater rptuser;
 
         /// <summary>
-        /// tjob control.
+        /// btnExportJobs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tjob;
-
-        /// <summary>
-        /// totalapplication control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl totalapplication;
+        protected global::System.Web.UI.WebControls.Button btnExportJobs;
     }
 }

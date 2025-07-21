@@ -51,7 +51,7 @@ namespace CCRPortal
                         }
                         else
                         {
-                            Response.Write("<script>alert('No Data Found');</script>");
+                            Response.Write("<script>alert('No Data Found'); window.location.href='UserDashboard.aspx';</script>");
                         }
                     }
                 }
@@ -138,8 +138,8 @@ namespace CCRPortal
 
                 SMTP.EnableSsl = true;
 
-                SMTP.Credentials = new NetworkCredential("ashishkalsara223@gmail.com", "ruzs fwdk toqb galv");
-
+                SMTP.Credentials = new NetworkCredential("ashishkalsara223@gmail.com", "your pass");
+                //ruzs fwdk toqb galv
 
                 SMTP.Send(Passmail);
 

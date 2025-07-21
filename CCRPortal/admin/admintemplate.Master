@@ -40,13 +40,13 @@
                                 <span class="lni-menu"></span>
                                 <span class="lni-menu"></span>
                             </button>
-                            <a href="homepage.aspx" class="navbar-brand">
+                            <a href="AdminDashboard.aspx" class="navbar-brand">
                                 <img src="../assets/img/logo.png" alt=""></a>
                         </div>
                         <div class="collapse navbar-collapse" id="main-navbar">
                             <ul class="navbar-nav mr-auto w-100 justify-content-end">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="homepage.aspx">Home
+                                    <a class="nav-link" href="AdminDashboard.aspx">Home
                                     </a>
                                 </li>
 
@@ -55,7 +55,7 @@
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="post-job.html">Add Job</a></li>
+                                        <li><a class="dropdown-item" href="Manage_user.aspx">Manage User</a></li>
                                         <li><a class="dropdown-item" href="manage-jobs.html">Manage Jobs</a></li>
                                         <li><a class="dropdown-item" href="manage-applications.html">Manage Applications</a></li>
                                         <li><a class="dropdown-item" href="browse-resumes.html">Browse Resumes</a></li>

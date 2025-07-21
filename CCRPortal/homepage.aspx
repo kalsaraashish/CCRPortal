@@ -90,7 +90,7 @@
                                 <br />
                                 We guide you every step of the way—toward growth, clarity, and lasting success.
                             </p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -104,9 +104,7 @@
                 <div class="section-header">
                     <h2 class="section-title">Latest Jobs</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et
-                 <br />
-                        metus effici turac fringilla lorem facilisis.
+                        Discover opportunities tailored to your skills — start your career journey today.
                     </p>
                 </div>
                 <div class="row">
@@ -133,7 +131,7 @@
                         </ItemTemplate>
                     </asp:Repeater>
                     <div class="col-12 text-center mt-4">
-                        <a href="job-page.html" class="btn btn-common">Browse All Jobs</a>
+                        <a href="alljobs.aspx" class="btn btn-common">Browse All Jobs</a>
                     </div>
                 </div>
             </div>
@@ -149,7 +147,7 @@
                             <div>
                                 <h3>7,000+ Browse Jobs</h3>
                                 <p>Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 600,000 companies worldwide. The right job is out there.</p>
-                                <a class="btn btn-common" href="#">Search jobs</a>
+                                <a class="btn btn-common" href="alljobs.aspx">View jobs</a>
                             </div>
                         </div>
                     </div>
@@ -224,13 +222,30 @@
                                 <div class="testimonial-item">
                                     <div class="author">
                                         <div class="img-thumb">
-                                            <img src="assets/img/testimonial/img1.png" alt="">
+                                            <img src="assets/img/a.jpg" alt="" style="width: 110px" />
                                         </div>
                                     </div>
                                     <div class="content-inner">
-                                        <p class="description">Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui.</p>
+                                        <p class="description">Finding a good project management role was challenging, but CCR Portal streamlined the process. It matched me with the right company, and the communication was clear throughout. Within weeks, I landed a job that aligns with my skills and goals.</p>
                                         <div class="author-info">
-                                            <h2><a href="#">Jessica</a></h2>
+                                            <h2><a href="#">Ashish kalsara</a></h2>
+                                            <span>Project Manager</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="testimonial-item">
+                                    <div class="author">
+                                        <div class="img-thumb">
+                                            <img src="assets/img/kunj.jpeg" style="width: 110px" />
+                                        </div>
+
+                                    </div>
+                                    <div class="content-inner">
+                                        <p class="description">I was struggling to find stable opportunities until I registered on CCR Portal. It connected me directly with companies looking for experienced accountants, and the interview tips were genuinely useful. Highly recommend it to anyone serious about their career.</p>
+                                        <div class="author-info">
+                                            <h2><a href="#">Kunj Ramdevputra</a></h2>
                                             <span>Senior Accountant</span>
                                         </div>
                                     </div>
@@ -240,34 +255,20 @@
                                 <div class="testimonial-item">
                                     <div class="author">
                                         <div class="img-thumb">
-                                            <img src="assets/img/testimonial/img2.png" alt="">
+
+                                            <img src="assets/img/sh.jpeg" alt="" style="width: 110px" />
                                         </div>
                                     </div>
                                     <div class="content-inner">
-                                        <p class="description">Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui.</p>
+                                        <p class="description">CCR Portal helped me secure a core engineering job within a month after registering. The job alerts were accurate, and the guidance provided for preparing my resume made a big difference. Thanks to this project, I’m now working in a reputed company.</p>
                                         <div class="author-info">
-                                            <h2><a href="#">John Doe</a></h2>
-                                            <span>Project Menager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="testimonial-item">
-                                    <div class="author">
-                                        <div class="img-thumb">
-                                            <img src="assets/img/testimonial/img3.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="content-inner">
-                                        <p class="description">Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui.</p>
-                                        <div class="author-info">
-                                            <h2><a href="#">Helen</a></h2>
+                                            <h2><a href="#">Shalish Makwana</a></h2>
                                             <span>Engineer</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

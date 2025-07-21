@@ -29,9 +29,8 @@
             <div class="section-header">
                 <h2 class="section-title">Latest Jobs</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et
-                    <br>
-                    metus effici turac fringilla lorem facilisis.
+                   Discover opportunities tailored to your skills — start your career journey today.
+                    
                 </p>
             </div>
             <div class="row">
@@ -59,7 +58,7 @@
                 </asp:Repeater>
 
                 <div class="col-12 text-center mt-4">
-                    <a href="job-page.html" class="btn btn-common">Browse All Jobs</a>
+                    <a href="alljobs.aspx" class="btn btn-common">Browse All Jobs</a>
                 </div>
             </div>
         </div>
@@ -77,7 +76,7 @@
                         <div>
                             <h3>7,000+ Browse Jobs</h3>
                             <p>Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 600,000 companies worldwide. The right job is out there.</p>
-                            <a class="btn btn-common" href="#">Search jobs</a>
+                            <a class="btn btn-common" href="alljobs.aspx">View jobs</a>
                         </div>
                     </div>
                 </div>

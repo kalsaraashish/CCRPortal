@@ -69,11 +69,16 @@
   <ItemGroup>
     <Content Include="aboutus.aspx" />
     <Content Include="admin\AdminDashboard.aspx" />
+    <Content Include="admin\Manage_user.aspx" />
+    <Content Include="alljobs.aspx" />
     <Content Include="App_Data\CCRPortal.mdf" />
     <Content Include="App_Data\CCRPortal_log.ldf">
       <DependentUpon>CCRPortal.mdf</DependentUpon>
     </Content>
     <Content Include="assets\css\adminlte.css" />
+    <Content Include="assets\img\a.jpg" />
+    <Content Include="assets\img\kunj.jpeg" />
+    <Content Include="assets\img\sh.jpeg" />
     <Content Include="company\CompanyDashboard.aspx" />
     <Content Include="company\company_login.aspx" />
     <Content Include="company\company_register.aspx" />
@@ -114,6 +119,20 @@
     </Compile>
     <Compile Include="admin\admintemplate.Master.designer.cs">
       <DependentUpon>admintemplate.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Manage_user.aspx.cs">
+      <DependentUpon>Manage_user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Manage_user.aspx.designer.cs">
+      <DependentUpon>Manage_user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="alljobs.aspx.cs">
+      <DependentUpon>alljobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="alljobs.aspx.designer.cs">
+      <DependentUpon>alljobs.aspx</DependentUpon>
     </Compile>
     <Compile Include="company\CompanyDashboard.aspx.cs">
       <DependentUpon>CompanyDashboard.aspx</DependentUpon>
