@@ -49,7 +49,7 @@
                                         <span><i class="lni-map-marker"></i><%# Eval("job_city") %></span>
                                         <%--<span><i class="lni-user"></i>John Smith</span>--%>
                                     </div>
-                                    <div class="tag mb-3"><i class="lni-tag"></i><%# Eval("Eligibility") %></div>
+                                    <div class="tag mb-3"><i class="lni-tag"></i><%# Eval("experience") %> Year Experience</div>
                                     <a href="job-details.aspx?jobId=<%# Eval("JobID") %>"><span class="full-time"><%# Eval("job_type") %></span></a>
                                 </div>
                             </div>

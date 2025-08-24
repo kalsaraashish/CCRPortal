@@ -138,7 +138,7 @@ namespace CCRPortal
 
                 SMTP.EnableSsl = true;
 
-                SMTP.Credentials = new NetworkCredential("ashishkalsara223@gmail.com", "your pass");
+                SMTP.Credentials = new NetworkCredential("ashishkalsara223@gmail.com", "ruzs fwdk toqb galv");
                 //ruzs fwdk toqb galv
 
                 SMTP.Send(Passmail);

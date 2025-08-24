@@ -68,7 +68,7 @@
                                     </ul>
                                 </li>
                                 <li class="button-group">
-                                    <a href="company/company_register.aspx" class="button btn btn-common">Post a Job</a>
+                                    <a href="company/company_login.aspx" class="button btn btn-common">Post a Job</a>
                                 </li>
                             </ul>
                         </div>
@@ -282,10 +282,10 @@
                         <div class="col-lg-3 col-md-3 col-xs-12">
                             <div class="widget">
                                 <div class="footer-logo">
-                                    <img src="assets/img/logo-footer.png" alt="">
+                                    <img src="assets/img/logo-footer.png" alt="" />
                                 </div>
                                 <div class="textwidget">
-                                    <p>Sed consequat sapien faus quam bibendum convallis quis in nulla. Pellentesque volutpat odio eget diam cursus semper.</p>
+                                    <p>your career journey begins with purpose.</p>
                                 </div>
                             </div>
                         </div>
@@ -295,7 +295,6 @@
                                 <ul class="menu">
                                     <li><a href="aboutus.aspx">About Us</a></li>
                                     <li><a href="#">Support</a></li>
-                                    <li><a href="#">License</a></li>
                                     <li><a href="contactus.aspx">Contact</a></li>
                                 </ul>
                                 <ul class="menu">
@@ -346,16 +345,8 @@
         </footer>
         <!-- Footer Section End -->
 
-        <!-- Go To Top Link -->
-        <a href="#" class="back-to-top">
-            <i class="lni-arrow-up"></i>
-        </a>
-
-        <!-- Preloader -->
-        <div id="preloader">
-            <div class="loader" id="loader-1"></div>
-        </div>
-        <!-- End Preloader -->
+        
+        
 
 
     </form>

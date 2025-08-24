@@ -48,6 +48,8 @@ namespace CCRPortal.company
                         txtDeadline.Text = Convert.ToDateTime(reader["Deadline"]).ToString("yyyy-MM-dd");
                         job_type_drp.SelectedValue= reader["job_type"].ToString();
                         txtcity.Text= reader["job_city"].ToString();
+                        ex_salary.Text= reader["ex_salary"].ToString();
+                        ex.Text= reader["experience"].ToString();
                         // Load other fields as necessary
                     }
                     else
@@ -64,7 +66,7 @@ namespace CCRPortal.company
         {
             using (SqlConnection con = new SqlConnection(conn))
             {
-                using(SqlCommand cmd = new SqlCommand("UPDATE Jobs SET Title=@Title, Description=@Description, Eligibility=@Eligibility, Deadline=@Deadline, job_type=@JobType, job_city=@JobCity WHERE JobId=@JobId", con))
+                using(SqlCommand cmd = new SqlCommand("UPDATE Jobs SET Title=@Title, Description=@Description, Eligibility=@Eligibility, Deadline=@Deadline, job_type=@JobType, job_city=@JobCity,ex_salary=@ex_salary,experience=@experience WHERE JobId=@JobId", con))
                 {
                     cmd.Parameters.AddWithValue("@Title", txtTitle.Text.Trim());
                     cmd.Parameters.AddWithValue("@Description", txtDescription.Text.Trim());
@@ -72,7 +74,9 @@ namespace CCRPortal.company
                     cmd.Parameters.AddWithValue("@Deadline", Convert.ToDateTime(txtDeadline.Text));
                     cmd.Parameters.AddWithValue("@JobType", job_type_drp.SelectedValue);
                     cmd.Parameters.AddWithValue("@JobCity", txtcity.Text.Trim());
-                    
+                    cmd.Parameters.AddWithValue("@ex_salary", ex_salary.Text.Trim());
+                    cmd.Parameters.AddWithValue("@experience", ex.Text.Trim());
+
                     int jobId;
                     if (int.TryParse(Request.QueryString["JobId"], out jobId))
                     {

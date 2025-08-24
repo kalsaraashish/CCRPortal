@@ -55,7 +55,7 @@ namespace CCRPortal.company
                     }
                 }
 
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Jobs (CompanyID,company_name, Title, Description, Eligibility, Deadline,job_type,job_city, jobimage) VALUES (@CompanyID,@company_name, @Title, @Description, @Eligibility, @Deadline,@job_type,@job_city, @jobimage)", con))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Jobs (CompanyID,company_name, Title, Description, Eligibility, Deadline,job_type,job_city, ex_salary,experience, jobimage) VALUES (@CompanyID,@company_name, @Title, @Description, @Eligibility, @Deadline,@job_type,@job_city,@ex_salary,@experience, @jobimage)", con))
                 {
                     cmd.Parameters.AddWithValue("@companyID", Session["CompanyID"]);
                     cmd.Parameters.AddWithValue("@Company_name", Session["CompanyName"]);
@@ -65,6 +65,8 @@ namespace CCRPortal.company
                     cmd.Parameters.AddWithValue("@Deadline", txtDeadline.Text.Trim());
                     cmd.Parameters.AddWithValue("@job_type", job_time_drp.SelectedValue.Trim());
                     cmd.Parameters.AddWithValue("@job_city", txtcity.Text.Trim());
+                    cmd.Parameters.AddWithValue("@ex_salary", ex_salary.Text.Trim());
+                    cmd.Parameters.AddWithValue("@experience", ex.Text.Trim());
                     cmd.Parameters.AddWithValue("@jobimage", resumeRelativePath);
                     
                     int rowsAffected = cmd.ExecuteNonQuery();
@@ -75,6 +77,8 @@ namespace CCRPortal.company
                         txtEligibility.Text = string.Empty;
                         txtDeadline.Text = string.Empty;
                         txtcity.Text = string.Empty;
+                        ex_salary.Text = string.Empty;
+                        ex.Text = string.Empty;
                         Response.Write("<script>alert('Job posted successfully');</script>");
                     }
                     else

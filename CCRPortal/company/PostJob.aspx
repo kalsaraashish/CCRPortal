@@ -79,7 +79,7 @@
                                 Type Of Job :
                                 <div class="input-icon">
                                     <i class="lni-graduation"></i>
-                               
+
                                     <asp:DropDownList ID="job_time_drp" runat="server" class="form-control">
                                         <asp:ListItem Text="-- Select Branch --" Value="" />
                                         <asp:ListItem Text="FULL-TIME" Value="FULL-TIME" />
@@ -90,6 +90,26 @@
 
                                 </div>
                             </div>
+                            <div class="form-group">
+                                Expeted Salary :
+                                <div class="input-icon">
+                                    <i class="lni-graduation"></i>
+                                    <asp:TextBox ID="ex_salary" runat="server" CssClass="form-control" placeholder="Expeted Salary" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="ex_salary"
+                                        ErrorMessage="Salary is required" CssClass="text-danger" Display="Dynamic" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                Experience :
+                                <div class="input-icon">
+                                    <i class="lni-graduation"></i>
+                                    <asp:TextBox ID="ex" runat="server" CssClass="form-control" placeholder="Experience" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="ex"
+                                        ErrorMessage="Experience is required" CssClass="text-danger" Display="Dynamic" />
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 Upload Image:
                         <div class="input-icon">

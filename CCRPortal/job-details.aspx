@@ -1,6 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/usertemplate.Master" AutoEventWireup="true" CodeBehind="job-details.aspx.cs" Inherits="CCRPortal.job_details" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+       
+
+    </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -15,15 +19,17 @@
                         <div class="col-lg-8 col-md-6 col-xs-12">
                             <div class="breadcrumb-wrapper">
                                 <div class="img-wrapper">
-                                    <img src="<%# Eval("jobimage") %>" alt="" style="width: 100px">
+                                    <img src="<%# Eval("jobimage") %>" alt="" style="width: 5rem">
                                 </div>
-                                <div class="content">
+                                <div class="content setview">
                                     <h3 class="product-title">Hiring <%# Eval("Title") %></h3>
                                     <p class="brand"><%# Eval("Company_name") %></p>
                                     <div class="tags">
                                         <span><i class="lni-map-marker"></i><%# Eval("job_city") %></span>
                                         <span><i class="lni-calendar"></i>Posted <%# Eval("PostedDate", "{0:dd MMM yyyy}") %></span>
-                                        <span><i class="lni-calendar"></i>Deadline <%# Eval("Deadline", "{0:dd MMM yyyy}") %></span><span class="full-time"><%# Eval("job_type") %></span>
+                                        <span><i class="lni-calendar"></i>Deadline <%# Eval("Deadline", "{0:dd MMM yyyy}") %></span>
+                                        <sapn><i class="lni-briefcase" style="padding-right:10px"></i><%# Eval("experience") %>  Year Experience</sapn>
+                                        <span class="full-time"><%# Eval("job_type") %></span>
 
                                     </div>
                                 </div>
@@ -32,7 +38,7 @@
                         <div class="col-lg-4 col-md-6 col-xs-12">
                             <div class="month-price">
                                 <span class="year">Yearly</span>
-                                <div class="price">$65,000</div>
+                                <div class="price" style="font-size: 18px;">₹ <%#Eval("ex_salary") %></div>
                             </div>
                         </div>
                     </div>

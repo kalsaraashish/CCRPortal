@@ -105,7 +105,7 @@
                                     <img src="assets/img/logo-footer.png" alt="">
                                 </div>
                                 <div class="textwidget">
-                                    <p>Sed consequat sapien faus quam bibendum convallis quis in nulla. Pellentesque volutpat odio eget diam cursus semper.</p>
+                                    <p>your career journey begins with purpose.</p>
                                 </div>
                             </div>
                         </div>
@@ -115,8 +115,8 @@
                                 <ul class="menu">
                                     <li><a href="aboutus.aspx">About Us</a></li>
                                     <li><a href="#">Support</a></li>
-                                    <li><a href="#">License</a></li>
                                     <li><a href="contactus.aspx">Contact</a></li>
+                                    <li><a href="alljobs.aspx">View Jobs</a></li>
                                 </ul>
                                 <ul class="menu">
                                     <li><a href="#">Terms & Conditions</a></li>
