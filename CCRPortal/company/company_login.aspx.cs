@@ -62,13 +62,20 @@ namespace CCRPortal.company
                     }
                     else
                     {
-                        Response.Write("<script>alert('Your account is not approved By Admin. Please contact support.');</script>");
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "errormessage();", true);
+                        //Response.Write("<script>alert('Your account is not approved By Admin. Please contact support.');</script>");
                         email.Text = string.Empty;
                         pass.Text = string.Empty;
                         email.Focus();
                     }
                 }
-                con.Close();
+                else {
+                    Response.Write("<script>alert('Invalid Email or password');</script>");
+                    email.Text = string.Empty;
+                    pass.Text = string.Empty;
+                    email.Focus();
+                }
+                    con.Close();
             }
         }
     }

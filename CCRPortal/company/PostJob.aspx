@@ -1,6 +1,31 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/company/companytemplate.Master" AutoEventWireup="true" CodeBehind="PostJob.aspx.cs" Inherits="CCRPortal.company.PostJob" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        function Post_success() {
+            Swal.fire({
+                title: "Job posted successfully",
+                text: "",
+                icon: "success"
+            });
+        }
+        function Post_error() {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Error posting job.ob with this title already exists for your company.",
+                //footer: '<a href="#">Why do I have this issue?</a>'
+            });
+        }
+        function error_exists() {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Job with this title already exists for your company.",
+                //footer: '<a href="#">Why do I have this issue?</a>'
+            });
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 

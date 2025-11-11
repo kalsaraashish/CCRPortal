@@ -1,6 +1,31 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admintemplate.Master" AutoEventWireup="true" CodeBehind="AdminDashboard.aspx.cs" Inherits="CCRPortal.admin.AdminDashboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        function cop_successful() {
+            Swal.fire({
+                title: "successfully!",
+                text: "Company approved",
+                icon: "success"
+            });
+        }
+        function user_successful() {
+            Swal.fire({
+                title: "successfully!",
+                text: "User approved",
+                icon: "success"
+            });
+        }
+
+        function errormessage() {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Your account is not approved By Admin. Please contact support.",
+                //footer: '<a href="#">Why do I have this issue?</a>'
+            });
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -145,13 +170,64 @@
         <!--end::App Content-->
     </main>
 
+    <div class="container ">
+        <h3 class="mb-4">Approve Student :</h3>
 
+        <table class="table table-striped table-bordered table-responsive">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email ID</th>
+                    <th>Branch</th>
+                    <th style="width: 25rem">Skills</th>
+                    <th>Resume</th>
+                    <th  style="width: 10rem">Register Date</th>
+                    <th  style="width: 8rem">Is Approved</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <asp:Repeater ID="rptuser" runat="server">
+                    <ItemTemplate>
+                        <tr>
+                            <td><%# Eval("id") %></td>
+                            <td><%# Eval("username").ToString().Trim() %></td>
+                            <td><%# Eval("Email").ToString().Trim() %></td>
+                            <td><%# Eval("Branch").ToString().Trim() %></td>
+                            <td><%# Eval("Skills").ToString().Trim() %></td>
+                            <td>
+                                <asp:HyperLink
+                                    ID="hlResume"
+                                    runat="server"
+                                    NavigateUrl='<%# Eval("Resume", "../{0}") %>'
+                                    Target="_blank"
+                                    Text='<%# Eval("username").ToString().Trim() %>' />
+                            </td>
+                            <td><%# Convert.ToDateTime(Eval("RegDate")).ToString("dd MMM yyyy") %></td>
+
+                            <td>
+                                <%# Convert.ToBoolean(Eval("IsApproved")) ? "Approved" : "Pending" %>
+                            </td>
+                            <td>
+                                <asp:Button ID="btnApprove" runat="server" Text="Approve" CssClass="btn btn-success btn-sm"
+                                    CommandName="Approve" CommandArgument='<%# Eval("id") %>'
+                                    OnClick="btnApprove_Click1"
+                                    Enabled='<%# !Convert.ToBoolean(Eval("IsApproved")) %>' />
+                            </td>
+
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </tbody>
+        </table>
+    </div>
 
 
 
 
     <div class="container ">
-        <h3 class="mb-4">Waiting For Approve :</h3>
+        <h3 class="mb-4">Approve Company :</h3>
 
         <table class="table table-striped table-bordered table-responsive">
             <thead class="table-dark">
@@ -161,7 +237,7 @@
                     <th>Email</th>
                     <th>Password</th>
                     <th>Website</th>
-                    <th style="width:20rem">Profile Info</th>
+                    <th style="width: 20rem">Profile Info</th>
                     <th>Is Approved</th>
                     <th>Action</th>
                 </tr>

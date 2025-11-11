@@ -59,20 +59,34 @@ namespace CCRPortal
 
                             string userType = reader["usertype"].ToString().Trim().ToLower();
 
-                            Session["username"] = username.Text;
+                            //Session["username"] = username.Text;
 
                             if (userType == "admin")
                             {
+                                Session["admin"] = username.Text;
                                 Response.Redirect("/admin/AdminDashboard.aspx");
                             }
                             else if (userType == "user")
                             {
-                                Response.Redirect("UserDashboard.aspx");
+                                bool isApproved = Convert.ToBoolean(reader["IsApproved"]);
+                                if (isApproved)
+                                {
+                                    Session["username"] = username.Text;
+                                    //Response.Write("<script>alert('welcome');</script>");
+                                    Response.Redirect("UserDashboard.aspx");
+                                }
+                                else
+                                {
+                                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "errormessage();", true);
+                                    username.Text = string.Empty;
+                                    pass.Text = string.Empty;
+                                    username.Focus();
+                                }
+                                
                             }
                             username.Text = string.Empty;
                             pass.Text = string.Empty;
                             username.Focus();
-
                         }
                         else
                         {

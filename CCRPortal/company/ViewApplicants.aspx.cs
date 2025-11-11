@@ -113,8 +113,8 @@ namespace CCRPortal.company
 
             // Refresh data after approval
             BindCompanyTable();
-
-            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('approved successfully.');", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "approved_success();", true);
+            //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('approved successfully.');", true);
         }
 
 
@@ -179,6 +179,7 @@ namespace CCRPortal.company
 
             // Refresh the page/grid
             BindCompanyTable();  // or your method to re-bind data
+            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "reject_success();", true);
         }
 
     }

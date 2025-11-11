@@ -23,6 +23,23 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <script src="dist/sweetalert2.min.js"></script>
+    <script type="text/javascript">
+        function Successapply() {
+            Swal.fire({
+                title: "Registration successful.",
+                text: "",
+                icon: "success"
+            });
+        }
+        function errormessage() {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Registration failed.",
+                //footer: '<a href="#">Why do I have this issue?</a>'
+            });
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">

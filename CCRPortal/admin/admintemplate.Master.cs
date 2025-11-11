@@ -13,9 +13,9 @@ namespace CCRPortal
         {
             if (!IsPostBack)
             {
-                if (Session["UserName"] != null)
+                if (Session["admin"] != null)
                 {
-                    lblUserName.Text = "Welcome, " + Session["UserName"].ToString().ToLower();
+                    lblUserName.Text = "Welcome, " + Session["admin"].ToString().ToLower();
                 }
                 else
                 {

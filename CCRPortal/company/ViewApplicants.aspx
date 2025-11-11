@@ -1,6 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/company/companytemplate.Master" AutoEventWireup="true" CodeBehind="ViewApplicants.aspx.cs" Inherits="CCRPortal.company.ViewApplicants" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        function approved_success() {
+        Swal.fire({
+            title: "Approved successfully.",
+            text: "",
+            icon: "success"
+        });
+    }
+        function reject_success() {
+        Swal.fire({
+            title: "Reject successfully.",
+            text: "",
+            icon: "success"
+            //footer: '<a href="#">Why do I have this issue?</a>'
+        });
+    }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -17,7 +34,7 @@
                     <th>Applied Date</th>
                     <th>Location</th>
                     <th>Application Status</th>
-                    <th>Action</th>
+                    <th  style="width: 20rem">Action</th>
                 </tr>
             </thead>
             <tbody>
