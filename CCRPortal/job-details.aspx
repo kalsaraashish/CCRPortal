@@ -1,10 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/usertemplate.Master" AutoEventWireup="true" CodeBehind="job-details.aspx.cs" Inherits="CCRPortal.job_details" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style>
-       
-
-    </style>
+    <script type="text/javascript">
+        function Successapply() {
+            Swal.fire({
+                title: "Application submitted successfully!",
+                text: "Check Application",
+                icon: "success"
+            });
+        }
+        function errormessage(){
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "You have already applied for this job went wrong!",
+                //footer: '<a href="#">Why do I have this issue?</a>'
+            });
+        }
+    </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

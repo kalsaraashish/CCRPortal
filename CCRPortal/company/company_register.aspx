@@ -12,6 +12,8 @@
     <title>CCRP - Job Portal</title>
 
     <!-- Bootstrap CSS -->
+    <link href="../dist/sweetalert2.min.css" rel="stylesheet" />
+    <link href="../assets/css/loader.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/line-icons.css">
     <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
@@ -20,9 +22,17 @@
     <link rel="stylesheet" href="../assets/css/animate.css">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
+    <script src="dist/sweetalert2.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
+
+        <!-- Loader Section -->
+        <div id="loader">
+            <div class="loader"></div>
+            <div class="loading-text">Loading...</div>
+        </div>
+        <!-- Loader End -->
 
         <header id="home" class="hero-area">
             <!-- Navbar Start -->
@@ -224,6 +234,20 @@
         <!-- Copyright End -->
     </footer>
     <!-- Footer Section End -->
+
+    <!-- JS Files -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#loader").show();
+        });
+
+        $(window).on("load", function () {
+            $("#loader").fadeOut(600);
+        });
+    </script>
 
 </body>
 </html>

@@ -79,6 +79,7 @@
       <DependentUpon>CCRPortal.mdf</DependentUpon>
     </Content>
     <Content Include="assets\css\adminlte.css" />
+    <Content Include="assets\css\loader.css" />
     <Content Include="assets\img\a.jpg" />
     <Content Include="assets\img\kunj.jpeg" />
     <Content Include="assets\img\sh.jpeg" />
@@ -91,6 +92,16 @@
     <Content Include="company\PostJob.aspx" />
     <Content Include="company\ViewApplicants.aspx" />
     <Content Include="contactus.aspx" />
+    <Content Include="dist\sweetalert2.all.js" />
+    <Content Include="dist\sweetalert2.all.min.js" />
+    <Content Include="dist\sweetalert2.css" />
+    <Content Include="dist\sweetalert2.esm.all.js" />
+    <Content Include="dist\sweetalert2.esm.all.min.js" />
+    <Content Include="dist\sweetalert2.esm.js" />
+    <Content Include="dist\sweetalert2.esm.min.js" />
+    <Content Include="dist\sweetalert2.js" />
+    <Content Include="dist\sweetalert2.min.css" />
+    <Content Include="dist\sweetalert2.min.js" />
     <Content Include="homepage.aspx" />
     <Content Include="job-details.aspx" />
     <Content Include="login.aspx" />

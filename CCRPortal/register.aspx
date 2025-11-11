@@ -12,6 +12,8 @@
     <title>CCRP - Job Portal</title>
 
     <!-- Bootstrap CSS -->
+    <link href="dist/sweetalert2.min.css" rel="stylesheet" />
+    <link href="assets/css/loader.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/line-icons.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -20,9 +22,17 @@
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <script src="dist/sweetalert2.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
+
+        <!-- Loader Section -->
+        <div id="loader">
+            <div class="loader"></div>
+            <div class="loading-text">Loading...</div>
+        </div>
+        <!-- Loader End -->
 
         <header id="home" class="hero-area">
             <!-- Navbar Start -->
@@ -42,28 +52,28 @@
                         </div>
                         <div class="collapse navbar-collapse" id="main-navbar">
                             <ul class="navbar-nav mr-auto w-100 justify-content-end">
-     <li class="nav-item active">
-         <a class="nav-link" href="homepage.aspx">Home
-         </a>
-     </li>
-     <li class="nav-item">
-         <a class="nav-link" href="aboutus.aspx">About
-         </a>
-     </li>
-     <li class="nav-item">
-         <a class="nav-link" href="contactus.aspx">Contact
-         </a>
-     </li>
-     <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In
-         </a>
-         <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="login.aspx">Sign In for User</a></li>
-             <li><a class="dropdown-item" href="/company/company_login.aspx">Company Sign In</a></li>
-         </ul>
-     </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="homepage.aspx">Home
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="aboutus.aspx">About
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contactus.aspx">Contact
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="login.aspx">Sign In for User</a></li>
+                                        <li><a class="dropdown-item" href="/company/company_login.aspx">Company Sign In</a></li>
+                                    </ul>
+                                </li>
 
- </ul>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -244,6 +254,18 @@
         <!-- Copyright End -->
     </footer>
     <!-- Footer Section End -->
+    <!-- JS Files -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            $("#loader").show();
+        });
+
+        $(window).on("load", function () {
+            $("#loader").fadeOut(600);
+        });
+    </script>
 </body>
 </html>

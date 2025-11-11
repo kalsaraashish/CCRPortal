@@ -64,10 +64,7 @@ namespace CCRPortal
 
         protected void applyjob_Click(object sender, EventArgs e)
         {
-            
-           
             int studentId = 0;
-            
 
             using (SqlConnection con = new SqlConnection(conn))
             {
@@ -86,7 +83,8 @@ namespace CCRPortal
                 int count = (int)checkCmd.ExecuteScalar();
                 if (count > 0)
                 { 
-                    Response.Write("<script>alert('You have already applied for this job.');</script>");
+                    //Response.Write("<script>alert('You have already applied for this job.');</script>");
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "errormessage();", true);
                     return;
                 }
 
@@ -144,8 +142,8 @@ namespace CCRPortal
                 SMTP.Send(Passmail);
 
 
-                Response.Write("<script>alert('Application submitted successfully!');</script>");
-
+                //Response.Write("<script>alert('Application submitted successfully!');</script>");
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "Successapply();", true);
 
                 // Optionally: Redirect to MyApplications.aspx
                 // Response.Redirect("~/Student/MyApplications.aspx");

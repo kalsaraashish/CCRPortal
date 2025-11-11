@@ -5,25 +5,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content="UIdeck">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="author" content="UIdeck"/>
     <title>CCRP - Job Portal</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/line-icons.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.css">
-    <link rel="stylesheet" href="assets/css/slicknav.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link href="assets/css/loader.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/line-icons.css"/>
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="assets/css/owl.theme.default.css"/>
+    <link rel="stylesheet" href="assets/css/slicknav.min.css"/>
+    <link rel="stylesheet" href="assets/css/animate.css"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="assets/css/responsive.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
+        <!-- Loader Section -->
+        <div id="loader">
+            <div class="loader"></div>
+            <div class="loading-text">Loading...</div>
+        </div>
+        <!-- Loader End -->
         <!-- Header Section Start -->
         <header id="home" class="hero-area">
             <!-- Navbar Start -->
@@ -345,15 +352,29 @@
         </footer>
         <!-- Footer Section End -->
 
-        
-        
+
+
 
 
     </form>
+    
+
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="assets/js/jquery-min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
 
+     <script>
+         // Working Loader Script
+         $(document).ready(function () {
+             // Show loader immediately
+             $("#loader").show();
+         });
+
+         $(window).on("load", function () {
+             // Hide loader smoothly once everything loads
+             $("#loader").fadeOut(600);
+         });
+     </script>
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/jquery.slicknav.js"></script>
     <script src="assets/js/jquery.counterup.min.js"></script>
