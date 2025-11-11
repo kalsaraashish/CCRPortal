@@ -40,16 +40,6 @@ CCRPortal is a campus recruitment web application developed using **ASP.NET Web 
 
 ---
 
-## 📁 Project Structure
-
-/CCRPortal
-├── /company
-├── /admin
-├── /imag
-├── /App_Code
-├── /bin
-└── Web.config
-
 ## 🧩 Database Schema (Basic Tables)
 - `user_data`
 - `Company`
