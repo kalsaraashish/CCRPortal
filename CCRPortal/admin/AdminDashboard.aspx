@@ -21,12 +21,101 @@
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Your account is not approved By Admin. Please contact support.",
-                //footer: '<a href="#">Why do I have this issue?</a>'
+                text: "Your account is not approved By Admin. Please contact support."
             });
         }
     </script>
+
+    <!-- extra styling only for these sections, matching CCRP theme -->
+    <style>
+        .ccrp-section {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .ccrp-section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #222831;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .ccrp-section-title::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 70px;
+            height: 3px;
+            border-radius: 999px;
+            background: #00c0ef; /* teal / brand accent */
+        }
+
+        .ccrp-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+            padding: 1.5rem 1.75rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        .ccrp-table thead th {
+            border-bottom-width: 1px !important;
+            background: #f8fafc;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #6b7280;
+            vertical-align: middle;
+        }
+
+        .ccrp-table tbody td {
+            vertical-align: middle;
+            font-size: 0.875rem;
+            color: #111827;
+        }
+
+        .ccrp-table tbody tr:hover {
+            background: #f9fafb;
+        }
+
+        .ccrp-pill-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .ccrp-pill-status.approved {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .ccrp-pill-status.pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .ccrp-approve-btn {
+            border-radius: 999px;
+            padding: 0.25rem 0.9rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .ccrp-card {
+                padding: 1rem;
+            }
+            .ccrp-section-title {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <main class="app-main" style="padding-top: 2.5rem">
@@ -159,116 +248,134 @@
                         <!--end::Small Box Widget 2-->
                     </div>
                     <!--end::Col-->
-
-
                 </div>
                 <!--end::Row-->
-
             </div>
             <!--end::Container-->
         </div>
         <!--end::App Content-->
     </main>
 
-    <div class="container ">
-        <h3 class="mb-4">Approve Student :</h3>
+    <!-- Approve Student Section -->
+    <section class="container ccrp-section">
+        <div class="ccrp-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="ccrp-section-title mb-0">Approve Student</h3>
+            </div>
 
-        <table class="table table-striped table-bordered table-responsive">
-            <thead class="table-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>Username</th>
-                    <th>Email ID</th>
-                    <th>Branch</th>
-                    <th style="width: 25rem">Skills</th>
-                    <th>Resume</th>
-                    <th  style="width: 10rem">Register Date</th>
-                    <th  style="width: 8rem">Is Approved</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <asp:Repeater ID="rptuser" runat="server">
-                    <ItemTemplate>
+            <div class="table-responsive">
+                <table class="table table-borderless ccrp-table">
+                    <thead>
                         <tr>
-                            <td><%# Eval("id") %></td>
-                            <td><%# Eval("username").ToString().Trim() %></td>
-                            <td><%# Eval("Email").ToString().Trim() %></td>
-                            <td><%# Eval("Branch").ToString().Trim() %></td>
-                            <td><%# Eval("Skills").ToString().Trim() %></td>
-                            <td>
-                                <asp:HyperLink
-                                    ID="hlResume"
-                                    runat="server"
-                                    NavigateUrl='<%# Eval("Resume", "../{0}") %>'
-                                    Target="_blank"
-                                    Text='<%# Eval("username").ToString().Trim() %>' />
-                            </td>
-                            <td><%# Convert.ToDateTime(Eval("RegDate")).ToString("dd MMM yyyy") %></td>
-
-                            <td>
-                                <%# Convert.ToBoolean(Eval("IsApproved")) ? "Approved" : "Pending" %>
-                            </td>
-                            <td>
-                                <asp:Button ID="btnApprove" runat="server" Text="Approve" CssClass="btn btn-success btn-sm"
-                                    CommandName="Approve" CommandArgument='<%# Eval("id") %>'
-                                    OnClick="btnApprove_Click1"
-                                    Enabled='<%# !Convert.ToBoolean(Eval("IsApproved")) %>' />
-                            </td>
-
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Email ID</th>
+                            <th>Branch</th>
+                            <th style="width: 25rem">Skills</th>
+                            <th>Resume</th>
+                            <th style="width: 10rem">Register Date</th>
+                            <th style="width: 8rem">Status</th>
+                            <th class="text-end">Action</th>
                         </tr>
-                    </ItemTemplate>
-                </asp:Repeater>
-            </tbody>
-        </table>
-    </div>
+                    </thead>
+                    <tbody>
+                        <asp:Repeater ID="rptuser" runat="server">
+                            <ItemTemplate>
+                                <tr>
+                                    <td><%# Eval("id") %></td>
+                                    <td><%# Eval("username").ToString().Trim() %></td>
+                                    <td><%# Eval("Email").ToString().Trim() %></td>
+                                    <td><%# Eval("Branch").ToString().Trim() %></td>
+                                    <td><%# Eval("Skills").ToString().Trim() %></td>
+                                    <td>
+                                        <asp:HyperLink
+                                            ID="hlResume"
+                                            runat="server"
+                                            NavigateUrl='<%# Eval("Resume", "../{0}") %>'
+                                            Target="_blank"
+                                            Text='<%# Eval("username").ToString().Trim() %>' />
+                                    </td>
+                                    <td>
+                                        <%# Convert.ToDateTime(Eval("RegDate")).ToString("dd MMM yyyy") %>
+                                    </td>
 
+                                    <td>
+                                        <span class='ccrp-pill-status <%# Convert.ToBoolean(Eval("IsApproved")) ? "approved" : "pending" %>'>
+                                            <%# Convert.ToBoolean(Eval("IsApproved")) ? "Approved" : "Pending" %>
+                                        </span>
+                                    </td>
+                                    <td class="text-end">
+                                        <asp:Button ID="btnApprove" runat="server" Text="Approve"
+                                            CssClass="btn btn-success btn-sm ccrp-approve-btn"
+                                            CommandName="Approve"
+                                            CommandArgument='<%# Eval("id") %>'
+                                            OnClick="btnApprove_Click1"
+                                            Enabled='<%# !Convert.ToBoolean(Eval("IsApproved")) %>' />
+                                    </td>
+                                </tr>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 
+    <!-- Approve Company Section -->
+    <section class="container ccrp-section">
+        <div class="ccrp-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="ccrp-section-title mb-0">Approve Company</h3>
+            </div>
 
-
-    <div class="container ">
-        <h3 class="mb-4">Approve Company :</h3>
-
-        <table class="table table-striped table-bordered table-responsive">
-            <thead class="table-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>Company Name</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                    <th>Website</th>
-                    <th style="width: 20rem">Profile Info</th>
-                    <th>Is Approved</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <asp:Repeater ID="rptCompanies" runat="server">
-                    <ItemTemplate>
+            <div class="table-responsive">
+                <table class="table table-borderless ccrp-table">
+                    <thead>
                         <tr>
-                            <td><%# Eval("CompanyId") %></td>
-                            <td><%# Eval("company_name").ToString().Trim() %></td>
-                            <td><%# Eval("email").ToString().Trim() %></td>
-                            <td><%# Eval("password").ToString().Trim() %></td>
-                            <td><a href='<%# Eval("website").ToString().Trim() %>' target="_blank"><%# Eval("website").ToString().Trim() %></a></td>
-                            <td><%# Eval("profile_info").ToString().Trim() %></td>
-                            <td>
-                                <%# Convert.ToBoolean(Eval("IsApproved")) ? "Approved" : "Pending" %>
-                            </td>
-                            <td>
-                                <asp:Button ID="btnApprove" runat="server" Text="Approve" CssClass="btn btn-success btn-sm"
-                                    CommandName="Approve" CommandArgument='<%# Eval("CompanyId") %>'
-                                    OnClick="btnApprove_Click"
-                                    Enabled='<%# !Convert.ToBoolean(Eval("IsApproved")) %>' />
-                            </td>
+                            <th>ID</th>
+                            <th>Company Name</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Website</th>
+                            <th style="width: 20rem">Profile Info</th>
+                            <th>Status</th>
+                            <th class="text-end">Action</th>
                         </tr>
-                    </ItemTemplate>
-                </asp:Repeater>
-            </tbody>
-        </table>
-    </div>
-
-
-
+                    </thead>
+                    <tbody>
+                        <asp:Repeater ID="rptCompanies" runat="server">
+                            <ItemTemplate>
+                                <tr>
+                                    <td><%# Eval("CompanyId") %></td>
+                                    <td><%# Eval("company_name").ToString().Trim() %></td>
+                                    <td><%# Eval("email").ToString().Trim() %></td>
+                                    <td><%# Eval("password").ToString().Trim() %></td>
+                                    <td>
+                                        <a href='<%# Eval("website").ToString().Trim() %>' target="_blank">
+                                            <%# Eval("website").ToString().Trim() %>
+                                        </a>
+                                    </td>
+                                    <td><%# Eval("profile_info").ToString().Trim() %></td>
+                                    <td>
+                                        <span class='ccrp-pill-status <%# Convert.ToBoolean(Eval("IsApproved")) ? "approved" : "pending" %>'>
+                                            <%# Convert.ToBoolean(Eval("IsApproved")) ? "Approved" : "Pending" %>
+                                        </span>
+                                    </td>
+                                    <td class="text-end">
+                                        <asp:Button ID="btnApprove" runat="server" Text="Approve"
+                                            CssClass="btn btn-success btn-sm ccrp-approve-btn"
+                                            CommandName="Approve"
+                                            CommandArgument='<%# Eval("CompanyId") %>'
+                                            OnClick="btnApprove_Click"
+                                            Enabled='<%# !Convert.ToBoolean(Eval("IsApproved")) %>' />
+                                    </td>
+                                </tr>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 
 </asp:Content>
