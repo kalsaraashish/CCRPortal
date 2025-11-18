@@ -114,47 +114,77 @@
         </div>
         <!-- Page Header End -->
 
-        <!-- Content section Start -->
-        <section id="content" class="section-padding">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-5 col-md-6 col-xs-12">
-                        <div class="page-login-form box">
-                            <h3>Login
-                            </h3>
-                            <div class="login-form">
-                                <div class="form-group">
-                                    <div class="input-icon">
-                                        <i class="lni-user"></i>
-                                        <asp:TextBox runat="server" ID="username" placeholder="Username" class="form-control"></asp:TextBox>
-                                        <%--<input type="text" id="sender-email"  name="email" >--%>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-icon">
-                                        <i class="lni-lock"></i>
-                                        <asp:TextBox runat="server" ID="pass" class="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
-                                        <%--<input type="password" class="form-control" >--%>
-                                    </div>
-                                </div>
-                                <div class="form-group form-check">
-                                    <asp:CheckBox ID="chkRememberMe" runat="server" CssClass="form-check-input" />
-                                    <%--<input type="checkbox" class="form-check-input" id="exampleCheck1">--%>
-                                    <label class="form-check-label" for="exampleCheck1">Keep Me Signed In</label>
+       <!-- Content section Start -->
+<section id="content" class="section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6 col-xs-12">
+                <div class="page-login-form box">
+                    <h3>Login</h3>
 
-                                </div>
+                    <asp:ValidationSummary 
+                        ID="vsErrors" 
+                        runat="server" 
+                        CssClass="text-danger mb-3"
+                        HeaderText="Please fix the following errors:" />
 
-                                <asp:Button runat="server" ID="btn" class="btn btn-common log-btn" Text="Submit" OnClick="Unnamed_Click" />
+                    <div class="login-form">
+                        <div class="form-group">
+                            <div class="input-icon">
+                                <i class="lni-user"></i>
+                                <asp:TextBox runat="server" ID="username" placeholder="Username" class="form-control"></asp:TextBox>
+
+                                <!-- Username Required -->
+                                <asp:RequiredFieldValidator 
+                                    ID="rfvUsername" 
+                                    runat="server" 
+                                    ControlToValidate="username"
+                                    ErrorMessage="Username is required"
+                                    CssClass="text-danger"
+                                    Display="Dynamic" />
                             </div>
-                            <ul class="form-links">
-                                <li class="text-center"><a href="register.aspx">Don't have an account?</a></li>
-                            </ul>
                         </div>
+
+                        <div class="form-group">
+                            <div class="input-icon">
+                                <i class="lni-lock"></i>
+                                <asp:TextBox runat="server" ID="pass" class="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
+
+                                <!-- Password Required -->
+                                <asp:RequiredFieldValidator 
+                                    ID="rfvPassword" 
+                                    runat="server" 
+                                    ControlToValidate="pass"
+                                    ErrorMessage="Password is required"
+                                    CssClass="text-danger"
+                                    Display="Dynamic" />
+                            </div>
+                        </div>
+
+                        <div class="form-group form-check">
+                            <asp:CheckBox ID="chkRememberMe" runat="server" CssClass="form-check-input" />
+                            <label class="form-check-label" for="exampleCheck1">Keep Me Signed In</label>
+                        </div>
+
+                        <asp:Button 
+                            runat="server" 
+                            ID="btn" 
+                            CssClass="btn btn-common log-btn" 
+                            Text="Submit" 
+                            OnClick="Unnamed_Click" 
+                            ValidationGroup="login" />
                     </div>
+
+                    <ul class="form-links">
+                        <li class="text-center"><a href="register.aspx">Don't have an account?</a></li>
+                    </ul>
                 </div>
             </div>
-        </section>
-        <!-- Content section End -->
+        </div>
+    </div>
+</section>
+<!-- Content section End -->
+
     </form>
     <!-- Footer Section Start -->
     <footer>

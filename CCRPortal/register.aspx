@@ -116,87 +116,185 @@
         <!-- Page Header End -->
 
         <!-- Content section Start -->
-        <section id="content" class="section-padding">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-5 col-md-6 col-xs-12">
-                        <div class="page-login-form box">
-                            <h3>Register</h3>
-                            <div class="login-form">
-                                <div class="form-group">
-                                    User Name :
-                                <div class="input-icon">
-                                    <i class="lni-user"></i>
-                                    <asp:TextBox runat="server" placeholder="Username" ID="username" class="form-control"></asp:TextBox>
-                                    <%--<input type="text" id="sender-email"  name="email" >--%>
-                                </div>
-                                </div>
-                                <div class="form-group">
-                                    Email :
-                                <div class="input-icon">
-                                    <i class="lni-envelope"></i>
-                                    <asp:TextBox runat="server" ID="email" class="form-control" placeholder="Email" TextMode="email"></asp:TextBox>
+<section id="content" class="section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6 col-xs-12">
+                <div class="page-login-form box">
+                    <h3>Register</h3>
 
-                                </div>
-                                </div>
-                                <div class="form-group">
-                                    Password :
-                                <div class="input-icon">
-                                    <i class="lni-lock"></i>
-                                    <asp:TextBox runat="server" ID="pass" class="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
+                    <!-- Show all errors here -->
+                    <asp:ValidationSummary 
+                        ID="vsRegister" 
+                        runat="server" 
+                        CssClass="text-danger mb-3"
+                        HeaderText="Please fix the following errors:" 
+                        ValidationGroup="reg" />
 
-                                </div>
-                                </div>
-                                <div class="form-group">
-                                    Branch :
-                                <div class="input-icon">
-                                    <i class="lni-graduation"></i>
-                                    <%--<asp:TextBox runat="server"  TextMode="Password"></asp:TextBox>--%>
-                                    <asp:DropDownList ID="DropDownList1" runat="server" class="form-control">
-                                        <asp:ListItem Text="-- Select Branch --" Value="" />
-                                        <asp:ListItem Text="Computer Science (CSE)" Value="CSE" />
-                                        <asp:ListItem Text="Information Technology" Value="IT" />
-                                        <asp:ListItem Text="Electronics & Communication" Value="ECE" />
-                                        <asp:ListItem Text="Electrical Engineering" Value="EE" />
-                                        <asp:ListItem Text="Mechanical Engineering" Value="ME" />
-                                        <asp:ListItem Text="Civil Engineering" Value="CE" />
-                                        <asp:ListItem Text="MCA" Value="MCA" />
-                                        <asp:ListItem Text="BCA" Value="BCA" />
-                                        <asp:ListItem Text="Other" Value="Other" />
+                    <div class="login-form">
+                        <!-- Username -->
+                        <div class="form-group">
+                            User Name :
+                            <div class="input-icon">
+                                <i class="lni-user"></i>
+                                <asp:TextBox runat="server" placeholder="Username" ID="username" class="form-control"></asp:TextBox>
 
-                                    </asp:DropDownList>
-
-                                </div>
-                                </div>
-                                <div class="form-group">
-                                    Skills :
-                                <div class="input-icon">
-                                    <i class="lni-bolt"></i>
-                                    <asp:TextBox runat="server" ID="skills" class="form-control" placeholder="Skills" TextMode="MultiLine"></asp:TextBox>
-
-                                </div>
-                                </div>
-                                <div class="form-group">
-                                    Upload Resume:
-                                <div class="input-icon">
-                                    <i class="lni-cloud-upload"></i>
-                                    <%--<asp:TextBox runat="server"  placeholder="Upload Resume"></asp:TextBox>--%>
-                                    <asp:FileUpload ID="resume" runat="server" class="form-control" Style="cursor: pointer" />
-                                </div>
-                                </div>
-
-
-                                <asp:Button runat="server" class="btn btn-common log-btn" ID="sub" Text="Submit" OnClick="sub_Click" />
+                                <asp:RequiredFieldValidator 
+                                    ID="rfvUsername" 
+                                    runat="server" 
+                                    ControlToValidate="username"
+                                    ErrorMessage="Username is required"
+                                    CssClass="text-danger"
+                                    Display="Dynamic"
+                                    ValidationGroup="reg" />
                             </div>
-                            <ul class="form-links">
-                                <li class="text-center"><a href="login.aspx">Already have an account?</a></li>
-                            </ul>
                         </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            Email :
+                            <div class="input-icon">
+                                <i class="lni-envelope"></i>
+                                <asp:TextBox runat="server" ID="email" class="form-control" placeholder="Email" TextMode="Email"></asp:TextBox>
+
+                                <asp:RequiredFieldValidator 
+                                    ID="rfvEmail" 
+                                    runat="server" 
+                                    ControlToValidate="email"
+                                    ErrorMessage="Email is required"
+                                    CssClass="text-danger"
+                                    Display="Dynamic"
+                                    ValidationGroup="reg" />
+
+                                <asp:RegularExpressionValidator
+                                    ID="revEmail"
+                                    runat="server"
+                                    ControlToValidate="email"
+                                    ErrorMessage="Enter a valid email address"
+                                    CssClass="text-danger"
+                                    Display="Dynamic"
+                                    ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+                                    ValidationGroup="reg" />
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="form-group">
+                            Password :
+                            <div class="input-icon">
+                                <i class="lni-lock"></i>
+                                <asp:TextBox runat="server" ID="pass" class="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
+
+                                <asp:RequiredFieldValidator 
+                                    ID="rfvPassword" 
+                                    runat="server" 
+                                    ControlToValidate="pass"
+                                    ErrorMessage="Password is required"
+                                    CssClass="text-danger"
+                                    Display="Dynamic"
+                                    ValidationGroup="reg" />
+
+                                <!-- Optional: min 6 characters -->
+                                <asp:RegularExpressionValidator
+                                    ID="revPassword"
+                                    runat="server"
+                                    ControlToValidate="pass"
+                                    ErrorMessage="Password must be at least 6 characters"
+                                    CssClass="text-danger"
+                                    Display="Dynamic"
+                                    ValidationExpression="^.{6,}$"
+                                    ValidationGroup="reg" />
+                            </div>
+                        </div>
+
+                        <!-- Branch -->
+                        <div class="form-group">
+                            Branch :
+                            <div class="input-icon">
+                                <i class="lni-graduation"></i>
+                                <asp:DropDownList ID="DropDownList1" runat="server" class="form-control">
+                                    <asp:ListItem Text="-- Select Branch --" Value="" />
+                                    <asp:ListItem Text="Computer Science (CSE)" Value="CSE" />
+                                    <asp:ListItem Text="Information Technology" Value="IT" />
+                                    <asp:ListItem Text="Electronics & Communication" Value="ECE" />
+                                    <asp:ListItem Text="Electrical Engineering" Value="EE" />
+                                    <asp:ListItem Text="Mechanical Engineering" Value="ME" />
+                                    <asp:ListItem Text="Civil Engineering" Value="CE" />
+                                    <asp:ListItem Text="MCA" Value="MCA" />
+                                    <asp:ListItem Text="BCA" Value="BCA" />
+                                    <asp:ListItem Text="Other" Value="Other" />
+                                </asp:DropDownList>
+
+                                <asp:RequiredFieldValidator
+                                    ID="rfvBranch"
+                                    runat="server"
+                                    ControlToValidate="DropDownList1"
+                                    InitialValue=""
+                                    ErrorMessage="Please select a branch"
+                                    CssClass="text-danger"
+                                    Display="Dynamic"
+                                    ValidationGroup="reg" />
+                            </div>
+                        </div>
+
+                        <!-- Skills -->
+                        <div class="form-group">
+                            Skills :
+                            <div class="input-icon">
+                                <i class="lni-bolt"></i>
+                                <asp:TextBox runat="server" ID="skills" class="form-control" placeholder="Skills" TextMode="MultiLine"></asp:TextBox>
+
+                                <asp:RequiredFieldValidator
+                                    ID="rfvSkills"
+                                    runat="server"
+                                    ControlToValidate="skills"
+                                    ErrorMessage="Please enter your skills"
+                                    CssClass="text-danger"
+                                    Display="Dynamic"
+                                    ValidationGroup="reg" />
+                            </div>
+                        </div>
+
+                        <!-- Resume -->
+                        <div class="form-group">
+                            Upload Resume:
+                            <div class="input-icon">
+                                <i class="lni-cloud-upload"></i>
+                                <asp:FileUpload ID="resume" runat="server" class="form-control" Style="cursor: pointer" />
+
+                                <asp:RequiredFieldValidator
+                                    ID="rfvResume"
+                                    runat="server"
+                                    ControlToValidate="resume"
+                                    ErrorMessage="Please upload your resume"
+                                    CssClass="text-danger"
+                                    Display="Dynamic"
+                                    ValidationGroup="reg" />
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <asp:Button 
+                            runat="server" 
+                            class="btn btn-common log-btn" 
+                            ID="sub" 
+                            Text="Submit" 
+                            OnClick="sub_Click"
+                            ValidationGroup="reg" />
                     </div>
+
+                    <ul class="form-links">
+                        <li class="text-center"><a href="login.aspx">Already have an account?</a></li>
+                    </ul>
                 </div>
             </div>
-        </section>
-        <!-- Content section End -->
+        </div>
+    </div>
+</section>
+<!-- Content section End -->
+
+
+
     </form>
 
     <!-- Footer Section Start -->

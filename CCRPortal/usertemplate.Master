@@ -62,9 +62,9 @@
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">Pages</a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="alljobs.aspx">Job Page</a></li>
-                                        <li><a class="dropdown-item" href="aboutus.aspx">About</a></li>
-                                        <li><a class="dropdown-item" href="contactus.aspx">Contact</a></li>
+                                        <li><a class="dropdown-item" href="alljobs.aspx">Jobs</a></li>
+                                        <%--<li><a class="dropdown-item" href="aboutus.aspx">About</a></li>
+                                        <li><a class="dropdown-item" href="contactus.aspx">Contact</a></li>--%>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -74,9 +74,9 @@
                                         <li><a class="dropdown-item" href="MyApplications.aspx">My Applications</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item">
+                                <%--<li class="nav-item">
                                     <a class="nav-link" href="contactus.aspx">Contact</a>
-                                </li>
+                                </li>--%>
                                 <li class="nav-item">
                                     <a class="nav-link" href="logout.aspx">Sign Out</a>
                                 </li>

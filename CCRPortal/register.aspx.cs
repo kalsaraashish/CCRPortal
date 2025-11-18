@@ -73,8 +73,9 @@ namespace CCRPortal
                     resume.Attributes.Clear();
 
                     // Show success message and redirect
-                    //Response.Write("<script>alert('Registration successful.'); window.location='login.aspx';</script>");
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "Successapply();", true);
+                    Response.Write("<script>window.location='login.aspx';</script>");
+
                     
                 }
                 else
