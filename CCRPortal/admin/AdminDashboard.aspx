@@ -227,7 +227,7 @@
                         <!--begin::Small Box Widget 2-->
                         <div class="small-box text-bg-success">
                             <div class="inner">
-                                <h3 runat="server" id="totalapplication">53</h3>
+                                <h3 runat="server" id="totalapplication"></h3>
                                 <p style="color: black">Total Applications</p>
                             </div>
                             <svg
@@ -305,7 +305,7 @@
                                         </span>
                                     </td>
                                     <td class="text-end">
-                                        <asp:Button ID="btnApprove" runat="server" Text="Approve"
+                                        <asp:Button ID="btnApproveStudent" runat="server" Text="Approve"
                                             CssClass="btn btn-success btn-sm ccrp-approve-btn"
                                             CommandName="Approve"
                                             CommandArgument='<%# Eval("id") %>'
@@ -362,7 +362,7 @@
                                         </span>
                                     </td>
                                     <td class="text-end">
-                                        <asp:Button ID="btnApprove" runat="server" Text="Approve"
+                                        <asp:Button ID="btnApproveCompany" runat="server" Text="Approve"
                                             CssClass="btn btn-success btn-sm ccrp-approve-btn"
                                             CommandName="Approve"
                                             CommandArgument='<%# Eval("CompanyId") %>'

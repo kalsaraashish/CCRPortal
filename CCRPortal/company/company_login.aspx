@@ -13,8 +13,8 @@
     <title>CCRP - Job Portal</title>
 
     <!-- Bootstrap CSS -->
-     <link href="../dist/sweetalert2.min.css" rel="stylesheet" />
- <link href="../assets/css/loader.css" rel="stylesheet" />
+    <link href="../dist/sweetalert2.min.css" rel="stylesheet" />
+    <link href="../assets/css/loader.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/line-icons.css">
     <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
@@ -24,32 +24,32 @@
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
     <script src="../dist/sweetalert2.min.js"></script>
-<script type="text/javascript">
-    function Successapply() {
-        Swal.fire({
-            title: "Application submitted successfully!",
-            text: "Check Application",
-            icon: "success"
-        });
-    }
-    function errormessage() {
-        Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Your account is not approved By Admin. Please contact support.",
-            //footer: '<a href="#">Why do I have this issue?</a>'
-        });
-    }
-</script>
+    <script type="text/javascript">
+        function Successapply() {
+            Swal.fire({
+                title: "Application submitted successfully!",
+                text: "Check Application",
+                icon: "success"
+            });
+        }
+        function errormessage() {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Your account is not approved By Admin. Please contact support.",
+                //footer: '<a href="#">Why do I have this issue?</a>'
+            });
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
         <!-- Loader Section -->
-<div id="loader">
-    <div class="loader"></div>
-    <div class="loading-text">Loading...</div>
-</div>
-<!-- Loader End -->
+        <div id="loader">
+            <div class="loader"></div>
+            <div class="loading-text">Loading...</div>
+        </div>
+        <!-- Loader End -->
 
         <header id="home" class="hero-area">
             <!-- Navbar Start -->
@@ -119,14 +119,14 @@
                                 <%--<li class="nav-item">
                                     <a class="nav-link" href="company_login.aspx">Sign In</a>
                                 </li>--%>
-                                  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In
-    </a>
-    <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="../login.aspx">Sign In for User</a></li>
-        <li><a class="dropdown-item" href="company_login.aspx">Company Sign In</a></li>
-    </ul>
-</li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="../login.aspx">Sign In for User</a></li>
+                                        <li><a class="dropdown-item" href="company_login.aspx">Company Sign In</a></li>
+                                    </ul>
+                                </li>
                                 <%--<li class="button-group">
                                     <asp:Label runat="server" ID="lblUserName" Text="POST A JOB" class="button btn btn-common"></asp:Label>
                             <a href="post-job.html" class="button btn btn-common">Post a Job</a>
@@ -169,28 +169,53 @@
                                     <div class="input-icon">
                                         <i class="lni-user"></i>
                                         <asp:TextBox runat="server" ID="email" placeholder="Email" class="form-control"></asp:TextBox>
-                                        <%--<input type="text" id="sender-email"  name="email" >--%>
+
+                                        <!-- Email Required Validation -->
+                                        <asp:RequiredFieldValidator
+                                            ID="rfvEmail"
+                                            runat="server"
+                                            ControlToValidate="email"
+                                            ErrorMessage="Email is required"
+                                            ForeColor="Red"
+                                            Display="Dynamic" />
+
+                                        <!-- Email Regex Validation -->
+                                        <asp:RegularExpressionValidator
+                                            ID="revEmail"
+                                            runat="server"
+                                            ControlToValidate="email"
+                                            ValidationExpression="^[\w\.-]+@[\w\.-]+\.\w{2,}$"
+                                            ErrorMessage="Enter valid email"
+                                            ForeColor="Red"
+                                            Display="Dynamic" />
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <div class="input-icon">
                                         <i class="lni-lock"></i>
                                         <asp:TextBox runat="server" ID="pass" class="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
-                                        <%--<input type="password" class="form-control" >--%>
+
+                                        <!-- Password Required Validation -->
+                                        <asp:RequiredFieldValidator
+                                            ID="rfvPass"
+                                            runat="server"
+                                            ControlToValidate="pass"
+                                            ErrorMessage="Password is required"
+                                            ForeColor="Red"
+                                            Display="Dynamic" />
                                     </div>
                                 </div>
+
                                 <div class="form-group form-check">
                                     <asp:CheckBox ID="chkRememberMe" runat="server" CssClass="form-check-input" />
-                                    <%--<input type="checkbox" class="form-check-input" id="exampleCheck1">--%>
                                     <label class="form-check-label" for="exampleCheck1">Keep Me Signed In</label>
-
                                 </div>
 
                                 <asp:Button runat="server" ID="btn" class="btn btn-common log-btn" Text="Submit" OnClick="btn_Click" />
                             </div>
                             <ul class="form-links">
                                 <li class="text-center"><a href="company_register.aspx">Don't have an account?</a></li>
-
                             </ul>
                         </div>
                     </div>
@@ -198,6 +223,7 @@
             </div>
         </section>
         <!-- Content section End -->
+
 
     </form>
     <!-- Footer Section Start -->
@@ -220,10 +246,10 @@
                         <div class="widget">
                             <h3 class="block-title">Quick Links</h3>
                             <ul class="menu">
-                                <li><a href="../aboutus.aspx">About Us</a></li>
+                                <li><a href="#">About Us</a></li>
                                 <li><a href="#">Support</a></li>
                                 <li><a href="#">License</a></li>
-                                <li><a href="../contactus.aspx">Contact</a></li>
+                                <li><a href="#">Contact</a></li>
                             </ul>
                             <ul class="menu">
                                 <li><a href="#">Terms & Conditions</a></li>
@@ -272,19 +298,19 @@
         <!-- Copyright End -->
     </footer>
     <!-- Footer Section End -->
- <!-- JS Files -->
- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
- <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- JS Files -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
 
- <script>
-     $(document).ready(function () {
-         $("#loader").show();
-     });
+    <script>
+        $(document).ready(function () {
+            $("#loader").show();
+        });
 
-     $(window).on("load", function () {
-         $("#loader").fadeOut(600);
-     });
- </script>
+        $(window).on("load", function () {
+            $("#loader").fadeOut(600);
+        });
+    </script>
 </body>
 </html>
 
