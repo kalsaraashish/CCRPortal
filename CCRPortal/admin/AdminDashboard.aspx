@@ -335,9 +335,9 @@
                             <th>ID</th>
                             <th>Company Name</th>
                             <th>Email</th>
-                            <th>Password</th>
+                            
                             <th>Website</th>
-                            <th style="width: 20rem">Profile Info</th>
+                            <th style="width: 30rem">Profile Info</th>
                             <th>Status</th>
                             <th class="text-end">Action</th>
                         </tr>
@@ -349,7 +349,7 @@
                                     <td><%# Eval("CompanyId") %></td>
                                     <td><%# Eval("company_name").ToString().Trim() %></td>
                                     <td><%# Eval("email").ToString().Trim() %></td>
-                                    <td><%# Eval("password").ToString().Trim() %></td>
+                                   
                                     <td>
                                         <a href='<%# Eval("website").ToString().Trim() %>' target="_blank">
                                             <%# Eval("website").ToString().Trim() %>

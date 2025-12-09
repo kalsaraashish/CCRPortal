@@ -22,19 +22,25 @@ namespace CCRPortal.admin
             }
             using (SqlConnection con = new SqlConnection(conn))
             {
-                using (SqlCommand delre = new SqlCommand("DELETE FROM user_data WHERE id=@userid", con))
+                using (SqlCommand delapp = new SqlCommand("DELETE FROM Applications WHERE StudentID=@userid", con))
                 {
-                    delre.Parameters.AddWithValue("@userid", userid);
                     con.Open();
-                    int rowsAffected = delre.ExecuteNonQuery();
-                    if (rowsAffected > 0)
+                    delapp.Parameters.AddWithValue("@userid", userid);
+                    delapp.ExecuteNonQuery();
+                    using (SqlCommand delre = new SqlCommand("DELETE FROM user_data WHERE id=@userid", con))
                     {
-                        Response.Write("<script>alert('user deleted successfully.'); window.location.href='Manage_user.aspx'</script>");
-                        //Response.Redirect("manage-jobs.aspx");
-                    }
-                    else
-                    {
-                        Response.Write("<script>alert('Error deleting user. Please try again.');</script>");
+                        delre.Parameters.AddWithValue("@userid", userid);
+                        
+                        int rowsAffected = delre.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            Response.Write("<script>alert('user deleted successfully.'); window.location.href='Manage_user.aspx'</script>");
+                            //Response.Redirect("manage-jobs.aspx");
+                        }
+                        else
+                        {
+                            Response.Write("<script>alert('Error deleting user. Please try again.');</script>");
+                        }
                     }
                 }
             }

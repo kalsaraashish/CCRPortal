@@ -114,76 +114,87 @@
         </div>
         <!-- Page Header End -->
 
-       <!-- Content section Start -->
-<section id="content" class="section-padding">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-5 col-md-6 col-xs-12">
-                <div class="page-login-form box">
-                    <h3>Login</h3>
+        <!-- Content section Start -->
+        <section id="content" class="section-padding">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 col-md-6 col-xs-12">
+                        <div class="page-login-form box">
+                            <h3>Login</h3>
 
-                    <asp:ValidationSummary 
-                        ID="vsErrors" 
-                        runat="server" 
-                        CssClass="text-danger mb-3"
-                        HeaderText="Please fix the following errors:" />
+                            <asp:ValidationSummary
+                                ID="vsErrors"
+                                runat="server"
+                                CssClass="text-danger mb-3"
+                                HeaderText="Please fix the following errors:" />
 
-                    <div class="login-form">
-                        <div class="form-group">
-                            <div class="input-icon">
-                                <i class="lni-user"></i>
-                                <asp:TextBox runat="server" ID="username" placeholder="Username" class="form-control"></asp:TextBox>
+                            <div class="login-form">
+                                <div class="form-group">
+                                    <div class="input-icon">
+                                        <i class="lni-user"></i>
+                                        <asp:TextBox runat="server" ID="username" placeholder="Username" class="form-control"></asp:TextBox>
 
-                                <!-- Username Required -->
-                                <asp:RequiredFieldValidator 
-                                    ID="rfvUsername" 
-                                    runat="server" 
-                                    ControlToValidate="username"
-                                    ErrorMessage="Username is required"
-                                    CssClass="text-danger"
-                                    Display="Dynamic" />
+                                        <!-- Username Required -->
+                                        <asp:RequiredFieldValidator
+                                            ID="rfvUsername"
+                                            runat="server"
+                                            ControlToValidate="username"
+                                            ErrorMessage="Username is required"
+                                            CssClass="text-danger"
+                                            Display="Dynamic" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-icon">
+                                        <i class="lni-lock"></i>
+                                        <asp:TextBox runat="server" ID="pass" class="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
+
+                                        <!-- Password Required -->
+                                        <asp:RequiredFieldValidator
+                                            ID="rfvPassword"
+                                            runat="server"
+                                            ControlToValidate="pass"
+                                            ErrorMessage="Password is required"
+                                            CssClass="text-danger"
+                                            Display="Dynamic" />
+
+                                        <!-- Password Pattern Validation -->
+                                        <asp:RegularExpressionValidator
+                                            ID="revPassword"
+                                            runat="server"
+                                            ControlToValidate="pass"
+                                            ErrorMessage="Password must contain at least 6 characters, including letters and numbers"
+                                            CssClass="text-danger"
+                                            Display="Dynamic"
+                                            ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{6,}$" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-check">
+                                    <asp:CheckBox ID="chkRememberMe" runat="server" CssClass="form-check-input" />
+                                    <label class="form-check-label" for="exampleCheck1">Keep Me Signed In</label>
+                                </div>
+
+                                <asp:Button
+                                    runat="server"
+                                    ID="btn"
+                                    CssClass="btn btn-common log-btn"
+                                    Text="Submit"
+                                    OnClick="Unnamed_Click"
+                                    ValidationGroup="login" />
                             </div>
+
+                            <ul class="form-links">
+                                <li class="text-center"><a href="register.aspx">Don't have an account?</a></li>
+                            </ul>
                         </div>
-
-                        <div class="form-group">
-                            <div class="input-icon">
-                                <i class="lni-lock"></i>
-                                <asp:TextBox runat="server" ID="pass" class="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
-
-                                <!-- Password Required -->
-                                <asp:RequiredFieldValidator 
-                                    ID="rfvPassword" 
-                                    runat="server" 
-                                    ControlToValidate="pass"
-                                    ErrorMessage="Password is required"
-                                    CssClass="text-danger"
-                                    Display="Dynamic" />
-                            </div>
-                        </div>
-
-                        <div class="form-group form-check">
-                            <asp:CheckBox ID="chkRememberMe" runat="server" CssClass="form-check-input" />
-                            <label class="form-check-label" for="exampleCheck1">Keep Me Signed In</label>
-                        </div>
-
-                        <asp:Button 
-                            runat="server" 
-                            ID="btn" 
-                            CssClass="btn btn-common log-btn" 
-                            Text="Submit" 
-                            OnClick="Unnamed_Click" 
-                            ValidationGroup="login" />
                     </div>
-
-                    <ul class="form-links">
-                        <li class="text-center"><a href="register.aspx">Don't have an account?</a></li>
-                    </ul>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<!-- Content section End -->
+        </section>
+        <!-- Content section End -->
+
 
     </form>
     <!-- Footer Section Start -->

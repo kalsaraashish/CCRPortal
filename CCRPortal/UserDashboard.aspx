@@ -15,7 +15,7 @@
                             <br>
                             We guide you every step of the way—toward growth, clarity, and lasting success.
                         </p>
-                       
+
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
             <div class="section-header">
                 <h2 class="section-title">Latest Jobs</h2>
                 <p>
-                   Discover opportunities tailored to your skills — start your career journey today.
+                    Discover opportunities tailored to your skills — start your career journey today.
                     
                 </p>
             </div>
@@ -39,7 +39,9 @@
                         <div class="col-lg-6 col-md-12 col-xs-12">
                             <div class="jobs-latest">
                                 <div class="img-thumb">
-                                    <img src="<%# Eval("jobimage") %>" alt="" style="height: 100px; width: 100px" />
+                                    <img src='<%# ResolveUrl("~/img/co_img/" + Eval("jobimage")) %>'
+                                        alt="" style="height: 100px; width: 100px" />
+
 
                                 </div>
                                 <div class="content">
@@ -65,7 +67,7 @@
     </section>
     <!-- Latest Section End -->
 
- 
+
 
     <!-- Browse jobs Section Start -->
     <div id="browse-jobs" class="section bg-gray">

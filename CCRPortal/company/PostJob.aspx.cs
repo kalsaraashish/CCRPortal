@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.IO;
 
 namespace CCRPortal.company
 {
@@ -22,53 +23,67 @@ namespace CCRPortal.company
         {
             using (SqlConnection con = new SqlConnection(conn))
             {
-                string resumeRelativePath = null;
+                string jobImageName = null;
 
                 // ===== Upload Image =====
                 if (jobimg.HasFile)
                 {
-                    string fileExtension = System.IO.Path.GetExtension(jobimg.FileName);
+                    string fileExtension = Path.GetExtension(jobimg.FileName);
 
-                    // Rename file with company name and job title
-                    string safeFileName = Session["CompanyName"] + "_" + txtTitle.Text.Trim().Replace(" ", "_");
+                    // Rename file -> CompanyName + Job Title
+                    string safeFileName = Session["CompanyName"] + "_" + txtTitle.Text.Trim();
+
+                    // Remove invalid characters from name
+                    foreach (char c in Path.GetInvalidFileNameChars())
+                    {
+                        safeFileName = safeFileName.Replace(c, '_');
+                    }
+
+                    safeFileName = safeFileName.Replace(" ", "_");
+
                     string filename = safeFileName + fileExtension;
 
-                    string filePath = Server.MapPath("../img/co_img/") + filename;
-                    jobimg.SaveAs(filePath);
+                    // Ensure directory exists
+                    string folderPath = Server.MapPath("~/img/co_img/");
+                    if (!Directory.Exists(folderPath))
+                        Directory.CreateDirectory(folderPath);
 
-                    resumeRelativePath = "../img/co_img/" + filename;
+                    string uploadPath = Path.Combine(folderPath, filename);
+                    jobimg.SaveAs(uploadPath);
+
+                    // ❗ Only store file name in DB
+                    jobImageName = filename;
                 }
                 else
                 {
-                    Response.Write("<script>alert('Please upload your image.');</script>");
+                    ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Please upload job image!');", true);
                     return;
                 }
 
                 con.Open();
 
-                // ===== Check if job already exists =====
-                using (SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Jobs WHERE CompanyID = @CompanyID AND Title = @Title", con))
+                // ===== Check Duplicate Job =====
+                using (SqlCommand checkCmd = new SqlCommand(
+                    "SELECT COUNT(*) FROM Jobs WHERE CompanyID=@CompanyID AND Title=@Title", con))
                 {
                     checkCmd.Parameters.AddWithValue("@CompanyID", Session["CompanyID"]);
                     checkCmd.Parameters.AddWithValue("@Title", txtTitle.Text.Trim());
 
-                    int count = (int)checkCmd.ExecuteScalar();
-                    if (count > 0)
+                    int exists = (int)checkCmd.ExecuteScalar();
+                    if (exists > 0)
                     {
-                        // Job already exists — show popup and stop
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "error_exists();", true);
-                        con.Close();
-                        return; // ❌ Prevent insert
+                        return;
                     }
                 }
 
-                // ===== Insert new job =====
+                // ===== Insert Job Details =====
                 using (SqlCommand cmd = new SqlCommand(
                     "INSERT INTO Jobs (CompanyID, company_name, Title, Description, Eligibility, Deadline, job_type, job_city, ex_salary, experience, jobimage) " +
-                    "VALUES (@CompanyID, @Company_name, @Title, @Description, @Eligibility, @Deadline, @job_type, @job_city, @ex_salary, @experience, @jobimage)", con))
+                    "VALUES (@CompanyID, @company_name, @Title, @Description, @Eligibility, @Deadline, @job_type, @job_city, @ex_salary, @experience, @jobimage)", con))
                 {
                     cmd.Parameters.AddWithValue("@CompanyID", Session["CompanyID"]);
-                    cmd.Parameters.AddWithValue("@Company_name", Session["CompanyName"]);
+                    cmd.Parameters.AddWithValue("@company_name", Session["CompanyName"]);
                     cmd.Parameters.AddWithValue("@Title", txtTitle.Text.Trim());
                     cmd.Parameters.AddWithValue("@Description", txtDescription.Text.Trim());
                     cmd.Parameters.AddWithValue("@Eligibility", txtEligibility.Text.Trim());
@@ -77,27 +92,24 @@ namespace CCRPortal.company
                     cmd.Parameters.AddWithValue("@job_city", txtcity.Text.Trim());
                     cmd.Parameters.AddWithValue("@ex_salary", ex_salary.Text.Trim());
                     cmd.Parameters.AddWithValue("@experience", ex.Text.Trim());
-                    cmd.Parameters.AddWithValue("@jobimage", resumeRelativePath);
+                    cmd.Parameters.AddWithValue("@jobimage", jobImageName);
 
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
+                    int result = cmd.ExecuteNonQuery();
+                    if (result > 0)
                     {
-                        // Clear all input fields
-                        txtTitle.Text = string.Empty;
-                        txtDescription.Text = string.Empty;
-                        txtEligibility.Text = string.Empty;
-                        txtDeadline.Text = string.Empty;
-                        txtcity.Text = string.Empty;
-                        ex_salary.Text = string.Empty;
-                        ex.Text = string.Empty;
+                        // Clear fields
+                        txtTitle.Text = "";
+                        txtDescription.Text = "";
+                        txtEligibility.Text = "";
+                        txtDeadline.Text = "";
+                        txtcity.Text = "";
+                        ex_salary.Text = "";
+                        ex.Text = "";
 
-                        // Success popup
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "Post_success();", true);
                     }
                     else
                     {
-                        // Error popup
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "Post_error();", true);
                     }
                 }

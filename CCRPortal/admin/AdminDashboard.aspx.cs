@@ -5,6 +5,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net;
 using System.Net.Mail;
+using System.Threading.Tasks;   // ✅ ADDED
 
 namespace CCRPortal.admin
 {
@@ -84,7 +85,7 @@ namespace CCRPortal.admin
             }
         }
 
-        // Common method to send email
+        // Common method to send email (kept synchronous)
         private void SendEmail(string toEmail, string subject, string body)
         {
             using (MailMessage mm = new MailMessage())
@@ -141,7 +142,7 @@ namespace CCRPortal.admin
                 }
             }
 
-            // 3) Send email
+            // 3) Send email in BACKGROUND
             if (!string.IsNullOrWhiteSpace(email))
             {
                 string subject = "Your company account has been approved - CCR Portal";
@@ -150,14 +151,17 @@ namespace CCRPortal.admin
                               "You can now login and post jobs.<br/><br/>" +
                               "Regards,<br/>CCR Portal Team";
 
-                try
+                Task.Run(() =>
                 {
-                    SendEmail(email, subject, body);
-                }
-                catch (Exception ex)
-                {
-                    // You can log ex.Message if needed
-                }
+                    try
+                    {
+                        SendEmail(email, subject, body);
+                    }
+                    catch (Exception ex)
+                    {
+                        // log ex if needed
+                    }
+                });
             }
 
             // Refresh data after approval
@@ -199,7 +203,7 @@ namespace CCRPortal.admin
                 }
             }
 
-            // 3) Send email
+            // 3) Send email in BACKGROUND
             if (!string.IsNullOrWhiteSpace(email))
             {
                 string subject = "Your account has been approved - CCR Portal";
@@ -208,14 +212,17 @@ namespace CCRPortal.admin
                               "You can now login and apply for jobs.<br/><br/>" +
                               "Best of luck!<br/>CCR Portal Team";
 
-                try
+                Task.Run(() =>
                 {
-                    SendEmail(email, subject, body);
-                }
-                catch (Exception ex)
-                {
-                    // You can log ex.Message if needed
-                }
+                    try
+                    {
+                        SendEmail(email, subject, body);
+                    }
+                    catch (Exception ex)
+                    {
+                        // log ex if needed
+                    }
+                });
             }
 
             // Refresh data after approval
