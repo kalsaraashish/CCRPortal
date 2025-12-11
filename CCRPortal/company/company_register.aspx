@@ -22,7 +22,30 @@
     <link rel="stylesheet" href="../assets/css/animate.css">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
-    <script src="dist/sweetalert2.min.js"></script>
+    <script src="../dist/sweetalert2.min.js"></script>
+    <script type="text/javascript">
+        function Successapply() {
+
+            Swal.fire({
+                title: "Registration successful.",
+                text: "Wait for Admin Approval",
+                icon: "success",
+                confirmButtonText: "OK"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location = 'company_login.aspx';
+                }
+            });
+        }
+        function errormessage() {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Registration failed.",
+                
+            });
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -68,8 +91,8 @@
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="login.aspx">Sign In for User</a></li>
-                                        <li><a class="dropdown-item" href="/company/company_login.aspx">Company Sign In</a></li>
+                                        <li><a class="dropdown-item" href="../login.aspx">Sign In for User</a></li>
+                                        <li><a class="dropdown-item" href="company_login.aspx">Company Sign In</a></li>
                                     </ul>
                                 </li>
 
@@ -99,67 +122,123 @@
         <!-- Page Header End -->
 
         <!-- Content section Start -->
-        <section id="content" class="section-padding">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-5 col-md-6 col-xs-12">
-                        <div class="page-login-form box">
-                            <h3>Company Register</h3>
-                            <div class="login-form">
-                                <div class="form-group">
-                                    Company Name :
-                                <div class="input-icon">
-                                    <i class="lni-user"></i>
-                                    <asp:TextBox runat="server" placeholder="Company Name" ID="coname" class="form-control"></asp:TextBox>
+<section id="content" class="section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6 col-xs-12">
+                <div class="page-login-form box">
+                    <h3>Company Register</h3>
+                    <div class="login-form">
 
-                                </div>
-                                </div>
-                                <div class="form-group">
-                                    Email :
-                                <div class="input-icon">
-                                    <i class="lni-envelope"></i>
-                                    <asp:TextBox runat="server" ID="email" class="form-control" placeholder="Email" TextMode="email"></asp:TextBox>
-
-                                </div>
-                                </div>
-                                <div class="form-group">
-                                    Password :
-                                <div class="input-icon">
-                                    <i class="lni-lock"></i>
-                                    <asp:TextBox runat="server" ID="pass" class="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
-
-                                </div>
-                                </div>
-
-                                <div class="form-group">
-                                    Website :
-                                <div class="input-icon">
-                                    <i class="lni-bolt"></i>
-                                    <asp:TextBox runat="server" ID="website" class="form-control" placeholder="Website"></asp:TextBox>
-
-                                </div>
-                                </div>
-                                <div class="form-group">
-                                    Profile Info :
-                                    <div class="input-icon">
-                                        <i class="lni-bolt"></i>
-                                        <asp:TextBox runat="server" ID="info" class="form-control" placeholder="Profile Info" TextMode="MultiLine"></asp:TextBox>
-
-                                    </div>
-                                </div>
-
-
-                                <asp:Button runat="server" class="btn btn-common log-btn" ID="sub" Text="Submit" OnClick="sub_Click" />
+                        <!-- Company Name -->
+                        <div class="form-group">
+                            Company Name :
+                            <div class="input-icon">
+                                <i class="lni-user"></i>
+                                <asp:TextBox runat="server" placeholder="Company Name" ID="coname" class="form-control"></asp:TextBox>
                             </div>
-                            <ul class="form-links">
-                                <li class="text-center"><a href="company_login.aspx">Already have an account?</a></li>
-                            </ul>
+
+                            <asp:RequiredFieldValidator 
+                                runat="server" 
+                                ControlToValidate="coname" 
+                                ErrorMessage="Company name is required" 
+                                ForeColor="Red" 
+                                Display="Dynamic" />
                         </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            Email :
+                            <div class="input-icon">
+                                <i class="lni-envelope"></i>
+                                <asp:TextBox runat="server" ID="email" class="form-control" placeholder="Email" TextMode="Email"></asp:TextBox>
+                            </div>
+
+                            <asp:RequiredFieldValidator 
+                                runat="server" 
+                                ControlToValidate="email" 
+                                ErrorMessage="Email is required" 
+                                ForeColor="Red" 
+                                Display="Dynamic" />
+
+                            <asp:RegularExpressionValidator 
+                                runat="server" 
+                                ControlToValidate="email"
+                                ErrorMessage="Invalid Email Format"
+                                ForeColor="Red"
+                                Display="Dynamic"
+                                ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$" />
+                        </div>
+
+                        <!-- Password -->
+                        <div class="form-group">
+                            Password :
+                            <div class="input-icon">
+                                <i class="lni-lock"></i>
+                                <asp:TextBox runat="server" ID="pass" class="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
+                            </div>
+
+                            <asp:RequiredFieldValidator 
+                                runat="server" 
+                                ControlToValidate="pass" 
+                                ErrorMessage="Password is required" 
+                                ForeColor="Red" 
+                                Display="Dynamic" />
+
+                            <asp:RegularExpressionValidator
+                                runat="server"
+                                ControlToValidate="pass"
+                                ErrorMessage="Password must have at least 6 characters, with uppercase, lowercase, number and special symbol"
+                                ForeColor="Red"
+                                Display="Dynamic"
+                                ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{6,}$" />
+                            <!-- Show/Hide password -->
+                        <div class="form-check mt-2">
+                            <input type="checkbox" class="form-check-input" id="chkShowPass" onclick="togglePassword()" />
+                            <label class="form-check-label" for="chkShowPass">Show Password</label>
+                        </div>
+                        </div>
+
+                        <!-- Website -->
+                        <div class="form-group">
+                            Website :
+                            <div class="input-icon">
+                                <i class="lni-bolt"></i>
+                                <asp:TextBox runat="server" ID="website" class="form-control" placeholder="Website"></asp:TextBox>
+                            </div>
+
+                            <asp:RequiredFieldValidator 
+                                runat="server" 
+                                ControlToValidate="website" 
+                                ErrorMessage="Website is required" 
+                                ForeColor="Red" 
+                                Display="Dynamic" />
+                        </div>
+
+                        <!-- Profile Info -->
+                        <div class="form-group">
+                            Profile Info :
+                            <div class="input-icon">
+                                <i class="lni-bolt"></i>
+                                <asp:TextBox runat="server" ID="info" class="form-control" placeholder="Profile Info" TextMode="MultiLine"></asp:TextBox>
+                            </div>
+                        </div>
+
+                        <asp:Button runat="server" class="btn btn-common log-btn" ID="sub" Text="Submit" OnClick="sub_Click" />
+
                     </div>
+
+                    <ul class="form-links">
+                        <li class="text-center"><a href="company_login.aspx">Already have an account?</a></li>
+                    </ul>
+
                 </div>
             </div>
-        </section>
-        <!-- Content section End -->
+        </div>
+    </div>
+</section>
+<!-- Content section End -->
+
     </form>
 
     <!-- Footer Section Start -->
@@ -238,7 +317,14 @@
     <!-- JS Files -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
-
+    <script type="text/javascript">
+        function togglePassword() {
+            var pwd = document.getElementById('<%= pass.ClientID %>');
+            if (pwd) {
+                pwd.type = (pwd.type === 'password') ? 'text' : 'password';
+            }
+        }
+    </script>
     <script>
         $(document).ready(function () {
             $("#loader").show();

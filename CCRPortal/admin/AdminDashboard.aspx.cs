@@ -38,7 +38,7 @@ namespace CCRPortal.admin
                     int appcount = (int)cmd.ExecuteScalar();
                     totalapplication.InnerText = appcount.ToString();
                 }
-                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM user_data", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM user_data where usertype='user'", con))
                 {
                     int usercount = (int)cmd.ExecuteScalar();
                     tuser.InnerText = usercount.ToString();

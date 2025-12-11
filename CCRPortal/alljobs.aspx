@@ -12,8 +12,9 @@
                     <div class="col-lg-6 col-md-12 col-xs-12">
                         <div class="jobs-latest">
                             <div class="img-thumb">
-                                <img src="<%# Eval("jobimage") %>" alt="" style="height: 100px; width: 100px" />
-
+                               
+                                <img src='<%# ResolveUrl("~/img/co_img/" + Eval("jobimage")) %>'
+    alt="" style="height: 100px; width: 100px" />
                             </div>
                             <div class="content">
                                 <h3><a href="job-details.aspx?jobId=<%# Eval("JobID") %>"><%# Eval("Title") %></a></h3>

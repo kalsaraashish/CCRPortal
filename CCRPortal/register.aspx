@@ -25,10 +25,16 @@
     <script src="dist/sweetalert2.min.js"></script>
     <script type="text/javascript">
         function Successapply() {
+           
             Swal.fire({
                 title: "Registration successful.",
-                text: "",
-                icon: "success"
+                text: "Wait for Admin Approval",
+                icon: "success",
+                confirmButtonText: "OK"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location = 'login.aspx';
+                }
             });
         }
         function errormessage() {
@@ -124,12 +130,12 @@
                             <h3>Register</h3>
 
                             <!-- Show all errors here -->
-                            <asp:ValidationSummary
+                            <%-- <asp:ValidationSummary
                                 ID="vsRegister"
                                 runat="server"
                                 CssClass="text-danger mb-3"
                                 HeaderText="Please fix the following errors:"
-                                ValidationGroup="reg" />
+                                ValidationGroup="reg" />--%>
 
                             <div class="login-form">
                                 <!-- Username -->
@@ -179,33 +185,32 @@
                                 </div>
 
                                 <!-- Password -->
-                                <!-- Password -->
                                 <div class="form-group">
                                     Password :
-    <div class="input-icon">
-        <i class="lni-lock"></i>
-        <asp:TextBox runat="server" ID="pass" class="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
+                                <div class="input-icon">
+                                    <i class="lni-lock"></i>
+                                    <asp:TextBox runat="server" ID="pass" class="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
 
-        <asp:RequiredFieldValidator
-            ID="rfvPassword"
-            runat="server"
-            ControlToValidate="pass"
-            ErrorMessage="Password is required"
-            CssClass="text-danger"
-            Display="Dynamic"
-            ValidationGroup="reg" />
+                                    <asp:RequiredFieldValidator
+                                        ID="rfvPassword"
+                                        runat="server"
+                                        ControlToValidate="pass"
+                                        ErrorMessage="Password is required"
+                                        CssClass="text-danger"
+                                        Display="Dynamic"
+                                        ValidationGroup="reg" />
 
-        <!-- Password Pattern Validation -->
-        <asp:RegularExpressionValidator
-            ID="revPassword"
-            runat="server"
-            ControlToValidate="pass"
-            ErrorMessage="Password must have at least 6 characters, with uppercase, lowercase, number and special symbol"
-            CssClass="text-danger"
-            Display="Dynamic"
-            ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{6,}$"
-            ValidationGroup="reg" />
-    </div>
+                                    <!-- Password Pattern Validation -->
+                                    <asp:RegularExpressionValidator
+                                        ID="revPassword"
+                                        runat="server"
+                                        ControlToValidate="pass"
+                                        ErrorMessage="Password must have at least 6 characters, with uppercase, lowercase, number and special symbol"
+                                        CssClass="text-danger"
+                                        Display="Dynamic"
+                                        ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{6,}$"
+                                        ValidationGroup="reg" />
+                                </div>
 
                                     <!-- Show/Hide password -->
                                     <div class="form-check mt-2">

@@ -21,37 +21,54 @@ namespace CCRPortal.company
         {
             using (SqlConnection sqlConnection = new SqlConnection(con))
             {
+                sqlConnection.Open();
+
+                // CHECK IF COMPANY NAME OR EMAIL ALREADY EXISTS
+                SqlCommand checkCmd = new SqlCommand(
+                    "SELECT COUNT(*) FROM Company WHERE company_name = @company_name OR Email = @Email",
+                    sqlConnection);
+
+                checkCmd.Parameters.AddWithValue("@company_name", coname.Text);
+                checkCmd.Parameters.AddWithValue("@Email", email.Text);
+
+                int count = (int)checkCmd.ExecuteScalar();
+
+                if (count > 0)
+                {
+                    Response.Write("<script>alert('Company name or email already exists!');</script>");
+                    return;  
+                }
+
                 SqlCommand insertdata = new SqlCommand(
-                    "INSERT INTO Company (company_name, Email, password, website, profile_info) VALUES (@company_name, @email, @pass, @website, @profile_info)",
+                    "INSERT INTO Company (company_name, Email, password, website, profile_info) " +
+                    "VALUES (@company_name, @Email, @pass, @website, @profile_info)",
                     sqlConnection);
 
                 insertdata.Parameters.AddWithValue("@company_name", coname.Text);
-                insertdata.Parameters.AddWithValue("@email", email.Text);
+                insertdata.Parameters.AddWithValue("@Email", email.Text);
                 insertdata.Parameters.AddWithValue("@pass", pass.Text);
                 insertdata.Parameters.AddWithValue("@website", website.Text);
                 insertdata.Parameters.AddWithValue("@profile_info", info.Text);
 
-                sqlConnection.Open();
                 int a = insertdata.ExecuteNonQuery();
 
                 if (a > 0)
                 {
-                    // Clear form
                     coname.Text = "";
                     email.Text = "";
                     pass.Text = "";
                     website.Text = "";
 
-
-                    // Show success message and redirect
-                    Response.Write("<script>alert('Registration successful.'); window.location='company_login.aspx';</script>");
+                    ScriptManager.RegisterStartupScript(this, GetType(), "SuccessRedirect", "Successapply();", true);
+                    //Response.Write("<script>alert('Registration successful.'); window.location='company_login.aspx';</script>");
                 }
                 else
                 {
-                    Response.Write("<script>alert('Registration failed.');</script>");
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "errormessage();", true);
                 }
             }
         }
+
     }
 }
 

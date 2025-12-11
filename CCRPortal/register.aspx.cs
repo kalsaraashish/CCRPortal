@@ -12,10 +12,7 @@ namespace CCRPortal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                // Code to execute on initial page load
-            }
+            
         }
 
         string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\admin\OneDrive\Desktop\CCRPortal\CCRPortal\App_Data\CCRPortal.mdf;Integrated Security=True";
@@ -24,66 +21,84 @@ namespace CCRPortal
         {
             string resumeRelativePath = null;
 
-            if (resume.HasFile)
+            if (!resume.HasFile)
             {
-                string fileExtension = System.IO.Path.GetExtension(resume.FileName);
-                if (fileExtension.ToLower() != ".pdf")
-                {
-                    Response.Write("<script>alert('Please upload a PDF file.');</script>");
-                    return;
-                }
-
-                // Rename file with username
-                string safeUsername = username.Text.Trim().Replace(" ", "_");
-                string filename = safeUsername + fileExtension;
-                string filePath = Server.MapPath("img/resume/") + filename;
-                resume.SaveAs(filePath);
-                resumeRelativePath = "img/resume/" + filename;
-            }
-            else
-            {
-                Response.Write("<script>alert('Please upload your resume.');</script>");
+                ScriptManager.RegisterStartupScript(this, GetType(), "Alert", "alert('Please upload your resume.');", true);
                 return;
             }
 
+            string fileExtension = System.IO.Path.GetExtension(resume.FileName).ToLower();
+            if (fileExtension != ".pdf")
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Alert", "alert('Please upload a PDF file.');", true);
+                return;
+            }
+
+            string safeUsername = username.Text.Trim().Replace(" ", "_");
+            string filename = safeUsername + fileExtension;
+            string filePath = Server.MapPath("img/resume/") + filename;
+            resume.SaveAs(filePath);
+
+            resumeRelativePath = "img/resume/" + filename;
+
+
             using (SqlConnection sqlConnection = new SqlConnection(con))
             {
-                SqlCommand insertdata = new SqlCommand(
-                    "INSERT INTO user_data (Username, Email, Password, Branch, Skills, Resume) " +
-                    "VALUES (@username, @email, @pass, @branch, @skills, @resume)",
+                sqlConnection.Open();
+
+                SqlCommand checkEmail = new SqlCommand(
+                    "SELECT COUNT(*) FROM user_data WHERE Email = @Email",
                     sqlConnection);
 
-                insertdata.Parameters.AddWithValue("@username", username.Text);
-                insertdata.Parameters.AddWithValue("@email", email.Text);
+                checkEmail.Parameters.AddWithValue("@Email", email.Text.Trim());
+
+                int emailCount = (int)checkEmail.ExecuteScalar();
+
+                if (emailCount > 0)
+                {
+                    ScriptManager.RegisterStartupScript(
+                        this, GetType(), "Alert",
+                        "alert('This email is already registered!');",
+                        true);
+
+                    return; 
+                }
+
+                SqlCommand insertdata = new SqlCommand(
+                    "INSERT INTO user_data (Username, Email, Password, Branch, Skills, Resume) " +
+                    "VALUES (@username, @Email, @pass, @branch, @skills, @resume)",
+                    sqlConnection);
+
+                insertdata.Parameters.AddWithValue("@username", username.Text.Trim());
+                insertdata.Parameters.AddWithValue("@Email", email.Text.Trim());
                 insertdata.Parameters.AddWithValue("@pass", pass.Text);
                 insertdata.Parameters.AddWithValue("@branch", DropDownList1.SelectedValue);
-                insertdata.Parameters.AddWithValue("@skills", skills.Text);
+                insertdata.Parameters.AddWithValue("@skills", skills.Text.Trim());
                 insertdata.Parameters.AddWithValue("@resume", resumeRelativePath);
 
-                sqlConnection.Open();
                 int a = insertdata.ExecuteNonQuery();
+
 
                 if (a > 0)
                 {
-                    // Clear form
+                    // Clear form fields
                     username.Text = "";
                     email.Text = "";
                     pass.Text = "";
                     skills.Text = "";
                     resume.Attributes.Clear();
 
-                    // Show success message and redirect
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "Successapply();", true);
-                    Response.Write("<script>window.location='login.aspx';</script>");
+                    // SUCCESS POPUP + REDIRECT (after 1.5 sec)
+                    string script = "Successapply();";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "SuccessRedirect", script, true);
 
-                    
                 }
                 else
                 {
-                    //Response.Write("<script>alert('Registration failed.');</script>");
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "errormessage();", true);
                 }
             }
         }
+
     }
 }
