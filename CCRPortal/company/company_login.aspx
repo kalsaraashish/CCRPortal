@@ -204,13 +204,24 @@
                                             ErrorMessage="Password is required"
                                             ForeColor="Red"
                                             Display="Dynamic" />
+                                        <!-- Password Pattern Validation -->
+<asp:RegularExpressionValidator
+    ID="revPassword"
+    runat="server"
+    ControlToValidate="pass"
+    ErrorMessage="Password must contain at least 6 characters, including letters and numbers"
+    CssClass="text-danger"
+    Display="Dynamic"
+    ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{6,}$" />
                                     </div>
+                                     <!-- Show/Hide password -->
+ <div class="form-check mt-2">
+     <input type="checkbox" class="form-check-input" id="chkShowPass" onclick="togglePassword()" />
+     <label class="form-check-label" for="chkShowPass">Show Password</label>
+ </div>
                                 </div>
 
-                                <div class="form-group form-check">
-                                    <asp:CheckBox ID="chkRememberMe" runat="server" CssClass="form-check-input" />
-                                    <label class="form-check-label" for="exampleCheck1">Keep Me Signed In</label>
-                                </div>
+                               
 
                                 <asp:Button runat="server" ID="btn" class="btn btn-common log-btn" Text="Submit" OnClick="btn_Click" />
                             </div>
@@ -301,7 +312,14 @@
     <!-- JS Files -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
-
+    <script type="text/javascript">
+        function togglePassword() {
+            var pwd = document.getElementById('<%= pass.ClientID %>');
+            if (pwd) {
+                pwd.type = (pwd.type === 'password') ? 'text' : 'password';
+            }
+        }
+    </script>
     <script>
         $(document).ready(function () {
             $("#loader").show();

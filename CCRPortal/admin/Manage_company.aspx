@@ -97,10 +97,10 @@
                         <tr>
                             <th>ID</th>
                             <th>Company Name</th>
-                            <th>Email</th>
+                            <th >Email</th>
                             <th>Password</th>
                             <th>Website</th>
-                            <th>Profile Info</th>
+                            <th style="width:50rem">Profile Info</th>
                             <th>Is Approved</th>
                             <th class="text-end">Action</th>
                         </tr>

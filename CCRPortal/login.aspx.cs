@@ -13,15 +13,7 @@ namespace CCRPortal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                if (Request.Cookies["username"] != null && Request.Cookies["pass"] != null)
-                {
-                    username.Text = Request.Cookies["username"].Value;
-                    pass.Text = Request.Cookies["pass"].Value;
-                    chkRememberMe.Checked = true;
-                }
-            }
+            
 
         }
         string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\admin\OneDrive\Desktop\CCRPortal\CCRPortal\App_Data\CCRPortal.mdf;Integrated Security=True";
@@ -43,19 +35,7 @@ namespace CCRPortal
                         {
                             reader.Read();
 
-                            if (chkRememberMe.Checked)
-                            {
-                                Response.Cookies["username"].Value = username.Text;
-                                Response.Cookies["pass"].Value = pass.Text;
-
-                                Response.Cookies["username"].Expires = DateTime.Now.AddHours(1);
-                                Response.Cookies["pass"].Expires = DateTime.Now.AddHours(1);
-                            }
-                            else
-                            {
-                                Response.Cookies["username"].Expires = DateTime.Now.AddHours(-1);
-                                Response.Cookies["pass"].Expires = DateTime.Now.AddHours(-1);
-                            }
+                           
 
                             string userType = reader["usertype"].ToString().Trim().ToLower();
 

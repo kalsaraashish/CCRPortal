@@ -65,7 +65,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="Manage_user.aspx">Manage User</a></li>
                                         <li><a class="dropdown-item" href="Manage_company.aspx">Manage Company</a></li>
-                                         <li><a class="dropdown-item" href="manage_applications.aspx">Manage Applications</a></li>
+                                        
                                     </ul>
                                 </li>
 

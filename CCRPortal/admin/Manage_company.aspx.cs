@@ -43,7 +43,7 @@ namespace CCRPortal.admin
         {
             using (SqlConnection con = new SqlConnection(conn))
             {
-                SqlCommand cmd = new SqlCommand("select * from Company", con);
+                SqlCommand cmd = new SqlCommand("select CompanyID,company_name,email,website,profile_info from Company", con);
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

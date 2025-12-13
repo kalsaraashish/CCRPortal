@@ -45,7 +45,7 @@ namespace CCRPortal.admin
 
             using (SqlConnection con = new SqlConnection(conn))
             {
-                SqlCommand cmd = new SqlCommand("select * from user_data where usertype='user'", con);
+                SqlCommand cmd = new SqlCommand("select id,Username,Email,Branch,Skills,RegDate from user_data where usertype='user'", con);
                
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
