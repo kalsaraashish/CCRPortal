@@ -15,12 +15,7 @@ namespace CCRPortal.company
         {
             if (!IsPostBack)
             {
-                if (Request.Cookies["username"] != null && Request.Cookies["pass"] != null)
-                {
-                    email.Text = Request.Cookies["email"].Value;
-                    pass.Text = Request.Cookies["pass"].Value;
-                    chkRememberMe.Checked = true;
-                }
+               
             }
         }
 
@@ -39,18 +34,7 @@ namespace CCRPortal.company
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    if (chkRememberMe.Checked)
-                    {
-                        Response.Cookies["email"].Value = email.Text;
-                        Response.Cookies["pass"].Value = pass.Text;
-                        Response.Cookies["email"].Expires = DateTime.Now.AddHours(1);
-                        Response.Cookies["pass"].Expires = DateTime.Now.AddHours(1);
-                    }
-                    else
-                    {
-                        Response.Cookies["email"].Expires = DateTime.Now.AddHours(-1);
-                        Response.Cookies["pass"].Expires = DateTime.Now.AddHours(-1);
-                    }
+                    
                     bool isApproved = Convert.ToBoolean(reader["IsApproved"]);
                     if (isApproved)
                     {

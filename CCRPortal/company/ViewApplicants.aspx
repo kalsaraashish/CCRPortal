@@ -110,6 +110,7 @@
                             <th>Student Name</th>
                             <th>Email</th>
                             <th>Resume</th>
+                            <th>Job Name</th>
                             <th>Applied Date</th>
                             <th>Location</th>
                             <th>Status</th>
@@ -137,6 +138,8 @@
                                             Text="Download Resume" />
                                     </td>
 
+
+                                    <td><%# Eval("Title") %></td>
                                     <td><%# Convert.ToDateTime(Eval("AppliedDate")).ToString("dd MMM yyyy") %></td>
 
                                     <td><%# Eval("city").ToString().Trim() %></td>
