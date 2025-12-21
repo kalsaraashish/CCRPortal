@@ -110,7 +110,6 @@
                                         <asp:ListItem Text="FULL-TIME" Value="FULL-TIME" />
                                         <asp:ListItem Text="PART-TIME" Value="PART-TIME" />
                                         <asp:ListItem Text="REMOTE" Value="REMOTE" />
-                                        <asp:ListItem Text="WORK-FROM-HOME" Value="WORK-FROM-HOME" />
                                     </asp:DropDownList>
 
                                 </div>
